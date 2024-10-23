@@ -29,17 +29,7 @@ public class PlayerController : MonoBehaviour, IMoveObject
     public void Move(float speed)
     {
         float currentMoveSpeed = speed;
-        LookAt();
         rb.velocity = direction * currentMoveSpeed + Vector3.up * rb.velocity.y;
-    }
-
-    private void LookAt()
-    {
-        if(direction != Vector3.zero)
-        {
-            Quaternion targetAngle = Quaternion.LookRotation(direction);
-            rb.rotation = targetAngle;
-        }
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
