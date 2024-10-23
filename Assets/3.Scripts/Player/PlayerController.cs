@@ -28,8 +28,10 @@ public class PlayerController : MonoBehaviour, IMoveObject
 
     public void Move(float speed)
     {
-        float currentMoveSpeed = speed;
-        rb.velocity = direction * currentMoveSpeed + Vector3.up * rb.velocity.y;
+        Vector3 moveDirection = new Vector3(direction.x, 0f, direction.z); 
+        moveDirection = transform.TransformDirection(moveDirection);
+
+        rb.velocity = new Vector3(moveDirection.x, rb.velocity.y, moveDirection.z) * speed;
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
