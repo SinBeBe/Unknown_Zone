@@ -4,8 +4,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour, IMoveObject
 {
-    private const float CONVERT_UNIT_VALUE = 0.01f;
-
     private Rigidbody rb;
 
     [SerializeField]
