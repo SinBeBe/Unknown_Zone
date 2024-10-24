@@ -15,9 +15,8 @@ public class ItemSpawn : MonoBehaviour
             gameObjects[i] = gameObject.transform.GetChild(i).gameObject;
         }
 
-        // UnityEngine.RandomÀ» »ç¿ëÇÏ¿© ·£´ýÇÑ ÀÎµ¦½º »ý¼º
         int[] randomNumbers = Enumerable.Range(0, gameObjects.Length)
-                                        .OrderBy(_ => Random.value) // ·£´ý °ªÀ¸·Î ¼¯±â
+                                        .OrderBy(_ => Random.value)
                                         .Take(num)
                                         .ToArray();
 

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
@@ -7,12 +6,17 @@ public class CameraController : MonoBehaviour
     private Transform playerPos;
     private Vector3 cameraPos;
 
+    private RaycastHit hit;
+    private LayerMask masks;
+
     [SerializeField]
     private float mouseSensitivity = 100f;
     private float xRotation = 0;
 
     private void Start()
     {
+        masks = (1 << 6) | (1 << 7) | (1 << 8);
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -40,5 +44,17 @@ public class CameraController : MonoBehaviour
         Camera.main.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
         playerPos.Rotate(Vector3.up * mouseX);
+    }
+
+    private void Interact()
+    {
+        if(Physics.Raycast(gameObject.transform.position, Vector3.forward, out hit, 2f, masks))
+        {
+            UIManager.instance.ImageOnOff(UIManager.instance.interactImage, true);
+        }
+        else
+        {
+            UIManager.instance.ImageOnOff(UIManager.instance.interactImage, false);
+        }
     }
 }
