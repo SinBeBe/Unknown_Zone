@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip[] clips;
 
+    public int clipsIndex;
+
     private void Awake()
     {
         if(instance == null)
@@ -23,7 +25,7 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        StartCoroutine(PlayBGM(clips[0], clips[0].length));
+        StartCoroutine(PlayBGM(clips[clipsIndex], clips[clipsIndex].length));
     }
 
     public void PlayAudiocilp(ref AudioSource source, AudioClip clip, bool isLoop)
