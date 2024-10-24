@@ -4,6 +4,8 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField]
     private Transform playerPos;
+    [SerializeField]
+    private Transform rayPos;
     private Vector3 cameraPos;
 
     private RaycastHit hit;
@@ -26,6 +28,7 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
         RotateCamera();
+        Interact();
     }
 
     private void LateUpdate()
@@ -48,13 +51,12 @@ public class CameraController : MonoBehaviour
 
     private void Interact()
     {
-        if(Physics.Raycast(gameObject.transform.position, Vector3.forward, out hit, 2f, masks))
+        Debug.DrawRay(rayPos.position, transform.forward * 8f, Color.red);
+        if(Physics.Raycast(rayPos.position, transform.forward, out hit, 8f, masks))
         {
             UIManager.instance.ImageOnOff(UIManager.instance.interactImage, true);
         }
         else
-        {
             UIManager.instance.ImageOnOff(UIManager.instance.interactImage, false);
-        }
     }
 }

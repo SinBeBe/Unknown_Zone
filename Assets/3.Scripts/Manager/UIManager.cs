@@ -13,14 +13,10 @@ public class UIManager : MonoBehaviour
         {
             instance = this;
         }
-        else
-        {
-            Destroy(this.gameObject);
-        }
     }
 
-    public void ImageOnOff(Image gaameObject, bool isState)
+    public void ImageOnOff(Image image, bool isState)
     {
-        gameObject.SetActive(isState);
+        image.gameObject.SetActive(isState);
     }
 }
