@@ -20,8 +20,15 @@ public class PlayerController : MonoBehaviour, IMoveObject
 
     private void FixedUpdate()
     {
-        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
-        Move(currentSpeed);
+        bool isRun = Input.GetKey(KeyCode.LeftShift) ? true : false;
+        if (isRun)
+        {
+            Move(runSpeed);
+        }
+        else
+        {
+            Move(walkSpeed);
+        }
     }
 
     public void Move(float speed)
