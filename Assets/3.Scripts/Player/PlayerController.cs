@@ -4,12 +4,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour, IMoveObject
 {
+    [SerializeField]
+    private AudioSource moveAudio;
+
     private Rigidbody rb;
 
-    [SerializeField]
-    private float walkSpeed = 3f;
-    [SerializeField]
-    private float runSpeed = 5f;
+    private float walkSpeed = 7f;
+    private float runSpeed = 13f;
 
     private Vector3 direction { get; set; }
 
