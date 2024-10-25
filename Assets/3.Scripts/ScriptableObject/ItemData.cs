@@ -5,9 +5,9 @@ public class ItemData : ScriptableObject
 {
     [SerializeField]
     private int count;
-    public int Count {  get { return count; } }
+    public int Count {  get { return count; } set { Count += value; } }
 
     [SerializeField]
     private bool isGet;
-    public bool IsGet { get { return isGet; } }
+    public bool IsGet { get { return isGet; } set { IsGet = value; } }
 }

@@ -3,6 +3,8 @@ using UnityEngineInternal;
 
 public class CameraController : MonoBehaviour
 {
+    private ItemData data;
+
     [SerializeField]
     private Transform playerPos;
     [SerializeField]
@@ -67,9 +69,16 @@ public class CameraController : MonoBehaviour
             UIManager.instance.ImageOnOff(UIManager.instance.interactImage, true);
             if (hit.collider.gameObject.layer == item)
             {
+                data = hit.collider.gameObject.GetComponent<ItemData>();
+                data.Count = 1;
+                data.IsGet = true;
+
                 Destroy(hit.collider.gameObject);
                 //아이템 먹는 소리
-
+            }
+            else
+            {
+                //숨는 로직
             }
         }
         else
