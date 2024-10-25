@@ -16,6 +16,8 @@ public class CameraController : MonoBehaviour
 
     private RaycastHit hit;
     private LayerMask masks;
+    private LayerMask item;
+    private LayerMask hideObj;
 
     [SerializeField]
     private float mouseSensitivity = 100f;
@@ -24,6 +26,8 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         masks = (1 << 6) | (1 << 8);
+        item = (1 << 6);
+        hideObj = (1 << 8);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -61,7 +65,7 @@ public class CameraController : MonoBehaviour
         if (Physics.Raycast(rayPos.position, transform.forward, out hit, 8f, masks))
         {
             UIManager.instance.ImageOnOff(UIManager.instance.interactImage, true);
-            if (hit.collider.gameObject.layer == 6)
+            if (hit.collider.gameObject.layer == item)
             {
                 Destroy(hit.collider.gameObject);
                 //아이템 먹는 소리
