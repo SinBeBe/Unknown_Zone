@@ -2,15 +2,23 @@ using UnityEngine;
 
 public class Soul : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject player;
+
     private LayerMask mask;
-    private float radius = 4f;
+    private float radius = 6f;
 
     private void Start()
     {
-        mask = 3;
+        mask = player.layer;
     }
 
-    private void LateUpdate()
+    private void Update()
+    {
+        CheckPlayer();
+    }
+
+    private void CheckPlayer()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius, mask);
 
@@ -18,6 +26,7 @@ public class Soul : MonoBehaviour
         {
             //영혼 사라지는 소리
             Destroy(this.gameObject);
+            UIManager.instance.SoulIncrease();
         }
     }
 
@@ -25,10 +34,5 @@ public class Soul : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, radius);
-    }
-
-    private void OnDestroy()
-    {
-        UIManager.instance.SoulIncrease();
     }
 }
