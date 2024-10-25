@@ -64,6 +64,8 @@ public class CameraController : MonoBehaviour
             if (hit.collider.gameObject.layer == 6)
             {
                 Destroy(hit.collider.gameObject);
+                //아이템 먹는 소리
+
             }
         }
         else
