@@ -67,7 +67,7 @@ public class CameraController : MonoBehaviour
         if (Physics.Raycast(rayPos.position, transform.forward, out hit, 8f, masks))
         {
             UIManager.instance.ImageOnOff(UIManager.instance.interactImage, true);
-            if (hit.collider.gameObject.layer == item)
+            if (hit.collider.gameObject.layer == item && Input.GetKey(KeyCode.Mouse0))
             {
                 data = hit.collider.gameObject.GetComponent<ItemData>();
                 data.Count = 1;
@@ -76,7 +76,7 @@ public class CameraController : MonoBehaviour
                 Destroy(hit.collider.gameObject);
                 //아이템 먹는 소리
             }
-            else
+            else if(hit.collider.gameObject.layer == hideObj && Input.GetKey(KeyCode.Mouse0))
             {
                 //숨는 로직
             }
