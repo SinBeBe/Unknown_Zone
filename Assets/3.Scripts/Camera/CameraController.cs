@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngineInternal;
 
 public class CameraController : MonoBehaviour
 {
@@ -6,6 +7,11 @@ public class CameraController : MonoBehaviour
     private Transform playerPos;
     [SerializeField]
     private Transform rayPos;
+    [SerializeField]
+    private AudioSource source;
+    [SerializeField]
+    private AudioClip clip;
+
     private Vector3 cameraPos;
 
     private RaycastHit hit;
@@ -17,7 +23,7 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        masks = (1 << 6) | (1 << 7) | (1 << 8);
+        masks = (1 << 6) | (1 << 8);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -52,11 +58,17 @@ public class CameraController : MonoBehaviour
     private void Interact()
     {
         Debug.DrawRay(rayPos.position, transform.forward * 8f, Color.red);
-        if(Physics.Raycast(rayPos.position, transform.forward, out hit, 8f, masks))
+        if (Physics.Raycast(rayPos.position, transform.forward, out hit, 8f, masks))
         {
             UIManager.instance.ImageOnOff(UIManager.instance.interactImage, true);
+            if (hit.collider.gameObject.layer == 6)
+            {
+                Destroy(hit.collider.gameObject);
+            }
         }
         else
+        {
             UIManager.instance.ImageOnOff(UIManager.instance.interactImage, false);
+        }
     }
 }
