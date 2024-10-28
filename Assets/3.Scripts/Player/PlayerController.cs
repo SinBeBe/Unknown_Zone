@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour, IMoveObject
 {
     [SerializeField]
     private AudioSource moveAudio;
+    [SerializeField]
+    private GameObject flashLight;
 
     private Rigidbody rb;
 
@@ -46,4 +48,11 @@ public class PlayerController : MonoBehaviour, IMoveObject
         direction = new Vector3(input.x, 0f, input.y);
     }
     
+    public void OnOffFlashLight(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            flashLight.SetActive(!flashLight.activeSelf);
+        }
+    }
 }

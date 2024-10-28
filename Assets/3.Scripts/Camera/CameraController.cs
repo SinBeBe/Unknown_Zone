@@ -70,7 +70,7 @@ public class CameraController : MonoBehaviour
             if (hit.collider.gameObject.layer == item && Input.GetKey(KeyCode.Mouse0))
             {
                 data = hit.collider.gameObject.GetComponent<ItemData>();
-                data.Count = 1;
+                data.Count += 1;
                 data.IsGet = true;
 
                 Destroy(hit.collider.gameObject);
