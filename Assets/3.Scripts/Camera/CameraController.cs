@@ -66,7 +66,6 @@ public class CameraController : MonoBehaviour
         Debug.DrawRay(rayPos.position, transform.forward * 8f, Color.red);
         if (Physics.Raycast(rayPos.position, transform.forward, out hit, 8f, masks))
         {
-            UIManager.instance.ImageOnOff(UIManager.instance.interactImage, true);
             if (hit.collider.gameObject.layer == item && Input.GetKey(KeyCode.Mouse0))
             {
                 data = hit.collider.gameObject.GetComponent<ItemData>();
@@ -79,6 +78,10 @@ public class CameraController : MonoBehaviour
             else if(hit.collider.gameObject.layer == hideObj && Input.GetKey(KeyCode.Mouse0))
             {
                 //¼û´Â ·ÎÁ÷
+            }
+            else
+            {
+                UIManager.instance.ImageOnOff(UIManager.instance.interactImage, true);
             }
         }
         else
