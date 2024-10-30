@@ -3,12 +3,8 @@ using UnityEngineInternal;
 
 public class CameraController : MonoBehaviour
 {
-    private ItemData data;
-
     [SerializeField]
     private Transform playerPos;
-    [SerializeField]
-    private Transform rayPos;
     [SerializeField]
     private AudioSource source;
     [SerializeField]
@@ -16,24 +12,12 @@ public class CameraController : MonoBehaviour
 
     private Vector3 cameraPos;
 
-    private RaycastHit hit;
-
-    private LayerMask masks;
-    private LayerMask item;
-    private LayerMask hideObj;
-    private LayerMask skill;
-
     [SerializeField]
     private float mouseSensitivity = 100f;
     private float xRotation = 0;
 
     private void Start()
     {
-        masks = (1 << 6) | (1 << 8);
-        item = (1 << 6);
-        hideObj = (1 << 8);
-        skill = (1 << 9);
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -43,7 +27,6 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
         RotateCamera();
-        Interact();
     }
 
     private void LateUpdate()
@@ -62,39 +45,5 @@ public class CameraController : MonoBehaviour
         Camera.main.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
         playerPos.Rotate(Vector3.up * mouseX);
-    }
-
-    private void Interact()
-    {
-        Debug.DrawRay(rayPos.position, transform.forward * 8f, Color.red);
-        if (Physics.Raycast(rayPos.position, transform.forward, out hit, 8f, masks))
-        {
-            UIManager.instance.ImageOnOff(UIManager.instance.interactImage, true);
-            if (Input.GetKey(KeyCode.Mouse0))
-            {
-                LayerMask hitObjLayer = hit.collider.gameObject.layer;
-                if(hitObjLayer == item)
-                {
-                    data = hit.collider.gameObject.GetComponent<ItemData>();
-                    data.Count += 1;
-                    data.IsGet = true;
-
-                    Destroy(hit.collider.gameObject);
-                    //아이템 먹는 소리
-                }
-                else if(hitObjLayer == skill)
-                {
-                    //skill 로직
-                }
-                else if(hitObjLayer == hideObj)
-                {
-                    //hide 로직
-                }
-            }
-        }
-        else
-        {
-            UIManager.instance.ImageOnOff(UIManager.instance.interactImage, false);
-        }
     }
 }
