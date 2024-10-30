@@ -17,9 +17,11 @@ public class CameraController : MonoBehaviour
     private Vector3 cameraPos;
 
     private RaycastHit hit;
+
     private LayerMask masks;
     private LayerMask item;
     private LayerMask hideObj;
+    private LayerMask skill;
 
     [SerializeField]
     private float mouseSensitivity = 100f;
@@ -30,6 +32,7 @@ public class CameraController : MonoBehaviour
         masks = (1 << 6) | (1 << 8);
         item = (1 << 6);
         hideObj = (1 << 8);
+        skill = (1 << 9);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -66,22 +69,27 @@ public class CameraController : MonoBehaviour
         Debug.DrawRay(rayPos.position, transform.forward * 8f, Color.red);
         if (Physics.Raycast(rayPos.position, transform.forward, out hit, 8f, masks))
         {
-            if (hit.collider.gameObject.layer == item && Input.GetKey(KeyCode.Mouse0))
+            UIManager.instance.ImageOnOff(UIManager.instance.interactImage, true);
+            if (Input.GetKey(KeyCode.Mouse0))
             {
-                data = hit.collider.gameObject.GetComponent<ItemData>();
-                data.Count += 1;
-                data.IsGet = true;
+                LayerMask hitObjLayer = hit.collider.gameObject.layer;
+                if(hitObjLayer == item)
+                {
+                    data = hit.collider.gameObject.GetComponent<ItemData>();
+                    data.Count += 1;
+                    data.IsGet = true;
 
-                Destroy(hit.collider.gameObject);
-                //아이템 먹는 소리
-            }
-            else if(hit.collider.gameObject.layer == hideObj && Input.GetKey(KeyCode.Mouse0))
-            {
-                //숨는 로직
-            }
-            else
-            {
-                UIManager.instance.ImageOnOff(UIManager.instance.interactImage, true);
+                    Destroy(hit.collider.gameObject);
+                    //아이템 먹는 소리
+                }
+                else if(hitObjLayer == skill)
+                {
+                    //skill 로직
+                }
+                else if(hitObjLayer == hideObj)
+                {
+                    //hide 로직
+                }
             }
         }
         else
