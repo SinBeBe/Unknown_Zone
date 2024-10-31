@@ -27,10 +27,6 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
         RotateCamera();
-    }
-
-    private void LateUpdate()
-    {
         transform.position = new Vector3(playerPos.position.x, cameraPos.y, playerPos.position.z);
     }
 
