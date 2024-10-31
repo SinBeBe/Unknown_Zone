@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour, IMoveObject
     {
         if (isInteract && context.performed)
         {
-            LayerMask hitObjLayer = hit.collider.gameObject.layer;
+            LayerMask hitObjLayer = (1 << hit.collider.gameObject.layer);
             if (hitObjLayer == item)
             {
                 data = hit.collider.gameObject.GetComponent<ItemData>();
