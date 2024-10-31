@@ -5,7 +5,7 @@ using UnityEngine.InputSystem.HID;
 
 public class PlayerController : MonoBehaviour, IMoveObject
 {
-    private ItemData data;
+    private Item data;
 
     [SerializeField]
     private AudioSource moveAudio;
@@ -98,9 +98,9 @@ public class PlayerController : MonoBehaviour, IMoveObject
             LayerMask hitObjLayer = (1 << hit.collider.gameObject.layer);
             if (hitObjLayer == item)
             {
-                data = hit.collider.gameObject.GetComponent<ItemData>();
-                data.Count += 1;
-                data.IsGet = true;
+                data = hit.collider.gameObject.GetComponent<Item>();
+                data.data.Count += 1;
+                data.data.IsGet = true;
 
                 Destroy(hit.collider.gameObject);
                 Debug.Log("get item");
