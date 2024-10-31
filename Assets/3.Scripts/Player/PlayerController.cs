@@ -103,6 +103,7 @@ public class PlayerController : MonoBehaviour, IMoveObject
                 data.data.IsGet = true;
 
                 Destroy(hit.collider.gameObject);
+                GameManager.instance.OnCandle();
                 Debug.Log("get item");
                 //아이템 먹는 소리
             }
