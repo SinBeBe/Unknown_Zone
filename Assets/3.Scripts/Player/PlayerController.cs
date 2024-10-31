@@ -19,9 +19,9 @@ public class PlayerController : MonoBehaviour, IMoveObject
     private RaycastHit hit;
 
     private LayerMask masks;
-    private LayerMask item;
-    private LayerMask hideObj;
-    private LayerMask skill;
+    private LayerMask item = (1 << 6);
+    private LayerMask hideObj = (1 << 8);
+    private LayerMask skill = (1 << 9);
 
     private float walkSpeed = 7f;
     private float runSpeed = 13f;
@@ -33,9 +33,6 @@ public class PlayerController : MonoBehaviour, IMoveObject
         rb = GetComponent<Rigidbody>();
 
         masks = (1 << 6) | (1 << 8);
-        item = (1 << 6);
-        hideObj = (1 << 8);
-        skill = (1 << 9);
     }
 
     private void Update()
@@ -66,11 +63,11 @@ public class PlayerController : MonoBehaviour, IMoveObject
 
     private void Interact()
     {
-        Debug.DrawRay(rayPos.position, transform.forward * 8f, Color.red);
-        if (Physics.Raycast(rayPos.position, transform.forward, out hit, 8f, masks))
+        Debug.DrawRay(rayPos.position, rayPos.forward * 8f, Color.red);
+        if (Physics.Raycast(rayPos.position, rayPos.forward, out hit, 8f, masks))
         {
             UIManager.instance.ImageOnOff(UIManager.instance.interactImage, true);
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 LayerMask hitObjLayer = hit.collider.gameObject.layer;
                 if (hitObjLayer == item)
