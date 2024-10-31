@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour, IMoveObject
     private Rigidbody rb;
 
     private RaycastHit hit;
+    private RaycastHit[] hits;
 
     private LayerMask masks;
     private LayerMask item = (1 << 6);
@@ -66,9 +67,14 @@ public class PlayerController : MonoBehaviour, IMoveObject
     private void Interact()
     {
         Debug.DrawRay(rayPos.position, rayPos.forward * 8f, Color.red);
-        if (Physics.Raycast(rayPos.position, rayPos.forward, out hit, 8f, masks))
+        hits = Physics.RaycastAll(rayPos.position, rayPos.forward, 8f, masks);
+        if (hits.Length > 0)
         {
             isInteract = true;
+            foreach (RaycastHit hit in hits)
+            {
+                this.hit = hit;
+            }
         }
         else
         {
