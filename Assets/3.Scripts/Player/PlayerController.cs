@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour, IMoveObject
     private LayerMask masks;
     private LayerMask item = (1 << 6);
     private LayerMask hideObj = (1 << 8);
-    private LayerMask skill = (1 << 9);
 
     private bool isInteract;
 
@@ -35,7 +34,7 @@ public class PlayerController : MonoBehaviour, IMoveObject
     {
         rb = GetComponent<Rigidbody>();
 
-        masks = (1 << 6) | (1 << 8) | (1 << 9);
+        masks = (1 << 6) | (1 << 8);
     }
 
     private void Update()
@@ -112,11 +111,6 @@ public class PlayerController : MonoBehaviour, IMoveObject
                 GameManager.instance.OnCandle();
                 Debug.Log("get item");
                 //아이템 먹는 소리
-            }
-            else if (hitObjLayer == skill)
-            {
-                //skill 로직
-                Debug.Log("get skill");
             }
             else if (hitObjLayer == hideObj)
             {
