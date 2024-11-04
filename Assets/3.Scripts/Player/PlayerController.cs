@@ -106,6 +106,7 @@ public class PlayerController : MonoBehaviour, IMoveObject
                 data = hit.collider.gameObject.GetComponent<Item>();
                 data.data.Count += 1;
                 data.data.IsGet = true;
+                Debug.Log(data.data.Count);
 
                 Destroy(hit.collider.gameObject);
                 GameManager.instance.OnCandle();
