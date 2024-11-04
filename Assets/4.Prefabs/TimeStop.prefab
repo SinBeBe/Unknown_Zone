@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5111544916611549536}
   - component: {fileID: 2126824138299787313}
-  m_Layer: 0
+  - component: {fileID: 5485171064179576207}
+  m_Layer: 6
   m_Name: TimeStop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,6 +58,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.23914337, y: 0.23554415, z: 0.24502349}
   m_Center: {x: -0.0004813671, y: 0.114044815, z: 0.0011404753}
+--- !u!114 &5485171064179576207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5111544916611323200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6230531f80c484349a54c95bc8458408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 0255787e49dfe034e8004a831a717bfe, type: 2}
 --- !u!1 &5111544916611323202
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,7 +82,7 @@ GameObject:
   - component: {fileID: 5111544916611549538}
   - component: {fileID: 5111544916612319552}
   - component: {fileID: 5111544916613319552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +165,7 @@ GameObject:
   - component: {fileID: 5111544916611549540}
   - component: {fileID: 5111544916612319554}
   - component: {fileID: 5111544916613319554}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +248,7 @@ GameObject:
   - component: {fileID: 5111544916611549542}
   - component: {fileID: 5111544916612319556}
   - component: {fileID: 5111544916613319556}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: glass_hoder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +331,7 @@ GameObject:
   - component: {fileID: 5111544916611549544}
   - component: {fileID: 5111544916612319558}
   - component: {fileID: 5111544916613319558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
