@@ -40,10 +40,7 @@ public class PlayerController : MonoBehaviour, IMoveObject
     private void Update()
     {
         Interact();
-    }
 
-    private void FixedUpdate()
-    {
         bool isRun = Input.GetKey(KeyCode.LeftShift) ? true : false;
         if (isRun)
         {
