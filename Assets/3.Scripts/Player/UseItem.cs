@@ -8,37 +8,38 @@ public class UseItem : MonoBehaviour
     public void OnSelectItemInput(InputAction.CallbackContext context)
     {
         Vector2 scrollValue = context.ReadValue<Vector2>();
+        Debug.Log(scrollValue.y);
 
         if(scrollValue.y > 0)
         {
-            ResetSelectItem();
-            if(indexer < UIManager.instance.selectItem.Count - 1)
-            {
-                indexer += 1;
-            }
-            else
-            {
-                indexer = 0;
-            }
-            UIManager.instance.selectItem[indexer].gameObject.SetActive(true);
+            SelectNextItem();
         }
         else if(scrollValue.y < 0)
         {
-            ResetSelectItem();
-            if (indexer > 0)
-            {
-                indexer -= 1;
-            }
-            else
-            {
-                indexer = UIManager.instance.selectItem.Count - 1;
-            }
-            UIManager.instance.selectItem[indexer].gameObject.SetActive(true);
+            SelectPreviousItem();
         }
     }
     public void OnUseItemInput(InputAction.CallbackContext context)
     {
 
+    }
+
+    private void SelectNextItem()
+    {
+        ResetSelectItem();
+
+        indexer = (indexer + 1) % UIManager.instance.selectItem.Count;
+
+        UIManager.instance.selectItem[indexer].gameObject.SetActive(true);
+    }
+
+    private void SelectPreviousItem()
+    {
+        ResetSelectItem();
+
+        indexer = (indexer - 1 + UIManager.instance.selectItem.Count) % UIManager.instance.selectItem.Count;
+
+        UIManager.instance.selectItem[indexer].gameObject.SetActive(true);
     }
 
     private void ResetSelectItem()
