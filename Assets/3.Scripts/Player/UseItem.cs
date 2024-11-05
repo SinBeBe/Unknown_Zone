@@ -7,17 +7,16 @@ public class UseItem : MonoBehaviour
     
     public void OnSelectItemInput(InputAction.CallbackContext context)
     {
-        Vector2 scrollValue = context.ReadValue<Vector2>();
-        int scrollDirection = scrollValue.y > 0 ? 1 : (scrollValue.y < 0 ? -1 : 0);
-        Debug.Log(scrollDirection);
+        if (context.performed)
+        {
+            Vector2 scrollValue = context.ReadValue<Vector2>();
+            int scrollDirection = scrollValue.y > 0 ? 1 : (scrollValue.y < 0 ? -1 : 0);
+            Debug.Log(scrollDirection);
 
-        if (scrollDirection > 0)
-        {
-            SelectNextItem();
-        }
-        else if(scrollDirection < 0)
-        {
-            SelectPreviousItem();
+            if (scrollDirection != 0)
+            {
+                SelectItem(scrollDirection);
+            }
         }
     }
     public void OnUseItemInput(InputAction.CallbackContext context)
@@ -25,29 +24,20 @@ public class UseItem : MonoBehaviour
 
     }
 
-    private void SelectNextItem()
+    private void SelectItem(int direction)
     {
         ResetSelectItem();
 
-        indexer = (indexer + 1) % UIManager.instance.selectItem.Count;
-
-        UIManager.instance.selectItem[indexer].gameObject.SetActive(true);
-    }
-
-    private void SelectPreviousItem()
-    {
-        ResetSelectItem();
-
-        indexer = (indexer - 1 + UIManager.instance.selectItem.Count) % UIManager.instance.selectItem.Count;
+        indexer = (indexer + direction + UIManager.instance.selectItem.Count) % UIManager.instance.selectItem.Count;
 
         UIManager.instance.selectItem[indexer].gameObject.SetActive(true);
     }
 
     private void ResetSelectItem()
     {
-        for(int i = 0; i < UIManager.instance.selectItem.Count; i++)
+        foreach (var item in UIManager.instance.selectItem)
         {
-            UIManager.instance.selectItem[i].gameObject.SetActive(false);
+            item.gameObject.SetActive(false);
         }
     }
 }
