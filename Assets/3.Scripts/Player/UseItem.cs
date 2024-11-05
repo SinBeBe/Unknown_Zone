@@ -25,7 +25,15 @@ public class UseItem : MonoBehaviour
         else
         {
             ResetSelectItem();
-
+            if (indexer < 0)
+            {
+                indexer -= 1;
+            }
+            else
+            {
+                indexer = UIManager.instance.selectItem.Count - 1;
+            }
+            UIManager.instance.selectItem[indexer].gameObject.SetActive(true);
         }
     }
     public void OnUseItemInput(InputAction.CallbackContext context)
