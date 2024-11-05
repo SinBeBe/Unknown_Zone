@@ -9,6 +9,7 @@ public class Syringe : MonoBehaviour, IUsed
     }
     public IEnumerator ItemUsed()
     {
-        
+        yield return null;
     }
+   
 }

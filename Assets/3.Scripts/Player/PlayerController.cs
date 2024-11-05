@@ -5,6 +5,8 @@ using UnityEngine.InputSystem.HID;
 
 public class PlayerController : MonoBehaviour, IMoveObject
 {
+    public PlayerData playerData;
+
     private Item data;
 
     [SerializeField]
@@ -25,9 +27,6 @@ public class PlayerController : MonoBehaviour, IMoveObject
 
     private bool isInteract;
 
-    private float walkSpeed = 7f;
-    private float runSpeed = 13f;
-
     private Vector3 direction { get; set; }
 
     private void Start()
@@ -44,11 +43,11 @@ public class PlayerController : MonoBehaviour, IMoveObject
         bool isRun = Input.GetKey(KeyCode.LeftShift) ? true : false;
         if (isRun)
         {
-            Move(runSpeed);
+            Move(playerData.RunSpeed);
         }
         else
         {
-            Move(walkSpeed);
+            Move(playerData.WalkSpeed);
         }
     }
 
