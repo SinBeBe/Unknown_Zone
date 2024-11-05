@@ -3,18 +3,19 @@ using UnityEngine.InputSystem;
 
 public class UseItem : MonoBehaviour
 {
-    private int indexer = -1;
+    private int indexer = 0;
     
     public void OnSelectItemInput(InputAction.CallbackContext context)
     {
         Vector2 scrollValue = context.ReadValue<Vector2>();
-        Debug.Log(scrollValue.y);
+        int scrollDirection = scrollValue.y > 0 ? 1 : (scrollValue.y < 0 ? -1 : 0);
+        Debug.Log(scrollDirection);
 
-        if(scrollValue.y > 0)
+        if (scrollDirection > 0)
         {
             SelectNextItem();
         }
-        else if(scrollValue.y < 0)
+        else if(scrollDirection < 0)
         {
             SelectPreviousItem();
         }
