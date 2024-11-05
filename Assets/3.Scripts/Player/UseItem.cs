@@ -22,10 +22,10 @@ public class UseItem : MonoBehaviour
             }
             UIManager.instance.selectItem[indexer].gameObject.SetActive(true);
         }
-        else
+        else if(scrollValue.y < 0)
         {
             ResetSelectItem();
-            if (indexer < 0)
+            if (indexer > 0)
             {
                 indexer -= 1;
             }
