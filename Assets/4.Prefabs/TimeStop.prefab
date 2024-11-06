@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5111544916611549536}
   - component: {fileID: 2126824138299787313}
   - component: {fileID: 5485171064179576207}
+  - component: {fileID: 7172230561798077782}
   m_Layer: 6
   m_Name: TimeStop
   m_TagString: UsingItem
@@ -71,6 +72,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 0255787e49dfe034e8004a831a717bfe, type: 2}
+--- !u!114 &7172230561798077782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5111544916611323200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc068b6ad3a8b84cb2c85b62c1cbaca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5111544916611323202
 GameObject:
   m_ObjectHideFlags: 0

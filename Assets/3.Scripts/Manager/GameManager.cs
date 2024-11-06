@@ -8,7 +8,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> candleLight = new List<GameObject>();
 
-    private int indexer = -1;
+    public bool isUsedItem = false;
+    
+    private int candleIndexer = -1;
+
 
     private void Awake()
     {
@@ -24,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     public void OnCandle()
     {
-        indexer += 1;
-        candleLight[indexer].SetActive(true);
+        candleIndexer += 1;
+        candleLight[candleIndexer].SetActive(true);
     }
 }

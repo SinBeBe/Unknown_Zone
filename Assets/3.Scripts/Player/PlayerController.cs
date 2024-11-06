@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour, IMoveObject
                 data.data.IsGet = true;
                 Destroy(hit.collider.gameObject);
                 Debug.Log("get item");
+                //아이템 먹는 소리
 
                 if (hit.collider.CompareTag("UsingItem"))
                 {
@@ -113,7 +114,6 @@ public class PlayerController : MonoBehaviour, IMoveObject
                 {
                     GameManager.instance.OnCandle();
                 }
-                //아이템 먹는 소리
             }
             else if (hitObjLayer == hideObj)
             {

@@ -1,15 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
-public class Syringe : MonoBehaviour, IUsed
+public class Syringe : ItemBase
 {
-    public void Used()
+    public override IEnumerator ItemUsed()
     {
-        StartCoroutine(ItemUsed());
+        throw new System.NotImplementedException();
     }
-    public IEnumerator ItemUsed()
-    {
-        yield return null;
-    }
-   
 }

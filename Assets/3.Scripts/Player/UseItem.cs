@@ -1,13 +1,19 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class UseItem : MonoBehaviour
 {
     UIManager ui;
+    GameManager gi;
+
+    [SerializeField]
+    private List<GameObject> items = new List<GameObject>();
 
     private void Start()
     {
         ui = UIManager.instance;
+        gi = GameManager.instance;
     }
 
     public void OnSelectItemInput(InputAction.CallbackContext context)
@@ -26,7 +32,11 @@ public class UseItem : MonoBehaviour
     }
     public void OnUseItemInput(InputAction.CallbackContext context)
     {
-
+        if(context.performed && !gi.isUsedItem)
+        {
+            gi.isUsedItem = true;
+            items[ui.selectIndex].gameObject.GetComponent<ItemBase>().Used();
+        }
     }
 
     private void SelectItem(int direction)

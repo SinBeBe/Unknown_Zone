@@ -1,17 +1,12 @@
 using System.Collections;
 using UnityEngine;
 
-public class Clock : MonoBehaviour, IUsed
+public class Clock : ItemBase
 {
-    public void Used()
+    public override IEnumerator ItemUsed()
     {
-        StartCoroutine(ItemUsed());
-    }
-
-    public IEnumerator ItemUsed()
-    {
-        Time.timeScale = 0f;
+        Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(10f);
-        Time.timeScale = 1f;
+        Time.timeScale = 1;
     }
 }
