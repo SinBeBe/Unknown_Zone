@@ -8,5 +8,6 @@ public class Clock : ItemBase
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(10f);
         Time.timeScale = 1;
+        GameManager.instance.isUsedItem = false;
     }
 }
