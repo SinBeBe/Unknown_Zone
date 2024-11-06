@@ -3,8 +3,13 @@ using UnityEngine.InputSystem;
 
 public class UseItem : MonoBehaviour
 {
-    private int indexer = 0;
-    
+    UIManager ui;
+
+    private void Start()
+    {
+        ui = UIManager.instance;
+    }
+
     public void OnSelectItemInput(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -28,14 +33,14 @@ public class UseItem : MonoBehaviour
     {
         ResetSelectItem();
 
-        indexer = (indexer + direction + UIManager.instance.selectItem.Count) % UIManager.instance.selectItem.Count;
+        ui.selectIndex = (ui.selectIndex + direction + ui.selectItem.Count) % UIManager.instance.selectItem.Count;
 
-        UIManager.instance.selectItem[indexer].gameObject.SetActive(true);
+        ui.selectItem[ui.selectIndex].gameObject.SetActive(true);
     }
 
     private void ResetSelectItem()
     {
-        foreach (var item in UIManager.instance.selectItem)
+        foreach (var item in ui.selectItem)
         {
             item.gameObject.SetActive(false);
         }

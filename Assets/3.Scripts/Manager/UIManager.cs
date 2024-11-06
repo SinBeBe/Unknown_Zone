@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
     public static UIManager instance = null;
 
     public List<Image> selectItem = new List<Image>();
+    public List<Text> selectText = new List<Text>();
+    public int selectIndex = 0;
 
     public Text soulText;
     public Image interactImage;
@@ -29,5 +31,10 @@ public class UIManager : MonoBehaviour
     public void SoulIncrease()
     {
         soulText.text = (soulCount + 1).ToString();
+    }
+
+    public void ItemCountIncrease(int count)
+    {
+        selectText[selectIndex].text = count.ToString();
     }
 }

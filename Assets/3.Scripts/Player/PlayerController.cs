@@ -102,11 +102,17 @@ public class PlayerController : MonoBehaviour, IMoveObject
                 data = hit.collider.gameObject.GetComponent<Item>();
                 data.data.Count += 1;
                 data.data.IsGet = true;
-                Debug.Log(data.data.Count);
-
                 Destroy(hit.collider.gameObject);
-                GameManager.instance.OnCandle();
                 Debug.Log("get item");
+
+                if (hit.collider.CompareTag("UsingItem"))
+                {
+                    UIManager.instance.ItemCountIncrease(data.data.Count);
+                }
+                else if(hit.collider.CompareTag("Getting"))
+                {
+                    GameManager.instance.OnCandle();
+                }
                 //아이템 먹는 소리
             }
             else if (hitObjLayer == hideObj)
