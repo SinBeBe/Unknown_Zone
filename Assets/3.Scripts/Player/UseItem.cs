@@ -2,19 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class UseItem : MonoBehaviour
+public class UseItem : ManagerBase
 {
-    UIManager ui;
-    GameManager gi;
-
     [SerializeField]
     private List<GameObject> items = new List<GameObject>();
-
-    private void Start()
-    {
-        ui = UIManager.instance;
-        gi = GameManager.instance;
-    }
 
     public void OnSelectItemInput(InputAction.CallbackContext context)
     {

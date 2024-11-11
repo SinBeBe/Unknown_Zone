@@ -3,7 +3,7 @@ using UnityEngine.Animations;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.HID;
 
-public class PlayerController : MonoBehaviour, IMoveObject
+public class PlayerController : ManagerBase, IMoveObject
 {
     public PlayerData playerData;
 
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour, IMoveObject
         {
             isInteract = false;
         }
-        UIManager.instance.ImageOnOff(UIManager.instance.interactImage, isInteract);
+        ui.ImageOnOff(UIManager.instance.interactImage, isInteract);
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
@@ -108,11 +108,11 @@ public class PlayerController : MonoBehaviour, IMoveObject
 
                 if (hit.collider.CompareTag("UsingItem"))
                 {
-                    UIManager.instance.ItemCountIncrease(data.data.Count);
+                    ui.ItemCountIncrease(data.data.Count);
                 }
                 else if(hit.collider.CompareTag("Getting"))
                 {
-                    GameManager.instance.OnCandle();
+                    gi.OnCandle();
                 }
             }
             else if (hitObjLayer == hideObj)
