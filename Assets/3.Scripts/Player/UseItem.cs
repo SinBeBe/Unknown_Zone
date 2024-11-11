@@ -36,6 +36,7 @@ public class UseItem : MonoBehaviour
         {
             gi.isUsedItem = true;
             items[ui.selectIndex].gameObject.GetComponent<ItemBase>().Used();
+            Debug.Log("Used Item");
         }
     }
 
