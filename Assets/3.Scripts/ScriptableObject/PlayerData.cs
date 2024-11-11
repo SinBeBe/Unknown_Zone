@@ -10,4 +10,8 @@ public class PlayerData : ScriptableObject
     [SerializeField]
     private float runSpeed;
     public float RunSpeed { get { return walkSpeed; } set { walkSpeed = value; } }
+
+    [SerializeField]
+    private float damagePercent;
+    public float DamagePercent { get { return damagePercent; } set { damagePercent = value; } }
 }

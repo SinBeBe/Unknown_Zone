@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public abstract class ItemBase : MonoBehaviour, IUsed
+public abstract class ItemBase : ManagerBase, IUsed
 {
     public void Used()
     {

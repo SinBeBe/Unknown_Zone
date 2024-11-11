@@ -7,6 +7,6 @@ public class Syringe : ItemBase
     {
         //플레이어 속도 증가, 데미지 절반 감소
         yield return new WaitForSeconds(15f);
-        GameManager.instance.isUsedItem = false;
+        gi.isUsedItem = false;
     }
 }
