@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,6 +7,8 @@ public class UseItem : ManagerBase
 {
     [SerializeField]
     private List<GameObject> items = new List<GameObject>();
+
+    private int itemCount;
 
     public void OnSelectItemInput(InputAction.CallbackContext context)
     {
@@ -23,7 +26,7 @@ public class UseItem : ManagerBase
     }
     public void OnUseItemInput(InputAction.CallbackContext context)
     {
-        if(context.performed && !gi.isUsedItem)
+        if(context.performed && !gi.isUsedItem && itemCount > 0)
         {
             gi.isUsedItem = true;
             items[ui.selectIndex].gameObject.GetComponent<ItemBase>().Used();
@@ -38,6 +41,7 @@ public class UseItem : ManagerBase
         ui.selectIndex = (ui.selectIndex + direction + ui.selectItem.Count) % UIManager.instance.selectItem.Count;
 
         ui.selectItem[ui.selectIndex].gameObject.SetActive(true);
+        itemCount = items[ui.selectIndex].GetComponent<Item>().data.Count;
     }
 
     private void ResetSelectItem()
