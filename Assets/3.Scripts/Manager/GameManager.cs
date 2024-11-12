@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-    public GameObject Player;
+    public PlayerController Player;
 
     [SerializeField]
     private List<GameObject> candleLight = new List<GameObject>();
