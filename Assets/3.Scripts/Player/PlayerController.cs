@@ -43,11 +43,11 @@ public class PlayerController : ManagerBase, IMoveObject
         bool isRun = Input.GetKey(KeyCode.LeftShift) ? true : false;
         if (isRun)
         {
-            Move(playerData.RunSpeed);
+            Move(playerData.Speed * 2);
         }
         else
         {
-            Move(playerData.WalkSpeed);
+            Move(playerData.Speed);
         }
     }
 

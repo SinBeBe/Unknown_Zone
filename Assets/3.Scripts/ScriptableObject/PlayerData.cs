@@ -4,12 +4,8 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [SerializeField]
-    private float walkSpeed;
-    public float WalkSpeed { get { return walkSpeed; } set { walkSpeed = value; } }
-
-    [SerializeField]
-    private float runSpeed;
-    public float RunSpeed { get { return walkSpeed; } set { walkSpeed = value; } }
+    private float speed;
+    public float Speed { get { return speed; } set { speed = value; } }
 
     [SerializeField]
     private float damagePercent;
