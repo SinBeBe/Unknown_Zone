@@ -100,15 +100,15 @@ public class PlayerController : ManagerBase, IMoveObject
             if (hitObjLayer == item)
             {
                 data = hit.collider.gameObject.GetComponent<Item>();
-                data.data.count += 1;
-                data.data.isGet = true;
+                data.Count += 1;
+                data.IsGet = true;
                 Destroy(hit.collider.gameObject);
                 Debug.Log("get item");
                 //아이템 먹는 소리
 
                 if (hit.collider.CompareTag("UsingItem"))
                 {
-                    ui.ItemCountIncrease(data.data.Index, data.data.count);
+                    ui.ItemCountIncrease(data.data.Index, data.Count);
                 }
                 else if(hit.collider.CompareTag("Getting"))
                 {

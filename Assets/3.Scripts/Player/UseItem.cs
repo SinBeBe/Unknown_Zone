@@ -40,7 +40,7 @@ public class UseItem : ManagerBase
         ui.selectIndex = (ui.selectIndex + direction + ui.selectItem.Count) % UIManager.instance.selectItem.Count;
 
         ui.selectItem[ui.selectIndex].gameObject.SetActive(true);
-        itemCount = items[ui.selectIndex].GetComponent<Item>().data.count;
+        itemCount = items[ui.selectIndex].GetComponent<Item>().Count;
     }
 
     private void ResetSelectItem()

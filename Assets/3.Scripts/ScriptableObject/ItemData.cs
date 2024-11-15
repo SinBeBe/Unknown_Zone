@@ -7,6 +7,11 @@ public class ItemData : ScriptableObject
     private int index;
     public int Index {  get { return index; } }
 
-    public int count;
-    public bool isGet;
+    [SerializeField]
+    private int count = 0;
+    public int Count { get { return count; } set { count = value; } }
+
+    [SerializeField]
+    private bool isGet = false;
+    public bool IsGet { get { return isGet; } set { isGet = value; } }
 }
