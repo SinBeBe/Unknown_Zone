@@ -7,8 +7,6 @@ public class PlayerController : ManagerBase, IMoveObject
 {
     public PlayerData playerData;
 
-    private Item data;
-
     [SerializeField]
     private AudioSource moveAudio;
     [SerializeField]
@@ -17,6 +15,8 @@ public class PlayerController : ManagerBase, IMoveObject
     private Transform rayPos;
 
     private Rigidbody rb;
+
+    private Item data;
 
     private RaycastHit hit;
     private RaycastHit[] hits;
@@ -108,7 +108,7 @@ public class PlayerController : ManagerBase, IMoveObject
 
                 if (hit.collider.CompareTag("UsingItem"))
                 {
-                    ui.ItemCountIncrease(data.data.Count);
+                    ui.ItemCountIncrease(data.data.Index, data.data.Count);
                 }
                 else if(hit.collider.CompareTag("Getting"))
                 {

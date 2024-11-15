@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
 
     public List<Image> selectItem = new List<Image>();
     public List<Text> selectText = new List<Text>();
+
+    public int selectItemIndex = 0;
     public int selectIndex = 0;
 
     public Text soulText;
@@ -33,8 +35,8 @@ public class UIManager : MonoBehaviour
         soulText.text = (soulCount + 1).ToString();
     }
 
-    public void ItemCountIncrease(int count)
+    public void ItemCountIncrease(int index, int count)
     {
-        selectText[selectIndex].text = count.ToString();
+        selectText[index].text = count.ToString();
     }
 }

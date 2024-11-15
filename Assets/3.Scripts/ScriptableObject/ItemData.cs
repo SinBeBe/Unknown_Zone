@@ -4,6 +4,10 @@ using UnityEngine;
 public class ItemData : ScriptableObject
 {
     [SerializeField]
+    private int index;
+    public int Index {  get { return index; } }
+
+    [SerializeField]
     private int count;
     public int Count {  get { return count; } set { count = value; } }
 
