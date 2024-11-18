@@ -4,24 +4,21 @@ public class Item : MonoBehaviour
 {
     public ItemData data;
 
-    private int count;
-    private bool isGet;
-
     private void Start()
     {
-        count = data.Count;
-        isGet = data.IsGet;
+        data.Count = 0;
+        data.IsGet = false;
     }
 
     public int Count
     {
-        get { return count; }
-        set { count = value; }
+        get { return data.Count; }
+        set { data.Count = value; }
     }
 
     public bool IsGet
     {
-        get { return isGet; }
-        set { isGet = value; }
+        get { return data.IsGet; }
+        set { data.IsGet = value; }
     }
 }

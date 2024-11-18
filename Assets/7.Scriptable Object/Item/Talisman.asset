@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d34d66616ee3a49a94048931b0889f, type: 3}
   m_Name: Talisman
   m_EditorClassIdentifier: 
+  index: 0
   count: 0
   isGet: 0
