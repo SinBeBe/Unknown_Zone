@@ -25,11 +25,19 @@ public class UseItem : ManagerBase
     }
     public void OnUseItemInput(InputAction.CallbackContext context)
     {
-        if(context.performed && !gi.isUsedItem && itemCount > 0)
+        if(context.performed && !gi.isUsedItem)
         {
-            gi.isUsedItem = true;
-            items[ui.selectIndex].gameObject.GetComponent<ItemBase>().Used();
-            Debug.Log("Used Item");
+            if (itemCount > 0) //itemCount가 0인 버그 고치기
+            {
+                gi.isUsedItem = true;
+                items[ui.selectIndex].gameObject.GetComponent<ItemBase>().Used();
+                Debug.Log("Used Item");
+            }
+            else
+            {
+                Debug.Log("No Item");
+                return;
+            }
         }
     }
 
@@ -41,6 +49,7 @@ public class UseItem : ManagerBase
 
         ui.selectItem[ui.selectIndex].gameObject.SetActive(true);
         itemCount = items[ui.selectIndex].GetComponent<Item>().Count;
+        Debug.Log(itemCount);
     }
 
     private void ResetSelectItem()
