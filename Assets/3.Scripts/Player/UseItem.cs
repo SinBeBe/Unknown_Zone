@@ -27,7 +27,7 @@ public class UseItem : ManagerBase
     {
         if(context.performed && !gi.isUsedItem)
         {
-            if (itemCount > 0) //itemCount가 0인 버그 고치기
+            if (itemCount > 0) //itemCount가 0인 버그 고치기 test
             {
                 gi.isUsedItem = true;
                 items[ui.selectIndex].gameObject.GetComponent<ItemBase>().Used();
