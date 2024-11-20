@@ -6,8 +6,6 @@ using UnityEngineInternal;
 
 public class PlayerController : ManagerBase, IMoveObject
 {
-    public PlayerData playerData;
-
     [SerializeField]
     private AudioSource moveAudio;
     [SerializeField]
@@ -17,13 +15,13 @@ public class PlayerController : ManagerBase, IMoveObject
 
     private Rigidbody rb;
 
-    private Item data;
+    private Item item;
 
     private RaycastHit hit;
     private RaycastHit[] hits;
 
     private LayerMask masks;
-    private LayerMask item = (1 << 6);
+    private LayerMask itemLayer = (1 << 6);
     private LayerMask hideObj = (1 << 8);
 
     private bool isInteract;
@@ -44,11 +42,11 @@ public class PlayerController : ManagerBase, IMoveObject
         bool isRun = Input.GetKey(KeyCode.LeftShift) ? true : false;
         if (isRun)
         {
-            Move(playerData.Speed * 2);
+            Move(gi.playerSpeed * 2);
         }
         else
         {
-            Move(playerData.Speed);
+            Move(gi.playerSpeed);
         }
     }
 
@@ -98,19 +96,19 @@ public class PlayerController : ManagerBase, IMoveObject
         if (isInteract && context.performed)
         {
             LayerMask hitObjLayer = (1 << hit.collider.gameObject.layer);
-            if (hitObjLayer == item)
+            if (hitObjLayer == itemLayer)
             {
-                data = hit.collider.gameObject.GetComponent<Item>();
-                data.Count += 1;
-                data.IsGet = true;
+                item = hit.collider.gameObject.GetComponent<Item>();
+                item.Count++;
+                item.IsGet = true;
                 Debug.Log("get item");
                 //아이템 먹는 소리
 
                 if (hit.collider.CompareTag("UsingItem"))
                 {
-                    ui.ItemCountIncrease(data.data.Index, data.Count);
+                    ui.ItemCount(item.data.Index, item.Count);
                     hit.collider.gameObject.transform.Translate(0f, -20f, 0f);
-                    gi.items[data.data.Index] = hit.collider.gameObject;
+                    gi.items[item.data.Index] = hit.collider.gameObject;
                 }
                 else if(hit.collider.CompareTag("Getting"))
                 {

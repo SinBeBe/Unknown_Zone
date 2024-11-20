@@ -35,7 +35,7 @@ public class UIManager : MonoBehaviour
         soulText.text = (soulCount + 1).ToString();
     }
 
-    public void ItemCountIncrease(int index, int count)
+    public void ItemCount(int index, int count)
     {
         selectText[index].text = count.ToString();
     }

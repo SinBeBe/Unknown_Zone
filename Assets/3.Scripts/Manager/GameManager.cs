@@ -5,17 +5,17 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-    public PlayerController Player;
-
     [SerializeField]
     private List<GameObject> candleLight = new List<GameObject>();
 
     public List<GameObject> items = new List<GameObject>();
 
     public bool isUsedItem = false;
-    
-    private int candleIndexer = -1;
 
+    public float playerSpeed = 7f;
+    public float damagePercent = 100f;
+
+    private int candleIndexer = -1;
 
     private void Awake()
     {

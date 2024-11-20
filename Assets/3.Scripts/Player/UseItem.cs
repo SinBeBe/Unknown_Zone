@@ -4,6 +4,11 @@ using UnityEngine.InputSystem;
 
 public class UseItem : ManagerBase
 {
+    private void Start()
+    {
+        FindManager();
+    }
+
     public void OnSelectItemInput(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -22,10 +27,12 @@ public class UseItem : ManagerBase
     {
         if(context.performed && !gi.isUsedItem)
         {
-            if (gi.items[ui.selectIndex].GetComponent<Item>().Count > 0)
+            int index = gi.items[ui.selectIndex].GetComponent<Item>().data.Index;
+            if (index > 0)
             {
                 gi.isUsedItem = true;
                 gi.items[ui.selectIndex].gameObject.GetComponent<ItemBase>().Used();
+                ui.ItemCount(index, --gi.items[ui.selectIndex].GetComponent<Item>().Count);
                 Debug.Log("Used Item");
             }
             else
