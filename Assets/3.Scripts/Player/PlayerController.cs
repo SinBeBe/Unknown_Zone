@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.HID;
+using UnityEngineInternal;
 
 public class PlayerController : ManagerBase, IMoveObject
 {
@@ -102,17 +103,19 @@ public class PlayerController : ManagerBase, IMoveObject
                 data = hit.collider.gameObject.GetComponent<Item>();
                 data.Count += 1;
                 data.IsGet = true;
-                Destroy(hit.collider.gameObject);
                 Debug.Log("get item");
                 //아이템 먹는 소리
 
                 if (hit.collider.CompareTag("UsingItem"))
                 {
                     ui.ItemCountIncrease(data.data.Index, data.Count);
+                    hit.collider.gameObject.transform.Translate(0f, -20f, 0f);
+                    gi.items[data.data.Index] = hit.collider.gameObject;
                 }
                 else if(hit.collider.CompareTag("Getting"))
                 {
                     gi.OnCandle();
+                    Destroy(hit.collider.gameObject);
                 }
             }
             else if (hitObjLayer == hideObj)

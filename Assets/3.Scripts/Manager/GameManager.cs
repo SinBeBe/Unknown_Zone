@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> candleLight = new List<GameObject>();
 
+    public List<GameObject> items = new List<GameObject>();
+
     public bool isUsedItem = false;
     
     private int candleIndexer = -1;

@@ -4,9 +4,6 @@ using UnityEngine.InputSystem;
 
 public class UseItem : ManagerBase
 {
-    [SerializeField]
-    private List<GameObject> items = new List<GameObject>();
-
     public void OnSelectItemInput(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -25,10 +22,10 @@ public class UseItem : ManagerBase
     {
         if(context.performed && !gi.isUsedItem)
         {
-            if (items[ui.selectIndex].GetComponent<Item>().Count > 0)
+            if (gi.items[ui.selectIndex].GetComponent<Item>().Count > 0)
             {
                 gi.isUsedItem = true;
-                items[ui.selectIndex].gameObject.GetComponent<ItemBase>().Used();
+                gi.items[ui.selectIndex].gameObject.GetComponent<ItemBase>().Used();
                 Debug.Log("Used Item");
             }
             else
