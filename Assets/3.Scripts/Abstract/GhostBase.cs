@@ -8,7 +8,27 @@ public enum State
 }
 
 
-public class GhostBase : ManagerBase
+public abstract class GhostBase : ManagerBase
 {
-    
+    private State currentState;
+
+    protected virtual void Update()
+    {
+        switch (currentState) 
+        { 
+            case State.Idle:
+                Idle();
+                break;
+            case State.Move:
+                Move();
+                break;
+            case State.Attack:
+                Attack();
+                break;
+        }
+    }
+
+    public abstract void Idle();
+    public abstract void Move();
+    public abstract void Attack();
 }
