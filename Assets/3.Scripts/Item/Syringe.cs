@@ -10,6 +10,5 @@ public class Syringe : ItemBase
         yield return new WaitForSeconds(15f);
         gi.playerSpeed /= 2;
         gi.damagePercent *= 2;
-        gi.isUsedItem = false;
     }
 }

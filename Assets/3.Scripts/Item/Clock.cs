@@ -5,8 +5,8 @@ public class Clock : ItemBase
 {
     public override IEnumerator ItemUsed()
     {
-        Time.timeScale = 0;
+        //귀신만 못움직이게 하는 로직
         yield return new WaitForSecondsRealtime(10f);
-        Time.timeScale = 1;
+        //다시 귀신 움직이게 하는 로직
     }
 }
