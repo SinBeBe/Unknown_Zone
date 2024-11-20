@@ -7,8 +7,6 @@ public class UseItem : ManagerBase
     [SerializeField]
     private List<GameObject> items = new List<GameObject>();
 
-    private int itemCount;
-
     public void OnSelectItemInput(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -27,7 +25,7 @@ public class UseItem : ManagerBase
     {
         if(context.performed && !gi.isUsedItem)
         {
-            if (itemCount > 0) //itemCount가 0인 버그 고치기 test
+            if (items[ui.selectIndex].GetComponent<Item>().Count > 0)
             {
                 gi.isUsedItem = true;
                 items[ui.selectIndex].gameObject.GetComponent<ItemBase>().Used();
@@ -48,8 +46,6 @@ public class UseItem : ManagerBase
         ui.selectIndex = (ui.selectIndex + direction + ui.selectItem.Count) % UIManager.instance.selectItem.Count;
 
         ui.selectItem[ui.selectIndex].gameObject.SetActive(true);
-        itemCount = items[ui.selectIndex].GetComponent<Item>().Count;
-        Debug.Log(itemCount);
     }
 
     private void ResetSelectItem()

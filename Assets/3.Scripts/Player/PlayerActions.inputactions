@@ -24,9 +24,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Mouse",
+                    "name": "MouseRight",
                     "type": "Button",
                     "id": "0359fbb2-fa15-4c28-aec9-a48c6eee40cb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MouseLeft",
+                    "type": "Button",
+                    "id": "bc66bd6d-c6b6-40c2-991d-09fc800e1e6b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -111,23 +120,12 @@
                 },
                 {
                     "name": "",
-                    "id": "c3cfff19-d697-4a5d-87dc-7f108f98d486",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Mouse",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "5e20b8af-7d25-4563-b6af-9c63d53b0cfa",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Mouse",
+                    "action": "MouseRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -139,6 +137,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "MouseWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "27b53125-edd2-4211-8a3d-3e8a1947d88a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
