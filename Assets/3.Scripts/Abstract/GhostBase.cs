@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public enum State 
 { 
@@ -6,9 +7,20 @@ public enum State
     Move,
 }
 
-public abstract class GhostBase : ManagerBase
+public abstract class GhostBase : ManagerBase, IFindTerrain
 {
     private State currentState;
+
+    private Terrain terrain;
+
+    protected float radius;
+
+    protected NavMeshAgent agent;
+
+    private void Start()
+    {
+        FindTerrain();
+    }
 
     protected virtual void Update()
     {
@@ -25,4 +37,9 @@ public abstract class GhostBase : ManagerBase
 
     public abstract void Idle();
     public abstract void Move();
+
+    public void FindTerrain()
+    {
+        terrain = transform.Find("Ground").GetComponent<Terrain>();
+    }
 }
