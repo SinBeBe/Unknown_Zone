@@ -4,9 +4,7 @@ public enum State
 { 
     Idle,
     Move,
-    Attack
 }
-
 
 public abstract class GhostBase : ManagerBase
 {
@@ -22,13 +20,9 @@ public abstract class GhostBase : ManagerBase
             case State.Move:
                 Move();
                 break;
-            case State.Attack:
-                Attack();
-                break;
         }
     }
 
     public abstract void Idle();
     public abstract void Move();
-    public abstract void Attack();
 }
