@@ -42,4 +42,19 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     {
         terrain = transform.Find("Ground").GetComponent<Terrain>();
     }
+
+    public Vector3 GetRandomPointInRange()
+    {
+        Vector3 randomPoint = GenerateRandomPoint(terrain.terrainData.size.x, terrain.terrainData.size.z);
+        return randomPoint;
+    }
+
+    public Vector3 GenerateRandomPoint(float x, float z)
+    {
+        float randomX = Random.Range(-x, x);
+        float randomZ = Random.Range(-z, z);
+        float y = terrain.SampleHeight(new Vector3(randomX, 0, randomZ));
+
+        return new Vector3(randomX, y, randomZ);
+    }
 }
