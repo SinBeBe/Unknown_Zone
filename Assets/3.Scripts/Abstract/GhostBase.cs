@@ -17,9 +17,10 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
 
     protected NavMeshAgent agent;
 
-    private void Start()
+    protected void Start()
     {
-        FindTerrain();
+        Init();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     protected virtual void Update()
@@ -38,14 +39,19 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     public abstract void Idle();
     public abstract void Move();
 
+    public virtual void Init()
+    {
+        FindTerrain();
+    }
+
     public void FindTerrain()
     {
         terrain = transform.Find("Ground").GetComponent<Terrain>();
     }
 
-    public Vector3 GetRandomPointInRange()
+    public Vector3 GetRandomPointInRange(float radius)
     {
-        Vector3 randomPoint = GenerateRandomPoint(terrain.terrainData.size.x, terrain.terrainData.size.z);
+        Vector3 randomPoint = GenerateRandomPoint(radius, radius);
         return randomPoint;
     }
 
