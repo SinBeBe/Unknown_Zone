@@ -12,7 +12,12 @@ public class Ghost : GhostBase
         else
         {
             targetPos =  GetRandomPointInRange(radius);
-            ChangeState(State.Move);
+            currentTime -= Time.deltaTime;
+
+            if(currentTime < 0)
+            {
+                ChangeState(State.Move, GetRandomTime(7f));
+            }
         }
     }
     public override void Move()
@@ -25,6 +30,11 @@ public class Ghost : GhostBase
         else
         {
             agent.SetDestination(targetPos);
+            currentTime -= Time.deltaTime;
+            if (IsNearDistination(agent) || currentTime < 0)
+            {
+                ChangeState(State.Idle, GetRandomTime(5f));
+            }
         }
     }
     public override void Attack()

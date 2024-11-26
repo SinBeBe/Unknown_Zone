@@ -19,6 +19,8 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     private Terrain terrain;
     protected NavMeshAgent agent;
 
+    protected float currentTime;
+
     protected float radius;
     protected float findRadius;
 
@@ -77,6 +79,11 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
         return new Vector3(randomX, y, randomZ);
     }
 
+    public float GetRandomTime(float max)
+    {
+        return Random.Range(1f, max);
+    }
+
     public bool IsCheckPlayer(float radius)
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius, playerLayer);
@@ -86,6 +93,12 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     public bool IsNearDistination(NavMeshAgent agent)
     {
         return agent.remainingDistance <= 1.5f ? true : false;
+    }
+
+    public void ChangeState(State state, float time)
+    {
+        currentState = state;
+        currentTime = time;
     }
 
     public void ChangeState(State state)
