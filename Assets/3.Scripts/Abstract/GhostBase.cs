@@ -16,6 +16,7 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     private LayerMask playerLayer;
     protected Vector3 targetPos;
 
+    [SerializeField]
     private Terrain terrain;
     protected NavMeshAgent agent;
 
@@ -61,7 +62,7 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
 
     public void FindTerrain()
     {
-        terrain = transform.Find("Ground").GetComponent<Terrain>();
+        terrain = GameObject.Find("Ground").GetComponent<Terrain>();
     }
 
     public Vector3 GetRandomPointInRange(float radius)
@@ -72,11 +73,17 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
 
     public Vector3 GenerateRandomPoint(float x, float z)
     {
-        float randomX = Random.Range(-x, x);
-        float randomZ = Random.Range(-z, z);
-        float y = terrain.SampleHeight(new Vector3(randomX, 0, randomZ));
+        while (true)
+        {
+            float randomX = Random.Range(-x, x);
+            float randomZ = Random.Range(-z, z);
+            float y = terrain.SampleHeight(new Vector3(randomX, 0, randomZ));
 
-        return new Vector3(randomX, y, randomZ);
+            if (y <= 10f)
+            {
+                return new Vector3(randomX, y, randomZ);
+            }
+        }
     }
 
     public float GetRandomTime(float max)

@@ -31,7 +31,7 @@ public class Ghost : GhostBase
         {
             agent.SetDestination(targetPos);
             currentTime -= Time.deltaTime;
-            if (IsNearDistination(agent) || currentTime < 0)
+            if (IsNearDistination(agent) && currentTime < 0)
             {
                 ChangeState(State.Idle, GetRandomTime(5f));
             }
