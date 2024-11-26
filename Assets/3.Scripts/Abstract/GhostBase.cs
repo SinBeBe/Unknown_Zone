@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -5,17 +6,22 @@ public enum State
 { 
     Idle,
     Move,
+    Attack
 }
 
 public abstract class GhostBase : ManagerBase, IFindTerrain
 {
     private State currentState;
 
+    private LayerMask playerLayer;
+    protected Vector3 targetPos;
+
     private Terrain terrain;
+    protected NavMeshAgent agent;
 
     protected float radius;
+    protected float findRadius;
 
-    protected NavMeshAgent agent;
 
     protected void Start()
     {
@@ -33,15 +39,22 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
             case State.Move:
                 Move();
                 break;
+            case State.Attack: 
+                Attack(); 
+                break;
         }
     }
 
     public abstract void Idle();
     public abstract void Move();
+    public abstract void Attack();
 
     public virtual void Init()
     {
         FindTerrain();
+        ChangeState(State.Idle);
+
+        playerLayer = (1 << 3);
     }
 
     public void FindTerrain()
@@ -62,5 +75,21 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
         float y = terrain.SampleHeight(new Vector3(randomX, 0, randomZ));
 
         return new Vector3(randomX, y, randomZ);
+    }
+
+    public bool IsCheckPlayer(float radius)
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, playerLayer);
+        return colliders.Length > 0 ? true : false;
+    }
+
+    public bool IsNearDistination(NavMeshAgent agent)
+    {
+        return agent.remainingDistance <= 1.5f ? true : false;
+    }
+
+    public void ChangeState(State state)
+    {
+        currentState = state;
     }
 }
