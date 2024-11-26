@@ -77,18 +77,11 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
 
     public Vector3 GenerateRandomPoint(float x, float z)
     {
-        while (true)
-        {
-            float randomX = Random.Range(x - radius, x + radius);
-            float randomZ = Random.Range(z - radius, z + radius);
-            float y = terrain.SampleHeight(new Vector3(randomX, 0, randomZ));
-            Debug.Log(y);
+        float randomX = Random.Range(x - radius, x + radius);
+        float randomZ = Random.Range(z - radius, z + radius);
+        float y = terrain.SampleHeight(new Vector3(randomX, 0, randomZ));
 
-            if (y > 10f)
-            {
-                return new Vector3(randomX, y, randomZ);
-            }
-        }
+        return new Vector3(randomX, y, randomZ);
     }
 
     public float GetRandomTime(float max)
