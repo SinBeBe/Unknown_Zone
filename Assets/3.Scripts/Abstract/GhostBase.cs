@@ -18,6 +18,8 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
 
     [SerializeField]
     private Terrain terrain;
+    [SerializeField]
+    private Transform centerPos;
     protected NavMeshAgent agent;
 
     protected float currentTime;
@@ -67,7 +69,9 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
 
     public Vector3 GetRandomPointInRange(float radius)
     {
-        Vector3 randomPoint = GenerateRandomPoint(radius, radius);
+        Vector3 randomPoint = GenerateRandomPoint(
+            centerPos.position.x,
+            centerPos.position.z);
         return randomPoint;
     }
 
@@ -75,11 +79,12 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     {
         while (true)
         {
-            float randomX = Random.Range(-x, x);
-            float randomZ = Random.Range(-z, z);
+            float randomX = Random.Range(x - radius, x + radius);
+            float randomZ = Random.Range(z - radius, z + radius);
             float y = terrain.SampleHeight(new Vector3(randomX, 0, randomZ));
+            Debug.Log(y);
 
-            if (y <= 10f)
+            if (y > 10f)
             {
                 return new Vector3(randomX, y, randomZ);
             }
