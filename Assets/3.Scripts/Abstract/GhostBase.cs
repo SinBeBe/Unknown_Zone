@@ -31,6 +31,8 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
 
     protected float speed;
 
+    protected int rand;
+
     protected void Start()
     {
         Init();
@@ -95,6 +97,16 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
         return Random.Range(1f, max);
     }
 
+    public Vector3 PlayerNearRandomPoint()
+    {
+        Vector3 playerPos = player.transform.position;
+        float playerRandX = Random.Range(playerPos.x - 60f, playerPos.x + 60f);
+        float playerRandZ = Random.Range(playerPos.z - 60f, playerPos.z + 60f);
+        float y = terrain.SampleHeight(new Vector3(playerRandX, 0, playerRandZ));
+
+        return new Vector3(playerRandX, y, playerRandZ);
+    }
+
     public bool IsCheckPlayer(float radius)
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius, playerLayer);
@@ -110,6 +122,8 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     {
         currentState = state;
         currentTime = time;
+
+        rand = (int)Random.Range(0, 1000);
     }
 
     public void ChangeState(State state)
