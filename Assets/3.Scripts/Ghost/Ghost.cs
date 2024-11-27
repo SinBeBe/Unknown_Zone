@@ -12,17 +12,22 @@ public class Ghost : GhostBase
         else
         {
             currentTime -= Time.deltaTime;
-            rand = RandomInt(0, 10);
+            rand = RandomInt(0, 11);
 
             if(currentTime < 0 && rand < 3)
             {
                 targetPos = GetRandomPointInRange(radius);
                 ChangeState(State.Move, GetRandomTime(7f));
             }
-            else if(currentTime < 0 && rand > 3)
+            else if(currentTime < 0 && rand > 3 && rand <= 10)
             {
                 targetPos = PlayerNearRandomPoint(60f, 10f);
                 ChangeState(State.Move);
+            }
+            else if(currentTime < 0 && rand == 11)
+            {
+                GhostSkill();
+                ChangeState(State.Idle);
             }
         }
     }
@@ -60,5 +65,10 @@ public class Ghost : GhostBase
         radius = 40f;
         findRadius = 30f;
         agent.speed = 15f;
+    }
+
+    public void GhostSkill()
+    {
+
     }
 }
