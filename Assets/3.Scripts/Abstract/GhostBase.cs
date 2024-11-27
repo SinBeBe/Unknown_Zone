@@ -31,8 +31,6 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
 
     protected float speed;
 
-    protected int rand;
-
     protected void Start()
     {
         Init();
@@ -118,12 +116,15 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
         return agent.remainingDistance <= 1.5f ? true : false;
     }
 
+    public int RandomInt(int min, int max)
+    {
+        return Random.Range(min, max);
+    }
+
     public void ChangeState(State state, float time)
     {
         currentState = state;
         currentTime = time;
-
-        rand = (int)Random.Range(0, 1000);
     }
 
     public void ChangeState(State state)
