@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Ghost : GhostBase
 {
-    private bool isMoved = false;
-
     public override void Idle()
     {
         if (IsCheckPlayer(findRadius))
@@ -36,13 +34,11 @@ public class Ghost : GhostBase
         }
         else
         {
-            isMoved = true;
             agent.SetDestination(targetPos);
             currentTime -= Time.deltaTime;
             if (IsNearDistination(agent) && currentTime < 0)
             {
                 ChangeState(State.Idle, GetRandomTime(5f));
-                isMoved = false;
             }
         }
     }
