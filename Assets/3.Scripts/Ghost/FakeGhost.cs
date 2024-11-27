@@ -12,6 +12,7 @@ public class FakeGhost : GhostBase
         else
         {
             currentTime -= Time.deltaTime;
+            rand = RandomInt(0, 10);
 
             if (currentTime < 0)
             {
@@ -20,7 +21,7 @@ public class FakeGhost : GhostBase
             }
             else if (currentTime < 0)
             {
-                //targetPos = PlayerNearRandomPoint();
+                targetPos = PlayerNearRandomPoint(40f, 10f);
                 ChangeState(State.Move);
             }
         }

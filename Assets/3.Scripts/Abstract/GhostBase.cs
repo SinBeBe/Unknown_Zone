@@ -31,6 +31,8 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
 
     protected float speed;
 
+    protected int rand;
+
     protected void Start()
     {
         Init();

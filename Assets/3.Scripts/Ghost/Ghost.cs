@@ -12,15 +12,16 @@ public class Ghost : GhostBase
         else
         {
             currentTime -= Time.deltaTime;
+            rand = RandomInt(0, 10);
 
-            if(currentTime < 0)
+            if(currentTime < 0 && rand < 3)
             {
                 targetPos = GetRandomPointInRange(radius);
                 ChangeState(State.Move, GetRandomTime(7f));
             }
-            else if(currentTime < 0)
+            else if(currentTime < 0 && rand > 3)
             {
-                //targetPos = PlayerNearRandomPoint();
+                targetPos = PlayerNearRandomPoint(60f, 10f);
                 ChangeState(State.Move);
             }
         }
