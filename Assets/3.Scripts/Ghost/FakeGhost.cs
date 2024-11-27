@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Ghost : GhostBase
+public class FakeGhost : GhostBase
 {
     public override void Idle()
     {
@@ -11,10 +11,10 @@ public class Ghost : GhostBase
         }
         else
         {
-            targetPos =  GetRandomPointInRange(radius);
+            targetPos = GetRandomPointInRange(radius);
             currentTime -= Time.deltaTime;
 
-            if(currentTime < 0)
+            if (currentTime < 0)
             {
                 ChangeState(State.Move, GetRandomTime(7f));
             }
@@ -41,7 +41,7 @@ public class Ghost : GhostBase
     {
         transform.LookAt(player.transform);
         agent.SetDestination(player.transform.position);
-        
+
         if (!IsCheckPlayer(findRadius))
         {
             ChangeState(State.Idle, 5f);
@@ -51,8 +51,8 @@ public class Ghost : GhostBase
     public override void Init()
     {
         base.Init();
-        radius = 40f;
-        findRadius = 30f;
-        agent.speed = 10f;
+        radius = 30f;
+        findRadius = 20f;
+        agent.speed = 15f;
     }
 }

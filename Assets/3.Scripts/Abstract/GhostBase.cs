@@ -20,6 +20,8 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     private Terrain terrain;
     [SerializeField]
     private Transform centerPos;
+
+    protected GameObject player;
     protected NavMeshAgent agent;
 
     protected float currentTime;
@@ -27,11 +29,11 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     protected float radius;
     protected float findRadius;
 
+    protected float speed;
 
     protected void Start()
     {
         Init();
-        agent = GetComponent<NavMeshAgent>();
     }
 
     protected virtual void Update()
@@ -59,7 +61,11 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
         FindTerrain();
         ChangeState(State.Idle);
 
+        player = GameObject.Find("Player");
         playerLayer = (1 << 3);
+
+        agent = GetComponent<NavMeshAgent>();
+        agent.speed = speed;
     }
 
     public void FindTerrain()
