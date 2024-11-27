@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Ghost : GhostBase
 {
+    public List<GameObject> ghostSkill = new List<GameObject>();
+
     public override void Idle()
     {
         if (IsCheckPlayer(findRadius))
@@ -12,7 +15,7 @@ public class Ghost : GhostBase
         else
         {
             currentTime -= Time.deltaTime;
-            rand = RandomInt(0, 11);
+            rand = RandomInt(0, 12);
 
             if(currentTime < 0 && rand < 3)
             {
@@ -69,6 +72,7 @@ public class Ghost : GhostBase
 
     public void GhostSkill()
     {
-
+        int rand = RandomInt(0, 3);
+        Instantiate(ghostSkill[rand], transform);
     }
 }
