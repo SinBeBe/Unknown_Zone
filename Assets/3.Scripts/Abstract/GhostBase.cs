@@ -77,17 +77,27 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     {
         Vector3 randomPoint = GenerateRandomPoint(
             centerPos.position.x,
-            centerPos.position.z);
+            centerPos.position.z,
+            10f
+            );
         return randomPoint;
     }
 
-    public Vector3 GenerateRandomPoint(float x, float z)
+    public Vector3 GenerateRandomPoint(float x, float z, float maxHeight)
     {
-        float randomX = Random.Range(x - radius, x + radius);
-        float randomZ = Random.Range(z - radius, z + radius);
-        float y = terrain.SampleHeight(new Vector3(randomX, 0, randomZ));
+        for(int i = 0; i < 100; i++)
+        {
+            float randomX = Random.Range(x - radius, x + radius);
+            float randomZ = Random.Range(z - radius, z + radius);
+            float y = terrain.SampleHeight(new Vector3(randomX, 0, randomZ));
 
-        return new Vector3(randomX, y, randomZ);
+            if (y < maxHeight)
+            {
+                return new Vector3(randomX, y, randomZ);
+            }
+        }
+        
+        return new Vector3(0, 0, 0);
     }
 
     public float GetRandomTime(float max)
@@ -95,14 +105,20 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
         return Random.Range(1f, max);
     }
 
-    public Vector3 PlayerNearRandomPoint()
+    public Vector3 PlayerNearRandomPoint(float range, float maxHeight)
     {
         Vector3 playerPos = player.transform.position;
-        float playerRandX = Random.Range(playerPos.x - 60f, playerPos.x + 60f);
-        float playerRandZ = Random.Range(playerPos.z - 60f, playerPos.z + 60f);
-        float y = terrain.SampleHeight(new Vector3(playerRandX, 0, playerRandZ));
-
-        return new Vector3(playerRandX, y, playerRandZ);
+        for(int i = 0; i < 100f; i++)
+        {
+            float playerRandX = Random.Range(playerPos.x - range, playerPos.x + range);
+            float playerRandZ = Random.Range(playerPos.z - range, playerPos.z + range);
+            float y = terrain.SampleHeight(new Vector3(playerRandX, 0, playerRandZ));
+            if(y < maxHeight)
+            {
+                return new Vector3(playerRandX, y, playerRandZ);
+            }
+        }
+        return playerPos;
     }
 
     public bool IsCheckPlayer(float radius)

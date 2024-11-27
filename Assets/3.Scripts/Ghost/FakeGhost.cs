@@ -20,7 +20,7 @@ public class FakeGhost : GhostBase
             }
             else if (currentTime < 0)
             {
-                targetPos = PlayerNearRandomPoint();
+                //targetPos = PlayerNearRandomPoint();
                 ChangeState(State.Move);
             }
         }
