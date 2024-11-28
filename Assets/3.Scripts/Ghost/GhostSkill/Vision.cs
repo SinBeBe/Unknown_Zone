@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class Vision : MonoBehaviour
+public class Vision : GhostSkillBase
 {
     void Start()
     {
-        Destroy(gameObject, 15f);
+        
     }
 
     void Update()

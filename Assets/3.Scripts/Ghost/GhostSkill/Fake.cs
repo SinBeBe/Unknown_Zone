@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Fake : MonoBehaviour
+public class Fake : GhostSkillBase
 {
     void Start()
     {

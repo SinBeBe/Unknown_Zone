@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerLimit : MonoBehaviour
+public class PlayerLimit : GhostSkillBase
 {
     void Start()
     {
