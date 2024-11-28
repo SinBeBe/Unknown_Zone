@@ -9,5 +9,5 @@ public class Vision : GhostSkillBase
     void Update()
     {
         
-    }
+    } 
 }
