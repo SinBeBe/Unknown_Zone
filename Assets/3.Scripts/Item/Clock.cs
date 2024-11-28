@@ -6,7 +6,7 @@ public class Clock : ItemBase
     public override IEnumerator ItemUsed()
     {
         gi.SwitchGhost(false);
-        yield return new WaitForSecondsRealtime(10f);
+        yield return new WaitForSeconds(10f);
         gi.SwitchGhost(true);
     }
 }
