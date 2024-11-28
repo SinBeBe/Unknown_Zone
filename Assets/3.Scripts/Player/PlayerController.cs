@@ -1,8 +1,5 @@
 using UnityEngine;
-using UnityEngine.Animations;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.HID;
-using UnityEngineInternal;
 
 public class PlayerController : ManagerBase, IMoveObject
 {
