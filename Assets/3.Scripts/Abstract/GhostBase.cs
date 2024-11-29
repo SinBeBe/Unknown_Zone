@@ -74,22 +74,12 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
         terrain = GameObject.Find("Ground").GetComponent<Terrain>();
     }
 
-    public Vector3 GetRandomPointInRange(float radius)
-    {
-        Vector3 randomPoint = GenerateRandomPoint(
-            centerPos.position.x,
-            centerPos.position.z,
-            10f
-            );
-        return randomPoint;
-    }
-
-    public Vector3 GenerateRandomPoint(float x, float z, float maxHeight)
+    public Vector3 GenerateRandomPoint(Vector3 pos, float range, float maxHeight)
     {
         for(int i = 0; i < 100; i++)
         {
-            float randomX = Random.Range(x - radius, x + radius);
-            float randomZ = Random.Range(z - radius, z + radius);
+            float randomX = Random.Range(pos.x - range, pos.x + range);
+            float randomZ = Random.Range(pos.z - range, pos.z + range);
             float y = terrain.SampleHeight(new Vector3(randomX, 0, randomZ));
 
             if (y < maxHeight)
@@ -104,22 +94,6 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     public float GetRandomTime(float max)
     {
         return Random.Range(1f, max);
-    }
-
-    public Vector3 PlayerNearRandomPoint(float range, float maxHeight)
-    {
-        Vector3 playerPos = player.transform.position;
-        for(int i = 0; i < 100f; i++)
-        {
-            float playerRandX = Random.Range(playerPos.x - range, playerPos.x + range);
-            float playerRandZ = Random.Range(playerPos.z - range, playerPos.z + range);
-            float y = terrain.SampleHeight(new Vector3(playerRandX, 0, playerRandZ));
-            if(y < maxHeight)
-            {
-                return new Vector3(playerRandX, y, playerRandZ);
-            }
-        }
-        return playerPos;
     }
 
     public bool IsCheckPlayer(float radius)

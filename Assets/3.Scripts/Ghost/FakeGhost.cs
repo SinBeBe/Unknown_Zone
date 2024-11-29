@@ -14,14 +14,14 @@ public class FakeGhost : GhostBase
             currentTime -= Time.deltaTime;
             rand = RandomInt(0, 10);
 
-            if (currentTime < 0)
+            if (currentTime < 0 && rand < 3)
             {
-                targetPos = GetRandomPointInRange(radius);
+                targetPos = GenerateRandomPoint(transform.position, radius, 10f);
                 ChangeState(State.Move, GetRandomTime(7f));
             }
-            else if (currentTime < 0)
+            else if (currentTime < 0 && rand > 3 && rand <= 10)
             {
-                targetPos = PlayerNearRandomPoint(40f, 10f);
+                targetPos = GenerateRandomPoint(player.transform.position, 60f, 10f);
                 ChangeState(State.Move);
             }
         }
