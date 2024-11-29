@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         candleLight[candleIndexer].SetActive(true);
     }
 
-    public void SwitchGhost(string tag, bool isStop)
+    public void SwitchGameObject(string tag, bool isStop)
     {
         GameObject[] gameObject = GameObject.FindGameObjectsWithTag(tag);
         foreach(GameObject obj in gameObject)

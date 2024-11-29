@@ -5,8 +5,8 @@ public class Clock : ItemBase
 {
     public override IEnumerator ItemUsed()
     {
-        gi.SwitchGhost("Enemy", false);
+        gi.SwitchGameObject("Enemy", false);
         yield return new WaitForSeconds(10f);
-        gi.SwitchGhost("Enemy", true);
+        gi.SwitchGameObject("Enemy", true);
     }
 }
