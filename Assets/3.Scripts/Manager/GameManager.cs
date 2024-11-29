@@ -35,9 +35,9 @@ public class GameManager : MonoBehaviour
         candleLight[candleIndexer].SetActive(true);
     }
 
-    public void SwitchGhost(bool isStop)
+    public void SwitchGhost(string tag, bool isStop)
     {
-        GameObject[] gameObject = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] gameObject = GameObject.FindGameObjectsWithTag(tag);
         foreach(GameObject obj in gameObject)
         {
             obj.GetComponent<GhostBase>().enabled = isStop;

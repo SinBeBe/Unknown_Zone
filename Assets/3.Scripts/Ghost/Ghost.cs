@@ -72,7 +72,7 @@ public class Ghost : GhostBase
 
     public void GhostSkill()
     {
-        int rand = RandomInt(0, 3);
+        int rand = RandomInt(0, ghostSkill.Count);
         Instantiate(ghostSkill[rand], transform);
     }
 }
