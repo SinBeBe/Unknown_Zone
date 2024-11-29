@@ -5,10 +5,7 @@ public class Fake : GhostSkillBase
 {
     [SerializeField]
     private GameObject fakeGhostPre;
-
-    [SerializeField]
-    private Transform centerPos;
-
+    
     private Transform[] generationPos;
 
 
