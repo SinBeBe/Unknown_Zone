@@ -53,12 +53,14 @@ public class Ghost : GhostBase
     }
     public override void Attack()
     {
-        transform.LookAt(player.transform);
-        agent.SetDestination(player.transform.position);
-        
         if (!IsCheckPlayer(findRadius))
         {
             ChangeState(State.Idle, 5f);
+        }
+        else
+        {
+            transform.LookAt(player.transform);
+            agent.SetDestination(player.transform.position);
         }
     }
 
