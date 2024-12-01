@@ -12,6 +12,6 @@ public class PlayerLimit : GhostSkillBase
     {
         gi.SwitchGameObject("Player", false);
         yield return new WaitForSeconds(t);
-        gi.SwitchGameObject("Player", false);
+        gi.SwitchGameObject("Player", true);
     }
 }
