@@ -112,6 +112,10 @@ public class PlayerController : ManagerBase, IMoveObject
                     gi.OnCandle();
                     Destroy(hit.collider.gameObject);
                 }
+                else
+                {
+                    Destroy(hit.collider.gameObject);
+                }
             }
             else if (hitObjLayer == hideObj)
             {

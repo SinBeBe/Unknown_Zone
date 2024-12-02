@@ -35,12 +35,16 @@ public class GameManager : MonoBehaviour
         candleLight[candleIndexer].SetActive(true);
     }
 
-    public void SwitchGameObject(string tag, bool isStop)
+    public void SwitchGameObject<T>(string tag, bool isStop) where T : Component
     {
         GameObject[] gameObject = GameObject.FindGameObjectsWithTag(tag);
         foreach(GameObject obj in gameObject)
         {
-            obj.GetComponent<GhostBase>().enabled = isStop;
+            T component = obj.GetComponent<T>();
+            if(component is MonoBehaviour mono)
+            {
+                mono.enabled = isStop;
+            }
         }
     }
 }
