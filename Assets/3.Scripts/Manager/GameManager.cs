@@ -65,6 +65,32 @@ public class GameManager : MonoBehaviour
 
     public void GameClear()
     {
+        if(!isFindTalisman && !isFindSoul)
+        {
+            BadEnding();
+        }
+        else if(isFindTalisman || isFindSoul)
+        {
+            NormalEnding();
+        }
+        else
+        {
+            HappyEnding();
+        }
+    }
+
+    private void BadEnding()
+    {
+
+    }
+
+    private void NormalEnding()
+    {
+
+    }
+
+    private void HappyEnding()
+    {
 
     }
 }
