@@ -15,7 +15,7 @@ public class Ghost : GhostBase
         else
         {
             currentTime -= Time.deltaTime;
-            rand = RandomInt(0, 12);
+            rand = RandomInt(1, 12);
 
             if (currentTime < 0)
             {
@@ -31,6 +31,7 @@ public class Ghost : GhostBase
                 }
                 else if (rand < 11)
                 {
+                    Debug.Log("Ghost Skill!");
                     GhostSkill();
                     ChangeState(State.Idle, 5f);
                 }
