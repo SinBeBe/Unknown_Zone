@@ -25,9 +25,14 @@ public class PlayerController : ManagerBase, IMoveObject
 
     private Vector3 direction { get; set; }
 
+    private float hp;
+
     private void Start()
     {
+        FindManager();
+
         rb = GetComponent<Rigidbody>();
+        hp = gi.playerData.HP;
 
         masks = (1 << 6) | (1 << 8);
     }
@@ -125,9 +130,9 @@ public class PlayerController : ManagerBase, IMoveObject
         }
     }
 
-    private void TakeDamage()
+    private void TakeDamage(float damage)
     {
-        //데미지 입는 로직
+        hp -= damage;
     }
 
     private void Die()
@@ -145,7 +150,7 @@ public class PlayerController : ManagerBase, IMoveObject
             }
             else
             {
-                TakeDamage();
+                TakeDamage(30f);
             }
         }
     }

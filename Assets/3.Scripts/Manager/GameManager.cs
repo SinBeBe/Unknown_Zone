@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    public PlayerData playerData;
+
     [SerializeField]
     private List<GameObject> candleLight = new List<GameObject>();
 
@@ -12,8 +14,8 @@ public class GameManager : MonoBehaviour
 
     public bool isUsedItem = false;
 
-    public float playerSpeed = 7f;
-    public float damagePercent = 100f;
+    public float playerSpeed;
+    public float damagePercent;
 
     private int candleIndexer = -1;
 
@@ -27,6 +29,12 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    private void Start()
+    {
+        playerSpeed = playerData.Speed;
+        damagePercent = playerData.DamagePercent;
     }
 
     public void OnCandle()
