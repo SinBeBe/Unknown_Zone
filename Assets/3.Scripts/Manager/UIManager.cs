@@ -33,6 +33,10 @@ public class UIManager : MonoBehaviour
     public void SoulIncrease()
     {
         soulText.text = (soulCount + 1).ToString();
+        if (soulCount == 5)
+        {
+            GameManager.instance.isFindSoul = true;
+        }
     }
 
     public void ItemCount(int index, int count)

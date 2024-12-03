@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
 
     public bool isUsedItem = false;
 
+    public bool isFindTalisman;
+    public bool isFindSoul;
+
     public float playerSpeed;
     public float damagePercent;
 
@@ -41,6 +44,10 @@ public class GameManager : MonoBehaviour
     {
         candleIndexer += 1;
         candleLight[candleIndexer].SetActive(true);
+        if (candleIndexer == 4)
+        {
+            isFindTalisman = true;
+        }
     }
 
     public void SwitchGameObject<T>(string tag, bool isStop) where T : Component
@@ -54,5 +61,10 @@ public class GameManager : MonoBehaviour
                 mono.enabled = isStop;
             }
         }
+    }
+
+    public void GameClear()
+    {
+
     }
 }
