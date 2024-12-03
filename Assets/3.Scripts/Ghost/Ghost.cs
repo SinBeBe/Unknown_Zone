@@ -32,7 +32,7 @@ public class Ghost : GhostBase
                 else if (rand < 11)
                 {
                     GhostSkill();
-                    ChangeState(State.Idle);
+                    ChangeState(State.Idle, 5f);
                 }
             }
         }
