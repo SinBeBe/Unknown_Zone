@@ -20,10 +20,9 @@ public class Ghost : GhostBase
 
             if (hasTarget) return;
 
-            rand = RandomInt(1, 12);
-
             if (currentTime < 0)
             {
+                rand = RandomInt(1, 12);
                 Debug.Log(rand);
                 if (rand > 3)
                 {
