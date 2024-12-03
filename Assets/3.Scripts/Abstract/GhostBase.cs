@@ -65,7 +65,7 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
         player = GameObject.Find("Player");
         playerLayer = (1 << 3);
 
-        agent = GetComponent<NavMeshAgent>();
+        agent = this.GetComponent<NavMeshAgent>();
         agent.speed = speed;
     }
 
