@@ -104,7 +104,7 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
 
     public bool IsNearDistination(NavMeshAgent agent)
     {
-        return agent.remainingDistance <= 1.5f ? true : false;
+        return agent.remainingDistance <= 1.5f;
     }
 
     public int RandomInt(int min, int max)

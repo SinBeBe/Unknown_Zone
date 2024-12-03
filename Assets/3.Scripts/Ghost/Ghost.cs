@@ -4,6 +4,7 @@ using UnityEngine;
 public class Ghost : GhostBase
 {
     public List<GameObject> ghostSkill = new List<GameObject>();
+    private bool hasTarget = false;
 
     public override void Idle()
     {
@@ -11,23 +12,30 @@ public class Ghost : GhostBase
         {
             agent.ResetPath();
             ChangeState(State.Attack);
+            hasTarget = false;
         }
         else
         {
             currentTime -= Time.deltaTime;
+
+            if (hasTarget) return;
+
             rand = RandomInt(1, 12);
 
             if (currentTime < 0)
             {
+                Debug.Log(rand);
                 if (rand > 3)
                 {
                     targetPos = GenerateRandomPoint(transform.position, radius, 10f);
                     ChangeState(State.Move, GetRandomTime(7f));
+                    hasTarget = true;
                 }
                 else if (rand < 10)
                 {
                     targetPos = GenerateRandomPoint(player.transform.position, 60f, 10f);
                     ChangeState(State.Move);
+                    hasTarget = true; 
                 }
                 else if (rand < 11)
                 {
@@ -38,28 +46,34 @@ public class Ghost : GhostBase
             }
         }
     }
+
     public override void Move()
     {
         if (IsCheckPlayer(findRadius))
         {
             agent.ResetPath();
             ChangeState(State.Attack);
+            hasTarget = false;
         }
         else
         {
             agent.SetDestination(targetPos);
             currentTime -= Time.deltaTime;
+
             if (IsNearDistination(agent) && currentTime < 0)
             {
                 ChangeState(State.Idle, GetRandomTime(5f));
+                hasTarget = false;
             }
         }
     }
+
     public override void Attack()
     {
         if (!IsCheckPlayer(findRadius))
         {
             ChangeState(State.Idle, 5f);
+            hasTarget = false;
         }
         else
         {
