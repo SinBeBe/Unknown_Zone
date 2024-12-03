@@ -3,9 +3,6 @@ using UnityEngine.AI;
 
 public class Vision : GhostSkillBase
 {
-    [SerializeField]
-    GameObject ghostPre;
-
     void Start()
     {
         FindPlayerPos();
@@ -13,6 +10,7 @@ public class Vision : GhostSkillBase
 
     private void FindPlayerPos()
     {
+        GameObject ghostPre = GameObject.Find("Ghost");
         NavMeshAgent agent = ghostPre.GetComponent<NavMeshAgent>();
         Vector3 playerPos = GameObject.Find("Player").transform.position;
         agent.SetDestination(playerPos);
