@@ -69,6 +69,10 @@ PrefabInstance:
       value: Ghost(fake)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6f3ad069d411b5841972c6d2dc2aac70, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6f3ad069d411b5841972c6d2dc2aac70, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}

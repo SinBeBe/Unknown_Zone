@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2376206974880603724}
   - component: {fileID: 8153399187394084092}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 557460523149676979}
   - component: {fileID: 3978940711047993736}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4010165533171855467}
   - component: {fileID: 5469843778339550941}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2719919625846088938}
   - component: {fileID: 8995835406053290614}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,6 +443,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6f3ad069d411b5841972c6d2dc2aac70, type: 3}
       propertyPath: m_Name
       value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6f3ad069d411b5841972c6d2dc2aac70, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6f3ad069d411b5841972c6d2dc2aac70, type: 3}
       propertyPath: m_TagString

@@ -124,4 +124,29 @@ public class PlayerController : ManagerBase, IMoveObject
             }
         }
     }
+
+    private void TakeDamage()
+    {
+        //데미지 입는 로직
+    }
+
+    private void Die()
+    {
+        //죽는 로직
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.tag == "Enemy")
+        {
+            if(collision.gameObject.layer == (1 << 7))
+            {
+                Die();
+            }
+            else
+            {
+                TakeDamage();
+            }
+        }
+    }
 }
