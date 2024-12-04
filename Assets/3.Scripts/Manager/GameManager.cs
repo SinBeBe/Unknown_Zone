@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public bool isFindTalisman;
     public bool isFindSoul;
 
+    public bool isPlayerHide;
+
     public float playerSpeed;
     public float damagePercent;
 

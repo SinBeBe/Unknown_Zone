@@ -11,6 +11,7 @@ public class PlayerController : ManagerBase, IMoveObject
     private Transform rayPos;
 
     private Rigidbody rb;
+    private Collider col;
 
     private Item item;
 
@@ -32,6 +33,7 @@ public class PlayerController : ManagerBase, IMoveObject
         FindManager();
 
         rb = GetComponent<Rigidbody>();
+        col = GetComponent<Collider>();
         hp = gi.playerData.HP;
 
         masks = (1 << 6) | (1 << 8);
@@ -95,7 +97,7 @@ public class PlayerController : ManagerBase, IMoveObject
 
     public void OnMouseInput(InputAction.CallbackContext context)
     {
-        if (isInteract && context.performed)
+        if (isInteract && !gi.isPlayerHide && context.performed)
         {
             LayerMask hitObjLayer = (1 << hit.collider.gameObject.layer);
             if (hitObjLayer == itemLayer)
@@ -124,15 +126,25 @@ public class PlayerController : ManagerBase, IMoveObject
             }
             else if (hitObjLayer == hideObj)
             {
-                GetComponent<Collider>().enabled = !ui.hideImage.IsActive();
+                col.enabled = false;
+                rb.Sleep();
 
                 Vector3 pos = hit.transform.position;
                 Quaternion rot = hit.transform.rotation;
                 transform.position = new Vector3(pos.x, pos.y + 2f, pos.z);
                 transform.rotation = rot;
 
-                ui.ImageOnOff(ui.hideImage, !ui.hideImage.IsActive());
+                gi.isPlayerHide = true;
+                ui.ImageOnOff(ui.hideImage, true);
             }
+        }
+        else
+        {
+            col.enabled = true;
+            rb.WakeUp();
+
+            gi.isPlayerHide = false;
+            ui.ImageOnOff(ui.hideImage, false);
         }
     }
 

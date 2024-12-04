@@ -69,7 +69,7 @@ public class Ghost : GhostBase
 
     public override void Attack()
     {
-        if (!IsCheckPlayer(findRadius))
+        if (!IsCheckPlayer(findRadius) || gi.isPlayerHide)
         {
             ChangeState(State.Idle, 5f);
             hasTarget = false;
