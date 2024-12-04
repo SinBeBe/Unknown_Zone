@@ -124,7 +124,7 @@ public class PlayerController : ManagerBase, IMoveObject
             }
             else if (hitObjLayer == hideObj)
             {
-                GetComponent<Collider>().enabled = !GetComponent<Collider>().enabled;
+                GetComponent<Collider>().enabled = !ui.hideImage.IsActive();
 
                 Vector3 pos = hit.transform.position;
                 Quaternion rot = hit.transform.rotation;
