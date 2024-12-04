@@ -124,8 +124,14 @@ public class PlayerController : ManagerBase, IMoveObject
             }
             else if (hitObjLayer == hideObj)
             {
-                //hide ·ÎÁ÷
-                Debug.Log("Hide");
+                GetComponent<Collider>().enabled = !GetComponent<Collider>().enabled;
+
+                Vector3 pos = hit.transform.position;
+                Quaternion rot = hit.transform.rotation;
+                transform.position = new Vector3(pos.x, pos.y + 2f, pos.z);
+                transform.rotation = rot;
+
+                ui.ImageOnOff(ui.hideImage, !ui.hideImage.IsActive());
             }
         }
     }

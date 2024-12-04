@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
 
     public Text soulText;
     public Image interactImage;
+    public Image hideImage;
 
     private int soulCount = 0;
 
