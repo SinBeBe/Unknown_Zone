@@ -26,6 +26,8 @@ public class PlayerController : ManagerBase, IMoveObject
 
     private Vector3 direction { get; set; }
 
+    private Vector3 originPos;
+
     private float hp;
 
     private void Start()
@@ -56,17 +58,20 @@ public class PlayerController : ManagerBase, IMoveObject
 
     public void Move(float speed)
     {
-        Vector3 moveDirection = new Vector3(direction.x, 0f, direction.z); 
-        moveDirection = transform.TransformDirection(moveDirection);
+        if (!gi.isPlayerHide)
+        {
+            Vector3 moveDirection = new Vector3(direction.x, 0f, direction.z); 
+            moveDirection = transform.TransformDirection(moveDirection);
 
-        rb.velocity = new Vector3(moveDirection.x, rb.velocity.y, moveDirection.z) * speed;
+            rb.velocity = new Vector3(moveDirection.x, rb.velocity.y, moveDirection.z) * speed;
+        }
     }
 
     private void Interact()
     {
         Debug.DrawRay(rayPos.position, rayPos.forward * 8f, Color.red);
         hits = Physics.RaycastAll(rayPos.position, rayPos.forward, 8f, masks);
-        if (hits.Length > 0)
+        if (hits.Length > 0 || gi.isPlayerHide)
         {
             isInteract = true;
             foreach (RaycastHit hit in hits)
@@ -97,7 +102,7 @@ public class PlayerController : ManagerBase, IMoveObject
 
     public void OnMouseInput(InputAction.CallbackContext context)
     {
-        if (isInteract && !gi.isPlayerHide && context.performed)
+        if (isInteract && context.performed)
         {
             LayerMask hitObjLayer = (1 << hit.collider.gameObject.layer);
             if (hitObjLayer == itemLayer)
@@ -124,27 +129,34 @@ public class PlayerController : ManagerBase, IMoveObject
                     Destroy(hit.collider.gameObject);
                 }
             }
-            else if (hitObjLayer == hideObj)
+            else if (hitObjLayer == hideObj && !gi.isPlayerHide)
             {
                 col.enabled = false;
+                rb.isKinematic = true; 
                 rb.Sleep();
 
                 Vector3 pos = hit.transform.position;
                 Quaternion rot = hit.transform.rotation;
-                transform.position = new Vector3(pos.x, pos.y + 2f, pos.z);
+
+                originPos = transform.position;
+
+                transform.position = new Vector3(pos.x, pos.y + 3f, pos.z);
                 transform.rotation = rot;
 
                 gi.isPlayerHide = true;
                 ui.ImageOnOff(ui.hideImage, true);
             }
-        }
-        else
-        {
-            col.enabled = true;
-            rb.WakeUp();
+            else if (gi.isPlayerHide)
+            {
+                transform.position = originPos;
 
-            gi.isPlayerHide = false;
-            ui.ImageOnOff(ui.hideImage, false);
+                col.enabled = true;
+                rb.isKinematic = false;
+                rb.WakeUp();
+
+                gi.isPlayerHide = false;
+                ui.ImageOnOff(ui.hideImage, false);
+            }
         }
     }
 
