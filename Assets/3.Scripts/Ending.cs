@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Ending : MonoBehaviour
 {
@@ -6,8 +7,20 @@ public class Ending : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            //플레이어에게 나갈건지 물어보는 로직
-            GameManager.instance.GameClear();
+            Time.timeScale = 0;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            if (UIManager.instance.IsAskExit())
+            {
+                GameManager.instance.GameClear();
+            }
+            else
+            {
+                Time.timeScale = 1;
+                return;
+            }
         }
     }
 }

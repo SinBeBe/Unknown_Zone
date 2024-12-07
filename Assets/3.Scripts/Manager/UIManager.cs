@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     public Image interactImage;
     public Image hideImage;
 
+    public Image askImage;
+
     private int soulCount = 0;
 
     private void Awake()
@@ -43,5 +45,11 @@ public class UIManager : MonoBehaviour
     public void ItemCount(int index, int count)
     {
         selectText[index].text = count.ToString();
+    }
+
+    public bool IsAskExit()
+    {
+        ImageOnOff(askImage, true);
+        return true;
     }
 }
