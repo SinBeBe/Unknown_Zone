@@ -71,28 +71,28 @@ public class GameManager : MonoBehaviour
         {
             BadEnding();
         }
-        else if(isFindTalisman || isFindSoul)
+        else if(isFindTalisman && isFindSoul)
         {
-            NormalEnding();
+            HappyEnding();
         }
         else
         {
-            HappyEnding();
+            NormalEnding();
         }
     }
 
     private void BadEnding()
     {
-
+        Debug.Log("Bad");
     }
 
     private void NormalEnding()
     {
-
+        Debug.Log("Normal");
     }
 
     private void HappyEnding()
     {
-
+        Debug.Log("Happy");
     }
 }
