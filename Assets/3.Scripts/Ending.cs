@@ -3,9 +3,9 @@ using UnityEngine.InputSystem;
 
 public class Ending : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.transform.tag == "Player")
+        if (other.transform.CompareTag("Player"))
         {
             Time.timeScale = 0;
 
