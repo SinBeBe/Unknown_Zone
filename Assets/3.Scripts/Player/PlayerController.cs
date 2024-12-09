@@ -111,7 +111,6 @@ public class PlayerController : ManagerBase, IMoveObject
                 item.Count++;
                 item.IsGet = true;
                 Debug.Log("get item");
-                //아이템 먹는 소리
 
                 if (hit.collider.CompareTag("UsingItem"))
                 {
