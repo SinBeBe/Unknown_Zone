@@ -4,10 +4,6 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField]
     private Transform playerPos;
-    [SerializeField]
-    private AudioSource source;
-    [SerializeField]
-    private AudioClip clip;
 
     private Vector3 cameraPos;
 
