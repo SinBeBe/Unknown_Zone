@@ -48,10 +48,12 @@ public class PlayerController : ManagerBase, IMoveObject
         bool isRun = Input.GetKey(KeyCode.LeftShift) ? true : false;
         if (isRun)
         {
+            ai.PlayAudiocilp(ref moveAudio, ai.playerRunClip, true);
             Move(gi.playerSpeed * 2);
         }
         else
         {
+            ai.PlayAudiocilp(ref moveAudio, ai.playerWalkClip, true);
             Move(gi.playerSpeed);
         }
     }

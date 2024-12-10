@@ -6,6 +6,10 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance = null;
 
     public AudioSource audioSource;
+
+    public AudioClip playerWalkClip;
+    public AudioClip playerRunClip;
+
     public AudioClip[] clips;
 
     public int clipsIndex;
@@ -22,11 +26,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        StartCoroutine(PlayBGM(clips[clipsIndex], clips[clipsIndex].length));
-    }
-
     public void PlayAudiocilp(ref AudioSource source, AudioClip clip, bool isLoop)
     {
         source.clip = clip;
@@ -34,11 +33,10 @@ public class AudioManager : MonoBehaviour
         source.Play();
     }
 
-    IEnumerator PlayBGM(AudioClip clip, float time)
+    public void PlayBGM(AudioClip clip, float time)
     {
         audioSource.clip = clip;
         audioSource.loop = true;
         audioSource.Play();
-        yield return new WaitForSecondsRealtime(time);
     }
 }
