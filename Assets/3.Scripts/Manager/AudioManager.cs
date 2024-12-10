@@ -7,8 +7,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource audioSource;
 
-    public AudioClip playerWalkClip;
-    public AudioClip playerRunClip;
+    public AudioClip[] playerMoveClip;
 
     public AudioClip[] clips;
 
@@ -28,6 +27,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayAudiocilp(ref AudioSource source, AudioClip clip, bool isLoop)
     {
+        source.Stop();
         source.clip = clip;
         source.loop = isLoop;
         source.Play();

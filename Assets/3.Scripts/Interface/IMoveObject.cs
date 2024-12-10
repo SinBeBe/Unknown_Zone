@@ -1,5 +1,5 @@
 
 public interface IMoveObject
 {
-    void Move(float speed);
+    void Move(float speed, int index);
 }

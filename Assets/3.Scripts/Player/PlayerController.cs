@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,6 +24,7 @@ public class PlayerController : ManagerBase, IMoveObject
     private LayerMask hideObj = (1 << 8);
 
     private bool isInteract;
+    private bool isMove;
 
     private Vector3 direction { get; set; }
 
@@ -46,26 +48,39 @@ public class PlayerController : ManagerBase, IMoveObject
         Interact();
 
         bool isRun = Input.GetKey(KeyCode.LeftShift) ? true : false;
-        if (isRun)
+        if (isMove)
         {
-            ai.PlayAudiocilp(ref moveAudio, ai.playerRunClip, false);
-            Move(gi.playerSpeed * 2);
+            if (isRun)
+            {
+                Move(gi.playerSpeed * 2, 1);
+            }
+            else
+            {
+                Move(gi.playerSpeed, 0);
+            }
         }
         else
         {
-            ai.PlayAudiocilp(ref moveAudio, ai.playerWalkClip, false);
-            Move(gi.playerSpeed);
+            moveAudio.Stop();
         }
     }
 
-    public void Move(float speed)
+    public void Move(float speed, int index)
     {
         if (!gi.isPlayerHide)
         {
+            if (!moveAudio.isPlaying || moveAudio.clip != ai.playerMoveClip[index])
+            {
+                ai.PlayAudiocilp(ref moveAudio, ai.playerMoveClip[index], true);
+            }
             Vector3 moveDirection = new Vector3(direction.x, 0f, direction.z); 
             moveDirection = transform.TransformDirection(moveDirection);
 
             rb.velocity = new Vector3(moveDirection.x, rb.velocity.y, moveDirection.z) * speed;
+        }
+        else
+        {
+            moveAudio.Stop();
         }
     }
 
@@ -90,6 +105,7 @@ public class PlayerController : ManagerBase, IMoveObject
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
+        isMove = context.performed;
         Vector2 input = context.ReadValue<Vector2>();
         direction = new Vector3(input.x, 0f, input.y);
     }
