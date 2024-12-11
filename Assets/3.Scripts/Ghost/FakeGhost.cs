@@ -14,7 +14,7 @@ public class FakeGhost : GhostBase
             currentTime -= Time.deltaTime;
             rand = RandomInt(1, 11);
 
-            if (currentTime < 0)
+            if (currentTime < 0 && !agent.hasPath)
             {
                 if (rand > 4)
                 {
@@ -38,13 +38,12 @@ public class FakeGhost : GhostBase
         }
         else
         {
+            agent.SetDestination(targetPos);
+
             if (IsNearDestination(agent))
             {
+                agent.ResetPath();
                 ChangeState(State.Idle, GetRandomTime(5f));
-            }
-            else
-            {
-                agent.SetDestination(targetPos);
             }
         }
     }
@@ -64,8 +63,8 @@ public class FakeGhost : GhostBase
     public override void Init()
     {
         base.Init();
-        radius = 35f;
-        findRadius = 40f;
+        radius = 70f;
+        findRadius = 80f;
         agent.speed = 25f;
     }
 }

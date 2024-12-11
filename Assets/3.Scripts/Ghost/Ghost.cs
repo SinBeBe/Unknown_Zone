@@ -79,8 +79,8 @@ public class Ghost : GhostBase
     public override void Init()
     {
         base.Init();
-        radius = 50f;
-        findRadius = 60f;
+        radius = 80f;
+        findRadius = 100f;
         agent.speed = 20f;
     }
 
