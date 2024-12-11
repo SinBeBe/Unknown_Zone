@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     public int selectItemIndex = 0;
     public int selectIndex = 0;
 
+    public Text playerHpText;
+
     public Text soulText;
     public Image interactImage;
     public Image hideImage;
@@ -26,6 +28,11 @@ public class UIManager : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    public void PlayerHpTextUpdate(int hp)
+    {
+        playerHpText.text = "HP " + hp;
     }
 
     public void ImageOnOff(Image image, bool isState)
