@@ -5,19 +5,15 @@ public class Fake : GhostSkillBase
 {
     [SerializeField]
     private GameObject fakeGhostPre;
-    
-    private Transform[] generationPos;
-
 
     void Start()
     {
         int rand = Random.Range(1, 6);
-        generationPos = new Transform[rand];
 
         for (int i = 0; i < rand; i++)
         {
-            generationPos[i].position = GeneratePosition(transform.position, 80f);
-            Instantiate(fakeGhostPre, generationPos[i]);
+            Vector3 pos = GeneratePosition(transform.position, 70f);
+            Instantiate(fakeGhostPre, pos, Quaternion.identity);
         }
     }
 

@@ -18,11 +18,7 @@ public class Ghost : GhostBase
         {
             currentTime -= Time.deltaTime;
 
-            if (hasTarget)
-            {
-                return;
-            }
-            else if (currentTime < 0)
+            if (currentTime < 0 && !hasTarget)
             {
                 rand = RandomInt(1, 12);
                 Debug.Log(rand);
@@ -45,6 +41,10 @@ public class Ghost : GhostBase
                     hasTarget = true;
                 }
             }
+            else
+            {
+                return;
+            }
         }
     }
 
@@ -58,14 +58,12 @@ public class Ghost : GhostBase
         }
         else
         {
+            agent.SetDestination(targetPos);
+
             if (IsNearDistination(agent))
             {
                 ChangeState(State.Idle, GetRandomTime(5f));
                 hasTarget = false;
-            }
-            else 
-            {
-                agent.SetDestination(targetPos);
             }
         }
     }
