@@ -5,6 +5,7 @@ public class Vision : GhostSkillBase
 {
     void Start()
     {
+        Debug.Log("Vision");
         FindPlayerPos();
     }
 

@@ -17,7 +17,7 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
 
     [SerializeField]
     private Terrain terrain;
-    [SerializeField]
+    
     private Transform centerPos;
 
     protected GameObject player;
@@ -61,6 +61,8 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     {
         FindTerrain();
         ChangeState(State.Idle);
+
+        centerPos = this.transform;
 
         player = GameObject.Find("Player");
         playerLayer = (1 << 3);

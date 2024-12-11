@@ -30,7 +30,7 @@ public class Ghost : GhostBase
                 }
                 else if (rand <= 4)
                 {
-                    targetPos = GenerateRandomPoint(player.transform.position, 60f);
+                    targetPos = GenerateRandomPoint(player.transform.position, radius + 20f);
                     ChangeState(State.Move);
                     hasTarget = true; 
                 }
@@ -86,7 +86,7 @@ public class Ghost : GhostBase
     {
         base.Init();
         radius = 50f;
-        findRadius = 50f;
+        findRadius = 60f;
         agent.speed = 20f;
     }
 
