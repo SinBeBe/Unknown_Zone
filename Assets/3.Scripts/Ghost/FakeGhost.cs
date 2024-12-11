@@ -65,6 +65,6 @@ public class FakeGhost : GhostBase
         base.Init();
         radius = 70f;
         findRadius = 80f;
-        agent.speed = 25f;
+        agent.speed = 20f;
     }
 }

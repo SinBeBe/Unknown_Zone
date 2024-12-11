@@ -81,7 +81,7 @@ public class Ghost : GhostBase
         base.Init();
         radius = 80f;
         findRadius = 100f;
-        agent.speed = 20f;
+        agent.speed = 15f;
     }
 
     public void GhostSkill()
