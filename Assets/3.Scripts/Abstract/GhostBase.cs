@@ -74,21 +74,13 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
         terrain = GameObject.Find("Ground").GetComponent<Terrain>();
     }
 
-    public Vector3 GenerateRandomPoint(Vector3 pos, float range, float maxHeight)
+    public Vector3 GenerateRandomPoint(Vector3 pos, float range)
     {
-        for(int i = 0; i < 100; i++)
-        {
-            float randomX = Random.Range(pos.x - range, pos.x + range);
-            float randomZ = Random.Range(pos.z - range, pos.z + range);
-            float y = terrain.SampleHeight(new Vector3(randomX, 0, randomZ));
+        float randomX = Random.Range(pos.x - range, pos.x + range);
+        float randomZ = Random.Range(pos.z - range, pos.z + range);
+        float y = terrain.SampleHeight(new Vector3(randomX, 0, randomZ));
 
-            if (y < maxHeight)
-            {
-                return new Vector3(randomX, y, randomZ);
-            }
-        }
-        
-        return new Vector3(0, 0, 0);
+        return new Vector3(randomX, y, randomZ);
     }
 
     public float GetRandomTime(float max)

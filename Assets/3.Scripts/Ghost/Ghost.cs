@@ -34,13 +34,13 @@ public class Ghost : GhostBase
                 }
                 else if (rand <= 4)
                 {
-                    targetPos = GenerateRandomPoint(player.transform.position, 60f, 10f);
+                    targetPos = GenerateRandomPoint(player.transform.position, 60f);
                     ChangeState(State.Move);
                     hasTarget = true; 
                 }
                 else
                 {
-                    targetPos = GenerateRandomPoint(transform.position, radius, 10f);
+                    targetPos = GenerateRandomPoint(transform.position, radius);
                     ChangeState(State.Move);
                     hasTarget = true;
                 }
@@ -58,12 +58,14 @@ public class Ghost : GhostBase
         }
         else
         {
-            agent.SetDestination(targetPos);
-
             if (IsNearDistination(agent))
             {
                 ChangeState(State.Idle, GetRandomTime(5f));
                 hasTarget = false;
+            }
+            else 
+            {
+                agent.SetDestination(targetPos);
             }
         }
     }
@@ -87,7 +89,7 @@ public class Ghost : GhostBase
         base.Init();
         radius = 50f;
         findRadius = 50f;
-        agent.speed = 15f;
+        agent.speed = 20f;
     }
 
     public void GhostSkill()

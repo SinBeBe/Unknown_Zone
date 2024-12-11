@@ -12,18 +12,18 @@ public class FakeGhost : GhostBase
         else
         {
             currentTime -= Time.deltaTime;
-            rand = RandomInt(0, 10);
+            rand = RandomInt(1, 11);
 
             if (currentTime < 0)
             {
-                if (rand > 3)
+                if (rand > 4)
                 {
-                    targetPos = GenerateRandomPoint(transform.position, radius, 10f);
-                    ChangeState(State.Move, GetRandomTime(7f));
+                    targetPos = GenerateRandomPoint(transform.position, radius);
+                    ChangeState(State.Move);
                 }
-                else if (rand < 10)
+                else
                 {
-                    targetPos = GenerateRandomPoint(player.transform.position, 60f, 10f);
+                    targetPos = GenerateRandomPoint(player.transform.position, 60f);
                     ChangeState(State.Move);
                 }
             }
@@ -38,11 +38,13 @@ public class FakeGhost : GhostBase
         }
         else
         {
-            agent.SetDestination(targetPos);
-            currentTime -= Time.deltaTime;
-            if (IsNearDistination(agent) && currentTime < 0)
+            if (IsNearDistination(agent))
             {
                 ChangeState(State.Idle, GetRandomTime(5f));
+            }
+            else
+            {
+                agent.SetDestination(targetPos);
             }
         }
     }
@@ -62,8 +64,8 @@ public class FakeGhost : GhostBase
     public override void Init()
     {
         base.Init();
-        radius = 30f;
-        findRadius = 20f;
-        agent.speed = 20f;
+        radius = 35f;
+        findRadius = 30f;
+        agent.speed = 25f;
     }
 }
