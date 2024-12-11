@@ -72,7 +72,7 @@ public class PlayerController : ManagerBase, IMoveObject
         {
             if (!moveAudio.isPlaying || moveAudio.clip != ai.playerMoveClip[index])
             {
-                ai.PlayAudiocilp(ref moveAudio, ai.playerMoveClip[index], true);
+                ai.PlayAudiocilp(moveAudio, ai.playerMoveClip[index], true);
             }
             Vector3 moveDirection = new Vector3(direction.x, 0f, direction.z); 
             moveDirection = transform.TransformDirection(moveDirection);
@@ -156,6 +156,8 @@ public class PlayerController : ManagerBase, IMoveObject
                 Vector3 pos = hit.transform.position;
                 Quaternion rot = hit.transform.rotation;
 
+                ai.PlayAudiocilp(moveAudio, ai.playerHideClip[0], false);
+
                 originPos = transform.position;
 
                 transform.position = new Vector3(pos.x, pos.y + 3f, pos.z);
@@ -166,6 +168,8 @@ public class PlayerController : ManagerBase, IMoveObject
             }
             else if (gi.isPlayerHide)
             {
+                ai.PlayAudiocilp(moveAudio, ai.playerHideClip[1], false);
+
                 transform.position = originPos;
 
                 col.enabled = true;
@@ -198,7 +202,7 @@ public class PlayerController : ManagerBase, IMoveObject
             }
             else
             {
-                TakeDamage(30f);
+                TakeDamage(30f * gi.damagePercent);
             }
         }
     }

@@ -18,29 +18,31 @@ public class Ghost : GhostBase
         {
             currentTime -= Time.deltaTime;
 
-            if (hasTarget) return;
-
-            if (currentTime < 0)
+            if (hasTarget)
+            {
+                return;
+            }
+            else if (currentTime < 0)
             {
                 rand = RandomInt(1, 12);
                 Debug.Log(rand);
-                if (rand > 3)
+                if (rand == 11)
                 {
-                    targetPos = GenerateRandomPoint(transform.position, radius, 10f);
-                    ChangeState(State.Move, GetRandomTime(7f));
-                    hasTarget = true;
+                    Debug.Log("Ghost Skill!");
+                    GhostSkill();
+                    ChangeState(State.Idle, 5f);
                 }
-                else if (rand < 10)
+                else if (rand <= 4)
                 {
                     targetPos = GenerateRandomPoint(player.transform.position, 60f, 10f);
                     ChangeState(State.Move);
                     hasTarget = true; 
                 }
-                else if (rand < 11)
+                else
                 {
-                    Debug.Log("Ghost Skill!");
-                    GhostSkill();
-                    ChangeState(State.Idle, 5f);
+                    targetPos = GenerateRandomPoint(transform.position, radius, 10f);
+                    ChangeState(State.Move);
+                    hasTarget = true;
                 }
             }
         }
@@ -57,9 +59,8 @@ public class Ghost : GhostBase
         else
         {
             agent.SetDestination(targetPos);
-            currentTime -= Time.deltaTime;
 
-            if (IsNearDistination(agent) && currentTime < 0)
+            if (IsNearDistination(agent))
             {
                 ChangeState(State.Idle, GetRandomTime(5f));
                 hasTarget = false;
@@ -84,8 +85,8 @@ public class Ghost : GhostBase
     public override void Init()
     {
         base.Init();
-        radius = 40f;
-        findRadius = 30f;
+        radius = 50f;
+        findRadius = 50f;
         agent.speed = 15f;
     }
 
