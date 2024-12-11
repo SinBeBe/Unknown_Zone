@@ -29,7 +29,7 @@ public class PlayerController : ManagerBase, IMoveObject
 
     private Vector3 originPos;
 
-    private int hp;
+    private float hp;
 
     private void Start()
     {
@@ -181,7 +181,7 @@ public class PlayerController : ManagerBase, IMoveObject
         }
     }
 
-    private void TakeDamage(int damage)
+    private void TakeDamage(float damage)
     {
         hp -= damage;
     }
@@ -201,7 +201,7 @@ public class PlayerController : ManagerBase, IMoveObject
             }
             else
             {
-                //TakeDamage(30 * gi.damagePercent);
+                TakeDamage(30 * gi.damagePercent);
                 ui.PlayerHpTextUpdate(hp);
             }
         }

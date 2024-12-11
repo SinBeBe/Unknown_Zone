@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void PlayerHpTextUpdate(int hp)
+    public void PlayerHpTextUpdate(float hp)
     {
         playerHpText.text = "HP " + hp;
     }
