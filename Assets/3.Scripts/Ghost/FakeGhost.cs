@@ -38,7 +38,7 @@ public class FakeGhost : GhostBase
         }
         else
         {
-            if (IsNearDistination(agent))
+            if (IsNearDestination(agent))
             {
                 ChangeState(State.Idle, GetRandomTime(5f));
             }

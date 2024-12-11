@@ -55,7 +55,7 @@ public class Ghost : GhostBase
         {
             agent.SetDestination(targetPos);
 
-            if (IsNearDistination(agent))
+            if (IsNearDestination(agent))
             {
                 agent.ResetPath();
                 ChangeState(State.Idle, GetRandomTime(5f));

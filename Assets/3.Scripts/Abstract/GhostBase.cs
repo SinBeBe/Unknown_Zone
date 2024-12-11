@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -35,6 +36,12 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     protected void Start()
     {
         Init();
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 
     protected virtual void Update()
@@ -92,12 +99,23 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
 
     public bool IsCheckPlayer(float radius)
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, playerLayer);
-        return colliders.Length > 0 ? true : false;
+        Collider[] colliders = Physics.OverlapSphere(this.transform.position, radius, playerLayer);
+        return colliders.Length > 0;
     }
 
-    public bool IsNearDistination(NavMeshAgent agent)
+    public bool IsNearDestination(NavMeshAgent agent)
     {
+        if (agent == null)
+        {
+            Debug.LogWarning("NavMeshAgent is null!");
+            return false;
+        }
+
+        if (!agent.hasPath || agent.pathPending)
+        {
+            return false;
+        }
+
         return agent.remainingDistance <= 1.5f;
     }
 
