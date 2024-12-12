@@ -90,7 +90,9 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
         float randomX = pos.x + distance * Mathf.Cos(angle);
         float randomZ = pos.z + distance * Mathf.Sin(angle);
 
-        float y = terrain.SampleHeight(new Vector3(randomX, 0, randomZ)) + terrain.transform.position.y;
+        float sampledY = terrain.SampleHeight(new Vector3(randomX, 0, randomZ)) + terrain.transform.position.y;
+
+        float y = Mathf.Min(sampledY, 5f);
 
         return new Vector3(randomX, y, randomZ);
     }
