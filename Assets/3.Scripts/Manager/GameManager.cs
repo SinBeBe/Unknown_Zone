@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
     {
         playerSpeed = playerData.Speed;
         damagePercent = playerData.DamagePercent;
+
+        UIManager.instance.PlayerHpTextUpdate(playerData.HP);
     }
 
     public void OnCandle()
