@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public bool isFindSoul;
 
     public bool isPlayerHide;
-    public bool isExhausted;
+    public bool isExhausted = false;
 
     private int candleIndexer = -1;
 
