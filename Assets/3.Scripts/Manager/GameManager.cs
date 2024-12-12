@@ -12,15 +12,21 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> items = new List<GameObject>();
 
+    private float maxStamina = 100f;
+    private float stamina = 100f;
+    private float regenRate = 5f;
+    private float decreaseRate = 20f;
+
+    public float playerSpeed;
+    public float damagePercent;
+
     public bool isUsedItem = false;
 
     public bool isFindTalisman;
     public bool isFindSoul;
 
     public bool isPlayerHide;
-
-    public float playerSpeed;
-    public float damagePercent;
+    public bool isPlayerStamina;
 
     private int candleIndexer = -1;
 
@@ -42,6 +48,25 @@ public class GameManager : MonoBehaviour
         damagePercent = playerData.DamagePercent;
 
         UIManager.instance.PlayerHpTextUpdate(playerData.HP);
+    }
+
+    public float PlayerStamina(bool isRun)
+    {
+        if(isRun && stamina > 0)
+        {
+            stamina -= decreaseRate * Time.deltaTime;
+        }
+        else
+        {
+            if(stamina < maxStamina)
+            {
+                stamina += regenRate * Time.deltaTime;
+            }
+        }
+
+        stamina = Mathf.Clamp(stamina, 0f, maxStamina);
+
+        return stamina / maxStamina;
     }
 
     public void OnCandle()

@@ -49,7 +49,7 @@ public class PlayerController : ManagerBase, IMoveObject
         bool isRun = Input.GetKey(KeyCode.LeftShift) ? true : false;
         if (isMove)
         {
-            if (isRun)
+            if (isRun && gi.isPlayerStamina)
             {
                 Move(gi.playerSpeed * 2, 1);
             }
@@ -63,6 +63,7 @@ public class PlayerController : ManagerBase, IMoveObject
             rb.velocity = Vector3.zero;
             moveAudio.Stop();
         }
+        ui.PlayerStaminaUpdate(isRun);
     }
 
     public void Move(float speed, int index)

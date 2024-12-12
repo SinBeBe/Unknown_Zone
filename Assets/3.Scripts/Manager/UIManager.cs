@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public int selectIndex = 0;
 
     public Text playerHpText;
+    public Image playerStamina;
 
     public Text soulText;
     public Image interactImage;
@@ -33,6 +34,11 @@ public class UIManager : MonoBehaviour
     public void PlayerHpTextUpdate(float hp)
     {
         playerHpText.text = "HP " + hp;
+    }
+
+    public void PlayerStaminaUpdate(bool isRun)
+    {
+        playerStamina.fillAmount = GameManager.instance.PlayerStamina(isRun);
     }
 
     public void ImageOnOff(Image image, bool isState)
