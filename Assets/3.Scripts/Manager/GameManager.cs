@@ -14,8 +14,8 @@ public class GameManager : MonoBehaviour
 
     private float maxStamina = 100f;
     private float stamina = 100f;
-    private float regenRate = 5f;
-    private float decreaseRate = 20f;
+    private float regenRate = 4f;
+    private float decreaseRate = 10f;
 
     public float playerSpeed;
     public float damagePercent;

@@ -186,11 +186,15 @@ public class PlayerController : ManagerBase, IMoveObject
     private void TakeDamage(float damage)
     {
         hp -= damage;
+        if (hp <= 0)
+        {
+            Die();
+        }
     }
 
     private void Die()
     {
-        //Á×´Â ·ÎÁ÷
+        Debug.Log("Die");
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -205,6 +209,7 @@ public class PlayerController : ManagerBase, IMoveObject
             {
                 TakeDamage(30 * gi.damagePercent);
                 ui.PlayerHpTextUpdate(hp);
+                Destroy(collision.gameObject);
             }
         }
     }

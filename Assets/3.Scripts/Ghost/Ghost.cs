@@ -87,6 +87,6 @@ public class Ghost : GhostBase
     public void GhostSkill()
     {
         int rand = RandomInt(0, ghostSkill.Count);
-        Instantiate(ghostSkill[rand], transform);
+        Instantiate(ghostSkill[rand], this.transform.position, Quaternion.identity);
     }
 }
