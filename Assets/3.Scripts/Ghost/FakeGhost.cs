@@ -66,5 +66,6 @@ public class FakeGhost : GhostBase
         radius = 70f;
         findRadius = 80f;
         agent.speed = 20f;
+        Destroy(this.gameObject, 180f);
     }
 }

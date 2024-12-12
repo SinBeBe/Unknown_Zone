@@ -85,9 +85,12 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
 
     public Vector3 GenerateRandomPoint(Vector3 pos, float range)
     {
-        float randomX = Random.Range(pos.x - range, pos.x + range);
-        float randomZ = Random.Range(pos.z - range, pos.z + range);
-        float y = terrain.SampleHeight(new Vector3(randomX, 0, randomZ));
+        float angle = Random.Range(0, Mathf.PI * 2);
+        float distance = Random.Range(0, range);
+        float randomX = pos.x + distance * Mathf.Cos(angle);
+        float randomZ = pos.z + distance * Mathf.Sin(angle);
+
+        float y = terrain.SampleHeight(new Vector3(randomX, 0, randomZ)) + terrain.transform.position.y;
 
         return new Vector3(randomX, y, randomZ);
     }

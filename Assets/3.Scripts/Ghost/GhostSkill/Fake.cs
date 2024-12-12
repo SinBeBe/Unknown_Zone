@@ -22,7 +22,8 @@ public class Fake : GhostSkillBase
     {
         float x = Random.Range(pos.x - range, pos.x + range);
         float z = Random.Range(pos.z - range, pos.z + range);
+        float y = pos.y;
 
-        return new Vector3(x, 5.5f, z);
+        return new Vector3(x, y, z);
     }
 }
