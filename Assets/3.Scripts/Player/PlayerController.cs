@@ -49,7 +49,7 @@ public class PlayerController : ManagerBase, IMoveObject
         bool isRun = Input.GetKey(KeyCode.LeftShift) ? true : false;
         if (isMove)
         {
-            if (isRun && gi.isPlayerStamina)
+            if (isRun && gi.isExhausted)
             {
                 Move(gi.playerSpeed * 2, 1);
             }

@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public bool isFindSoul;
 
     public bool isPlayerHide;
-    public bool isPlayerStamina;
+    public bool isExhausted;
 
     private int candleIndexer = -1;
 
@@ -52,15 +52,26 @@ public class GameManager : MonoBehaviour
 
     public float PlayerStamina(bool isRun)
     {
-        if(isRun && stamina > 0)
+        if(isRun && stamina > 0 && !isExhausted)
         {
             stamina -= decreaseRate * Time.deltaTime;
+
+            if(stamina <= 0)
+            {
+                stamina = 0;
+                isExhausted = true;
+            }
         }
         else
         {
             if(stamina < maxStamina)
             {
                 stamina += regenRate * Time.deltaTime;
+
+                if(stamina >= 30)
+                {
+                    isExhausted = false;
+                }
             }
         }
 
