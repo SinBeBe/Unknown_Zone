@@ -26,7 +26,7 @@ public class Ghost : GhostBase
                     GhostSkill();
                     ChangeState(State.Idle, 5f);
                 }
-                else if (rand <= 4)
+                else if (rand <= 4 && gi.isPlayerHide)
                 {
                     targetPos = GenerateRandomPoint(player.transform.position, radius + 20f);
                     ChangeState(State.Move);

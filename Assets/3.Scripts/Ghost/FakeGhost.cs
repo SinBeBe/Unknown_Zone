@@ -16,7 +16,7 @@ public class FakeGhost : GhostBase
 
             if (currentTime < 0 && !agent.hasPath)
             {
-                if (rand > 4)
+                if (rand > 4 && gi.isPlayerHide)
                 {
                     targetPos = GenerateRandomPoint(transform.position, radius);
                     ChangeState(State.Move);
