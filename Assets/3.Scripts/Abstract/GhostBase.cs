@@ -87,6 +87,7 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     {
         Vector3 randomPoint;
         float y;
+        bool isValid;
 
         do
         {
@@ -100,7 +101,10 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
             y = Mathf.Min(sampledY, 5f);
             randomPoint = new Vector3(randomX, y, randomZ);
 
-        } while (y > 5f);
+            NavMeshHit hit;
+            isValid = NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas);
+
+        } while (y > 5f && isValid);
 
         return randomPoint;
     }
