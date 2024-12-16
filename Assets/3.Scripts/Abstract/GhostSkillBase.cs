@@ -6,8 +6,12 @@ public class GhostSkillBase : ManagerBase
 
     void Start()
     {
+        Init();
+    }
+
+    protected void Init()
+    {
         FindManager();
-        centerPos = GameObject.Find("Ghost").transform;
-        Destroy(this.gameObject, 10f);
+        Destroy(this.gameObject, 5f);
     }
 }

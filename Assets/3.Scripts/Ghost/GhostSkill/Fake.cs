@@ -8,6 +8,7 @@ public class Fake : GhostSkillBase
 
     void Start()
     {
+        Init();
         Debug.Log("Fake");
         int rand = Random.Range(1, 6);
 
