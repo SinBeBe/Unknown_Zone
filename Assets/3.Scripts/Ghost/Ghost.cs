@@ -29,12 +29,12 @@ public class Ghost : GhostBase
                 else if (rand <= 4 && !gi.isPlayerHide)
                 {
                     targetPos = GenerateRandomPoint(player.transform.position, radius + 20f);
-                    ChangeState(State.Move);
+                    ChangeState(State.Move, 30f);
                 }
                 else
                 {
                     targetPos = GenerateRandomPoint(transform.position, radius);
-                    ChangeState(State.Move);
+                    ChangeState(State.Move, 10f);
                 }
             }
             else
@@ -53,9 +53,11 @@ public class Ghost : GhostBase
         }
         else
         {
+            currentTime -= Time.deltaTime;
+
             agent.SetDestination(targetPos);
 
-            if (IsNearDestination(agent))
+            if (IsNearDestination(agent) || currentTime <= 0)
             {
                 agent.ResetPath();
                 ChangeState(State.Idle, GetRandomTime(5f));
