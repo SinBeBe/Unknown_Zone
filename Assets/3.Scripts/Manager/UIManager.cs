@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -58,11 +59,5 @@ public class UIManager : MonoBehaviour
     public void ItemCount(int index, int count)
     {
         selectText[index].text = count.ToString();
-    }
-
-    public bool IsAskExit()
-    {
-        ImageOnOff(askImage, true);
-        return true;
     }
 }

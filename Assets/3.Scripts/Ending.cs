@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Ending : MonoBehaviour
+public class Ending : ManagerBase
 {
     private void OnCollisionEnter(Collision collision)
     {
@@ -12,15 +12,11 @@ public class Ending : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
-            if (UIManager.instance.IsAskExit())
-            {
-                GameManager.instance.GameClear();
-            }
-            else
-            {
-                Time.timeScale = 1;
-                return;
-            }
+            ui.ImageOnOff(ui.askImage, true);
+
+            //버튼 로직
+
+            ui.ImageOnOff(ui.askImage, false);
         }
         
     }
