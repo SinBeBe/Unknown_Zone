@@ -12,6 +12,8 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip[] clips;
 
+    public AudioClip soulClip;
+
     public int clipsIndex;
 
     private void Awake()
