@@ -14,7 +14,7 @@ public class Fake : GhostSkillBase
 
         for (int i = 0; i < rand; i++)
         {
-            Vector3 pos = GeneratePosition(transform.position, 70f);
+            Vector3 pos = GeneratePosition(transform.position, 40f);
             Instantiate(fakeGhostPre, pos, Quaternion.identity);
         }
     }
