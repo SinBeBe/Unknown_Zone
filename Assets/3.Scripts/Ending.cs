@@ -27,6 +27,8 @@ public class Ending : ManagerBase
         {
             yield return null;
         }
+
+        ui.ImageOnOff(ui.askImage, false);
     }
 
     public void OnConfirmExit()
@@ -38,8 +40,6 @@ public class Ending : ManagerBase
     public void OnCancelExit()
     {
         isWaitingForInput = false;
-
-        ui.ImageOnOff(ui.askImage, false);
 
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;

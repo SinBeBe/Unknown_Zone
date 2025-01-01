@@ -1,11 +1,16 @@
 using System.Collections;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance = null;
 
-    public AudioSource audioSource;
+    public AudioSource BGM;
+    public AudioSource SFX;
+
+    public AudioClip[] BGMclip;
 
     public AudioClip[] playerMoveClip;
     public AudioClip[] playerHideClip;
@@ -28,6 +33,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        PlayBGM(BGMclip[SceneManager.sceneCount]);
+    }
+
     public void PlayAudiocilp(AudioSource source, AudioClip clip, bool isLoop)
     {
         source.Stop();
@@ -36,10 +46,10 @@ public class AudioManager : MonoBehaviour
         source.Play();
     }
 
-    public void PlayBGM(AudioClip clip, float time)
+    public void PlayBGM(AudioClip clip)
     {
-        audioSource.clip = clip;
-        audioSource.loop = true;
-        audioSource.Play();
+        BGM.clip = clip;
+        BGM.loop = true;
+        BGM.Play();
     }
 }

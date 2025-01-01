@@ -157,7 +157,7 @@ public class PlayerController : ManagerBase, IMoveObject
                 Vector3 pos = hit.transform.position;
                 Quaternion rot = hit.transform.rotation;
 
-                ai.PlayAudiocilp(moveAudio, ai.playerHideClip[0], false);
+                ai.PlayAudiocilp(ai.SFX, ai.playerHideClip[0], false);
 
                 originPos = transform.position;
 
@@ -169,7 +169,7 @@ public class PlayerController : ManagerBase, IMoveObject
             }
             else if (gi.isPlayerHide)
             {
-                ai.PlayAudiocilp(moveAudio, ai.playerHideClip[1], false);
+                ai.PlayAudiocilp(ai.SFX, ai.playerHideClip[1], false);
 
                 transform.position = originPos;
 
