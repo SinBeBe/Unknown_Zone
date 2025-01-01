@@ -12,10 +12,10 @@ public class FakeGhost : GhostBase
         else
         {
             currentTime -= Time.deltaTime;
-            rand = RandomInt(1, 11);
 
             if (currentTime < 0 && !agent.hasPath)
             {
+                rand = RandomInt(1, 11);
                 if (rand > 4 && gi.isPlayerHide)
                 {
                     targetPos = GenerateRandomPoint(transform.position, radius);
@@ -26,6 +26,10 @@ public class FakeGhost : GhostBase
                     targetPos = GenerateRandomPoint(player.transform.position, 60f);
                     ChangeState(State.Move, 30f);
                 }
+            }
+            else
+            {
+                return;
             }
         }
     }
