@@ -26,7 +26,7 @@ public class SoulBase : ManagerBase
 
         if (colliders.Length > 0)
         {
-            ai.PlayAudiocilp(ai.BGM, ai.soulClip, false);
+            ai.PlayAudiocilp(ai.SFX, ai.soulClip, false);
             Destroy(this.gameObject);
             ui.SoulIncrease();
             return;

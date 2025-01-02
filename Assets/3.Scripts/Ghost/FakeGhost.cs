@@ -71,7 +71,7 @@ public class FakeGhost : GhostBase
         base.Init();
         radius = 70f;
         findRadius = 80f;
-        agent.speed = 20f;
+        agent.speed = 15f;
         Destroy(this.gameObject, 180f);
     }
 }
