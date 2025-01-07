@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Fake : GhostSkillBase
 {
@@ -14,9 +15,24 @@ public class Fake : GhostSkillBase
 
         for (int i = 0; i < rand; i++)
         {
-            Vector3 pos = GeneratePosition(transform.position, 40f);
-            Instantiate(fakeGhostPre, pos, Quaternion.identity);
+            Vector3 pos;
+            GameObject ghost;
+            NavMeshAgent agent;
+
+            do
+            {
+                pos = GeneratePosition(transform.position, 40f);
+                ghost = Instantiate(fakeGhostPre, pos, Quaternion.identity);
+                agent = ghost.GetComponent<NavMeshAgent>();
+
+                if (agent.pathStatus == NavMeshPathStatus.PathInvalid)
+                {
+                    Destroy(ghost);
+                }
+
+            } while (agent == null || agent.pathStatus == NavMeshPathStatus.PathInvalid || !agent.hasPath);
         }
+
     }
 
     private Vector3 GeneratePosition(Vector3 pos, float range)

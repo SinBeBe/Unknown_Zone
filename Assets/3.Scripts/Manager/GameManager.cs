@@ -109,13 +109,17 @@ public class GameManager : MonoBehaviour
         {
             BadEnding();
         }
-        else if(isFindTalisman && isFindSoul)
+        else if(isFindTalisman && !isFindSoul)
         {
-            HappyEnding();
+            NormalEnding(1);
+        }
+        else if(!isFindTalisman && isFindSoul)
+        {
+            NormalEnding(2);
         }
         else
         {
-            NormalEnding();
+            HappyEnding();
         }
     }
 
@@ -124,9 +128,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Bad");
     }
 
-    private void NormalEnding()
+    private void NormalEnding(int num)
     {
-        Debug.Log("Normal");
+        Debug.Log("Normal" + num);
     }
 
     private void HappyEnding()
