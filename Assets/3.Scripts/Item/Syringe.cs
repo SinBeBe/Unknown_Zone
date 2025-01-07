@@ -5,10 +5,10 @@ public class Syringe : ItemBase
 {
     public override IEnumerator ItemUsed()
     {
-        gi.playerSpeed *= 2;
-        gi.damagePercent /= 2;
+        gi.playerSpeed = 14;
+        gi.damagePercent = 0.5f;
         yield return new WaitForSeconds(15f);
-        gi.playerSpeed /= 2;
-        gi.damagePercent *= 2;
+        gi.playerSpeed = 7;
+        gi.damagePercent = 1;
     }
 }
