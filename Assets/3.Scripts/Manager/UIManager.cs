@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
 
     public void SoulIncrease()
     {
-        soulText.text = (soulCount + 1).ToString();
+        soulText.text = (++soulCount).ToString();
         if (soulCount == 5)
         {
             GameManager.instance.isFindSoul = true;
