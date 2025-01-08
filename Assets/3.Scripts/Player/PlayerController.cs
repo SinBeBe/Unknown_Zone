@@ -150,7 +150,6 @@ public class PlayerController : ManagerBase, IMoveObject
             else if (hitObjLayer == hideObj && !gi.isPlayerHide)
             {
                 col.enabled = false;
-                rb.isKinematic = true; 
                 rb.Sleep();
 
                 Vector3 pos = hit.transform.position;
@@ -173,7 +172,6 @@ public class PlayerController : ManagerBase, IMoveObject
                 transform.position = originPos;
 
                 col.enabled = true;
-                rb.isKinematic = false;
                 rb.WakeUp();
 
                 gi.isPlayerHide = false;
