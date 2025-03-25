@@ -139,8 +139,15 @@ public class PlayerController : ManagerBase, IMoveObject
                 }
                 else if(hit.collider.CompareTag("Getting"))
                 {
-                    gi.OnCandle();
-                    Destroy(hit.collider.gameObject);
+                    if(hit.collider.gameObject.layer == LayerMask.GetMask("Map"))
+                    {
+                        gi.isFindKnife = true;
+                    }
+                    else
+                    {
+                        gi.OnCandle();
+                        Destroy(hit.collider.gameObject);
+                    }
                 }
                 else
                 {

@@ -1,13 +1,13 @@
 
 using UnityEngine;
 
-public class SoulBase : ManagerBase
+public abstract class SoulBase : ManagerBase
 {
     [SerializeField]
     private GameObject player;
 
     private LayerMask mask;
-    protected float radius = 6f;
+    protected float radius;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class SoulBase : ManagerBase
         CheckPlayer();
     }
 
-    private void CheckPlayer()
+    protected virtual void CheckPlayer()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius, mask);
 
@@ -32,4 +32,11 @@ public class SoulBase : ManagerBase
             return;
         }
     }
+
+    protected void SetRadius(float radius)
+    {
+        this.radius = radius;
+    }
+
+    protected abstract void Init();
 }

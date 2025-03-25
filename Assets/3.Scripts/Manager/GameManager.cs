@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> items = new List<GameObject>();
 
+    public GameObject ghostSprit;
+
     private float maxStamina = 100f;
     private float stamina = 100f;
     private float regenRate = 4f;
@@ -22,7 +24,8 @@ public class GameManager : MonoBehaviour
 
     public bool isUsedItem = false;
 
-    public bool isFindTalisman;
+    public bool isKilledGhost;
+    public bool isFindKnife;
     public bool isFindSoul;
 
     public bool isPlayerHide;
@@ -86,7 +89,7 @@ public class GameManager : MonoBehaviour
         candleLight[candleIndexer].SetActive(true);
         if (candleIndexer == 4)
         {
-            isFindTalisman = true;
+            ghostSprit.SetActive(true);
         }
     }
 
@@ -105,15 +108,15 @@ public class GameManager : MonoBehaviour
 
     public void GameClear()
     {
-        if(!isFindTalisman && !isFindSoul)
+        if(!isKilledGhost && !isFindSoul)
         {
             BadEnding();
         }
-        else if(isFindTalisman && !isFindSoul)
+        else if(isKilledGhost && !isFindSoul)
         {
             NormalEnding(1);
         }
-        else if(!isFindTalisman && isFindSoul)
+        else if(!isKilledGhost && isFindSoul)
         {
             NormalEnding(2);
         }
