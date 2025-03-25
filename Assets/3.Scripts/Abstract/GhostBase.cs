@@ -67,6 +67,7 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     public virtual void Init()
     {
         FindTerrain();
+        FindManager();
         ChangeState(State.Idle);
 
         centerPos = this.transform;
