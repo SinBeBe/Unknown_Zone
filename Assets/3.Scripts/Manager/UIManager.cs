@@ -4,12 +4,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public enum Button {
-    Start,
-    Option,
-    Exit
-}
-
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance = null;

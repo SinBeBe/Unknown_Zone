@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ButtonManager : ManagerBase
@@ -8,17 +9,17 @@ public class ButtonManager : ManagerBase
         FindManager();
     }
 
-    public void OnButtonClick(Button button)
+    public void OnClickButton(string name)
     {
-        if (button == Button.Start)
+        if (name == "Start")
         {
             SceneManager.LoadScene(1);
         }
-        else if (button == Button.Option)
+        else if (name == "Option")
         {
-            //ui.
+
         }
-        else if (button == Button.Exit)
+        else if (name == "Exit")
         {
             Application.Quit();
         }
