@@ -7,7 +7,7 @@ public class PlayerLimit : GhostSkillBase
     {
         Init();
         Debug.Log("PlayerLimit");
-        StartCoroutine(Limit(Random.Range(5f, 10f)));
+        StartCoroutine(Limit(Random.Range(3f, 5f)));
     }
 
     IEnumerator Limit(float t)
