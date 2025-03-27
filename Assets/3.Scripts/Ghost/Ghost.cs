@@ -96,4 +96,9 @@ public class Ghost : GhostBase
     {
         ChangeState(State.Idle);
     }
+
+    private void OnDisable()
+    {
+        agent.ResetPath();
+    }
 }
