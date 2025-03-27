@@ -79,11 +79,6 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
         agent.speed = speed;
     }
 
-    public virtual void PlaySound()
-    {
-
-    }
-
     public void FindTerrain()
     {
         terrain = GameObject.Find("Ground").GetComponent<Terrain>();

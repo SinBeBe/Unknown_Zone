@@ -203,6 +203,11 @@ public class PlayerController : ManagerBase, IMoveObject
         Debug.Log("Die");
     }
 
+    private void OnEnable()
+    {
+        isMove = true;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.tag == "Enemy")
