@@ -11,6 +11,7 @@ public abstract class SoulBase : ManagerBase
 
     private void Start()
     {
+        Init();
         FindManager();
         mask = (1 << 3);
     }
