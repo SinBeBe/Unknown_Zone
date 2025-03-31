@@ -46,17 +46,20 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
 
     protected virtual void Update()
     {
-        switch (currentState) 
-        { 
-            case State.Idle:
-                Idle();
-                break;
-            case State.Move:
-                Move();
-                break;
-            case State.Attack: 
-                Attack(); 
-                break;
+        if (!gi.isEnemyLimit)
+        {
+            switch (currentState)
+            {
+                case State.Idle:
+                    Idle();
+                    break;
+                case State.Move:
+                    Move();
+                    break;
+                case State.Attack:
+                    Attack();
+                    break;
+            }
         }
     }
 

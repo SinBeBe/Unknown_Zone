@@ -12,8 +12,8 @@ public class PlayerLimit : GhostSkillBase
 
     IEnumerator Limit(float t)
     {
-        gi.SwitchGameObject<PlayerController>("Player", false);
+        gi.isPlayerLimit = true;
         yield return new WaitForSeconds(t);
-        gi.SwitchGameObject<PlayerController>("Player", true);
+        gi.isPlayerLimit = false;
     }
 }

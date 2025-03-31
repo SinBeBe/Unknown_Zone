@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
 
     public bool isUsedItem = false;
 
+    public bool isEnemyLimit = false;
+    public bool isPlayerLimit = false;
+
     public bool isKilledGhost;
     public bool isFindKnife;
     public bool isFindSoul;

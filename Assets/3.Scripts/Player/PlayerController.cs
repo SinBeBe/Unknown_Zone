@@ -48,21 +48,24 @@ public class PlayerController : ManagerBase, IMoveObject
 
         bool isRun = Input.GetKey(KeyCode.LeftShift) ? true : false;
         ui.PlayerStaminaUpdate(isRun);
-        if (isMove)
+        if (!gi.isPlayerLimit)
         {
-            if (isRun && !gi.isExhausted)
+            if (isMove)
             {
-                Move(gi.playerSpeed * 2, 1);
+                if (isRun && !gi.isExhausted)
+                {
+                    Move(gi.playerSpeed * 2, 1);
+                }
+                else
+                {
+                    Move(gi.playerSpeed, 0);
+                }
             }
             else
             {
-                Move(gi.playerSpeed, 0);
+                rb.velocity = Vector3.zero;
+                moveAudio.Stop();
             }
-        }
-        else
-        {
-            rb.velocity = Vector3.zero;
-            moveAudio.Stop();
         }
     }
 
