@@ -91,14 +91,4 @@ public class Ghost : GhostBase
         int rand = RandomInt(0, ghostSkill.Count);
         Instantiate(ghostSkill[rand], this.transform.position, Quaternion.identity);
     }
-
-    private void OnEnable()
-    {
-        ChangeState(State.Idle);
-    }
-
-    private void OnDisable()
-    {
-        agent.ResetPath();
-    }
 }

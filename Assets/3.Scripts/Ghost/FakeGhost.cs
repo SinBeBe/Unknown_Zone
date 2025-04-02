@@ -74,4 +74,12 @@ public class FakeGhost : GhostBase
         agent.speed = 15f;
         Destroy(this.gameObject, 180f);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
