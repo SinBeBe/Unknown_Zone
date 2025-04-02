@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] playerMoveClip;
     public AudioClip[] playerHideClip;
 
+    public AudioClip ghostNearClip;
     public AudioClip ghostChaseClip;
 
     public AudioClip[] clips;

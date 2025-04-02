@@ -3,10 +3,13 @@ using UnityEngine;
 
 public class Ghost : GhostBase
 {
+    [SerializeField]
+    private AudioSource audioSource;
     public List<GameObject> ghostSkill = new List<GameObject>();
 
     public override void Idle()
     {
+        ai.PlayAudiocilp(audioSource, ai.ghostNearClip, true);
         if (IsCheckPlayer(findRadius))
         {
             agent.ResetPath();
@@ -73,6 +76,7 @@ public class Ghost : GhostBase
         }
         else
         {
+            ai.PlayAudiocilp(audioSource, ai.ghostChaseClip, true);
             transform.LookAt(player.transform);
             agent.SetDestination(player.transform.position);
         }

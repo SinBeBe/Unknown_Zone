@@ -12,6 +12,6 @@ public class GhostSkillBase : ManagerBase
     protected void Init()
     {
         FindManager();
-        Destroy(this.gameObject, 5f);
+        Destroy(this.gameObject, 10f);
     }
 }

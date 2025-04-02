@@ -335,7 +335,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 150
+  MaxDistance: 160
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -570,7 +570,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e9a402676709ff549b7f79961d7fce5c, type: 2}
     - target: {fileID: 919132149155446097, guid: 6f3ad069d411b5841972c6d2dc2aac70, type: 3}
       propertyPath: m_Name
-      value: Ghost 1
+      value: Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6f3ad069d411b5841972c6d2dc2aac70, type: 3}
       propertyPath: m_Layer
