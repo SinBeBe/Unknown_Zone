@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -20,6 +20,23 @@ public class UIManager : MonoBehaviour
     public Text soulText;
     public Image interactImage;
     public Image hideImage;
+
+    public Image gameOverImage;
+    public Text gameOverText;
+    private string[] gameOverTextList = { 
+        "Dead.",
+        "Try Again.",
+        "Dot'n give up.",
+        "Next.",
+        "HaHaHa",
+        "Smile",
+        "End?",
+        "No help.",
+        "SOS",
+        "See you later",
+        "I'll wait",
+        "Did it hurt?"
+    };
 
     public Image askImage;
 
@@ -60,5 +77,12 @@ public class UIManager : MonoBehaviour
     public void ItemCount(int index, int count)
     {
         selectText[index].text = count.ToString();
+    }
+
+    public IEnumerator GameOver()
+    {
+        gameOverText.text = gameOverTextList[Random.Range(0, gameOverTextList.Length)];
+        ImageOnOff(gameOverImage, true);
+        yield return new WaitForSeconds(5f);
     }
 }

@@ -203,7 +203,7 @@ public class PlayerController : ManagerBase, IMoveObject
 
     private void Die()
     {
-        Debug.Log("Die");
+        gi.GameOver();
     }
 
     private void OnCollisionEnter(Collision collision)
