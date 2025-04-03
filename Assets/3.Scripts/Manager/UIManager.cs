@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -84,5 +85,6 @@ public class UIManager : MonoBehaviour
         gameOverText.text = gameOverTextList[Random.Range(0, gameOverTextList.Length)];
         ImageOnOff(gameOverImage, true);
         yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("MainScene");
     }
 }
