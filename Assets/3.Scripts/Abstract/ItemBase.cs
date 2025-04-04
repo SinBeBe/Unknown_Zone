@@ -7,7 +7,6 @@ public abstract class ItemBase : ManagerBase, IUsed
         FindManager();
         StartCoroutine(ItemUsed());
         gameObject.SetActive(false);
-        Destroy(this.gameObject, 15f);
         gi.isUsedItem = false;
     }
     public abstract IEnumerator ItemUsed();
