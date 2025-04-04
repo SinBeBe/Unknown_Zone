@@ -210,13 +210,13 @@ public class PlayerController : ManagerBase, IMoveObject
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            if(collision.gameObject.layer == (1 << 7))
+            if (collision.collider.gameObject.layer == 7)
             {
                 Die();
             }
             else
             {
-                TakeDamage(30 * gi.damagePercent);
+                TakeDamage(30f * gi.damagePercent);
                 ui.PlayerHpTextUpdate(hp);
                 Destroy(collision.gameObject);
             }

@@ -82,9 +82,10 @@ public class UIManager : MonoBehaviour
 
     public IEnumerator GameOver()
     {
+        Time.timeScale = 0f;
         gameOverText.text = gameOverTextList[Random.Range(0, gameOverTextList.Length)];
         ImageOnOff(gameOverImage, true);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSecondsRealtime(5f);
         SceneManager.LoadScene("MainScene");
     }
 }

@@ -108,11 +108,11 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
+    
     public void GameOver()
     {
-        Time.timeScale = 0f;
-        UIManager.instance.GameOver();
+        StartCoroutine(UIManager.instance.GameOver());
+        Time.timeScale = 1f;
     }
 
     public void GameClear()
