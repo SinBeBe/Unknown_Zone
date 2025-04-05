@@ -8,6 +8,7 @@ public class Clock : ItemBase
         Destroy(this.gameObject, 15f);
         gi.isEnemyLimit = true;
         yield return new WaitForSeconds(10f);
+        Debug.Log("End Item");
         gi.isEnemyLimit = false;
     }
 }

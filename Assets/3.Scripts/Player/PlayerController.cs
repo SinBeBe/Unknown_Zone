@@ -218,8 +218,8 @@ public class PlayerController : ManagerBase, IMoveObject
             {
                 TakeDamage(30f * gi.damagePercent);
                 ui.PlayerHpTextUpdate(hp);
-                Destroy(collision.gameObject);
             }
+            Destroy(collision.gameObject);
         }
     }
 }

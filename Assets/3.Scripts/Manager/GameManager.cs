@@ -112,7 +112,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         StartCoroutine(UIManager.instance.GameOver());
-        Time.timeScale = 1f;
     }
 
     public void GameClear()

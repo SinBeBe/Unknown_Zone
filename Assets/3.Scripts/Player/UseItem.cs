@@ -26,13 +26,15 @@ public class UseItem : ManagerBase
     {
         if(context.performed && !gi.isUsedItem)
         {
-            if (gi.items[ui.selectIndex].GetComponent<Item>().Count > 0)
+            int count = gi.items[ui.selectIndex].GetComponent<Item>().Count;
+            if (count > 0)
             {
                 int index = gi.items[ui.selectIndex].GetComponent<Item>().data.Index;
 
                 gi.isUsedItem = true;
+                gi.items[ui.selectIndex].GetComponent<Item>().Count--;
                 gi.items[ui.selectIndex].gameObject.GetComponent<ItemBase>().Used();
-                ui.ItemCount(index, --gi.items[ui.selectIndex].GetComponent<Item>().Count);
+                ui.ItemCount(index, --count);
                 Debug.Log("Used Item");
             }
             else
