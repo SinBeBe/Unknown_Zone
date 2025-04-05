@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     private float maxStamina = 100f;
     private float stamina = 100f;
-    private float regenRate = 4f;
+    private float regenRate = 5f;
     private float decreaseRate = 10f;
 
     public float playerSpeed;
@@ -112,6 +113,9 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         StartCoroutine(UIManager.instance.GameOver());
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 1f;
     }
 
     public void GameClear()
