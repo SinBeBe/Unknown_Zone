@@ -5,9 +5,8 @@ public abstract class ItemBase : ManagerBase, IUsed
     public void Used()
     {
         FindManager();
+        gi.isUsedItem = true;
         StartCoroutine(ItemUsed());
-        gameObject.SetActive(false);
-        gi.isUsedItem = false;
     }
     public abstract IEnumerator ItemUsed();
 }

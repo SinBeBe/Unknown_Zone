@@ -137,7 +137,7 @@ public class PlayerController : ManagerBase, IMoveObject
                 if (hit.collider.CompareTag("UsingItem"))
                 {
                     ui.ItemCount(item.data.Index, item.Count);
-                    hit.collider.gameObject.transform.Translate(0f, -20f, 0f);
+                    hit.collider.gameObject.transform.Translate(0f, -30f, 0f);
                     gi.items[item.data.Index] = hit.collider.gameObject;
                 }
                 else if(hit.collider.CompareTag("Getting"))
