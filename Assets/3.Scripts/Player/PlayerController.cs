@@ -47,9 +47,9 @@ public class PlayerController : ManagerBase, IMoveObject
         Interact();
 
         bool isRun = Input.GetKey(KeyCode.LeftShift) ? true : false;
-        ui.PlayerStaminaUpdate(isRun);
         if (!gi.isPlayerLimit)
         {
+            ui.PlayerStaminaUpdate(isRun);
             if (isMove)
             {
                 if (isRun && !gi.isExhausted)
@@ -160,8 +160,8 @@ public class PlayerController : ManagerBase, IMoveObject
             else if (hitObjLayer == hideObj && !gi.isPlayerHide)
             {
                 col.enabled = false;
-                rb.isKinematic = true;
-                rb.Sleep();
+                isMove = false;
+                gi.isPlayerLimit = true;
 
                 Vector3 pos = hit.transform.position;
                 Quaternion rot = hit.transform.rotation;
@@ -169,6 +169,8 @@ public class PlayerController : ManagerBase, IMoveObject
                 ai.PlayAudiocilp(ai.SFX, ai.playerHideClip[0], false);
 
                 originPos = transform.position;
+
+                rb.velocity = Vector3.zero;
 
                 transform.position = new Vector3(pos.x, pos.y + 3f, pos.z);
                 transform.rotation = rot;
@@ -183,8 +185,8 @@ public class PlayerController : ManagerBase, IMoveObject
                 transform.position = originPos;
 
                 col.enabled = true;
-                rb.isKinematic = false;
-                rb.WakeUp();
+                isMove = true;
+                gi.isPlayerLimit = false;
 
                 gi.isPlayerHide = false;
                 ui.ImageOnOff(ui.hideImage, false);
