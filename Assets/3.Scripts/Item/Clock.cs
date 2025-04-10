@@ -9,6 +9,5 @@ public class Clock : ItemBase
         yield return new WaitForSeconds(10f);
         gi.isEnemyLimit = false;
         gi.isUsedItem = false;
-        Destroy(this.gameObject);
     }
 }

@@ -61,6 +61,10 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
                     break;
             }
         }
+        else
+        {
+            agent.ResetPath();
+        }
     }
 
     public abstract void Idle();

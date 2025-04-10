@@ -11,6 +11,5 @@ public class Syringe : ItemBase
         gi.playerSpeed = 7;
         gi.damagePercent = 1;
         gi.isUsedItem = false;
-        Destroy(this.gameObject);
     }
 }
