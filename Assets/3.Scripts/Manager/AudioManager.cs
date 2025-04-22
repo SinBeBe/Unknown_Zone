@@ -18,6 +18,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip ghostNearClip;
     public AudioClip ghostChaseClip;
 
+    public AudioClip ghostSkillClip;
+
     public AudioClip[] clips;
 
     public AudioClip soulClip;

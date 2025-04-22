@@ -9,21 +9,23 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance = null;
 
+    [Header("Select")]
     public List<Image> selectItem = new List<Image>();
     public List<Text> selectText = new List<Text>();
-
     public int selectItemIndex = 0;
     public int selectIndex = 0;
 
-    public Text playerHpText;
-    public Image playerStamina;
-
+    [Header("Text")]
     public Text soulText;
+    public Text playerHpText;
+    public Text gameOverText;
+
+    [Header("Image")]
+    public Image playerStamina;
     public Image interactImage;
     public Image hideImage;
-
     public Image gameOverImage;
-    public Text gameOverText;
+
     private string[] gameOverTextList = { 
         "Dead.",
         "Try Again.",
