@@ -129,13 +129,13 @@ public class PlayerController : ManagerBase, IMoveObject
             LayerMask hitObjLayer = (1 << hit.collider.gameObject.layer);
             if (hitObjLayer == itemLayer)
             {
-                item = hit.collider.gameObject.GetComponent<Item>();
-                item.Count++;
-                item.IsGet = true;
-                Debug.Log("get item");
-
                 if (hit.collider.CompareTag("UsingItem"))
                 {
+                    item = hit.collider.gameObject.GetComponent<Item>();
+                    item.Count++;
+                    item.IsGet = true;
+                    Debug.Log("get item");
+
                     ui.ItemCount(item.data.Index, item.Count);
                     hit.collider.gameObject.transform.Translate(0f, -30f, 0f);
                     gi.items[item.data.Index] = hit.collider.gameObject;
