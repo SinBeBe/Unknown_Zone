@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0188188c253e0c4bb9b46e19fa7312e, type: 3}
+  m_Name: st_short_hair_female_Recipe
+  m_EditorClassIdentifier: 
+  label: 
+  resourcesOnly: 0
+  recipeType: Wardrobe
+  DisplayValue: Short Hair
+  compatibleRaces:
+  - o3n Stunner Jane
+  wardrobeRecipeThumbs:
+  - race: o3n Stunner Jane
+    filename: 
+    thumb: {fileID: 21300000, guid: adfb72e2954841340b379cf3cdc7a974, type: 3}
+  wardrobeSlot: Hair
+  Hides: []
+  HideTags: []
+  suppressWardrobeSlots: []
+  activeWardrobeSet: []
+  MeshHideAssets: []
+  recipeString: '{"version":3,"packedSlotDataList":[],"slotsV2":[],"slotsV3":[{"id":"st_short_hair_LOD0","scale":100,"copyIdx":-1,"overlays":[{"id":"st_short_hair_Overlay","colorIdx":0,"rect":[0.0,0.0,0.0,0.0],"isTransformed":false,"scale":{"x":0.0,"y":0.0,"z":0.0},"rotation":0.0}],"Tags":["hairbase"],"Races":[]},{"id":"st_female_head_LOD0","scale":100,"copyIdx":-1,"overlays":[{"id":"st_shorthair_haircap_Overlay","colorIdx":0,"rect":[0.0,0.0,0.0,0.0],"isTransformed":false,"scale":{"x":0.0,"y":0.0,"z":0.0},"rotation":0.0}],"Tags":[],"Races":[]},{"id":"St_short_hair_Hat01_Slot","scale":100,"copyIdx":0,"overlays":[],"Tags":["hairline1"],"Races":[]}],"colors":[],"fColors":[{"name":"Hair","colors":[93,52,34,255,0,0,0,0,255,255,255,255,0,0,0,0,255,255,255,255,0,0,0,0,255,255,255,255,0,0,0,0,255,255,255,255,0,0,0,0,255,255,255,255,0,0,0,0],"ShaderParms":[]}],"sharedColorCount":1,"race":"","packedDna":[]}'
+  IncompatibleRecipes: []
+  UserField: 
+  replaces: Nothing

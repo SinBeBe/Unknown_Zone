@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b68d44e3ab744b98027a983d66b345, type: 3}
+  m_Name: weight_lower_high
+  m_EditorClassIdentifier: 
+  poses:
+  - bone: LeftGluteus
+    hash: 2044062440
+    position: {x: -0.0119595155, y: -0.02384105, z: -0.01685492}
+    rotation: {x: 0.0054885736, y: 0.2518389, z: 0.059448738, w: 0.9659262}
+    scale: {x: 2.1104987, y: 1.1827937, z: 1.183115}
+  - bone: LeftLeg
+    hash: 101577729
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0.000000032561665, y: -0.00000011596744, z: -0.0000013923953, w: 1.0000001}
+    scale: {x: 1, y: 0.999549, z: 1}
+  - bone: LeftFootAdjust
+    hash: -599733254
+    position: {x: -0.0000000023283064, y: 0, z: 0}
+    rotation: {x: 0.00017151432, y: -0.0000023657499, z: 0.0000035877797, w: 1}
+    scale: {x: 1.0749999, y: 0.999702, z: 1.0749999}
+  - bone: LeftLegAdjust
+    hash: -861926788
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1.15, y: 1, z: 1.1500001}
+  - bone: LeftLegTwist
+    hash: -2084309735
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 5.5621696e-12, y: 8.5807905e-10, z: -2.3022478e-12, w: 1}
+    scale: {x: 1.1684979, y: 1, z: 1.117653}
+  - bone: LeftUpLegAdjust
+    hash: 898137571
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1.3699813, y: 1, z: 1.3175596}
+  - bone: LeftUpLegTwist
+    hash: 309003653
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1.3927789, y: 1, z: 1.225}
+  - bone: RightGluteus
+    hash: -2110033470
+    position: {x: 0.0119595155, y: -0.02384105, z: -0.01685492}
+    rotation: {x: 0.005488572, y: -0.2518388, z: -0.059448753, w: 0.9659262}
+    scale: {x: 2.1104987, y: 1.1827937, z: 1.1831151}
+  - bone: RightLeg
+    hash: -2042820100
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0.000000032561665, y: 0.00000011596744, z: 0.0000013923953, w: 1.0000001}
+    scale: {x: 1, y: 0.999549, z: 1}
+  - bone: RightFootAdjust
+    hash: 1016960153
+    position: {x: 0.0000000023283064, y: 0, z: 0}
+    rotation: {x: 0.00017151432, y: 0.0000023657499, z: -0.0000035877797, w: 1}
+    scale: {x: 1.0749999, y: 0.999702, z: 1.0749999}
+  - bone: RightLegAdjust
+    hash: -1005160586
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1.15, y: 1, z: 1.1500001}
+  - bone: RightLegTwist
+    hash: 1485034068
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 5.5621696e-12, y: -8.5807905e-10, z: 2.3022478e-12, w: 1}
+    scale: {x: 1.1684979, y: 1, z: 1.117653}
+  - bone: RightUpLegAdjust
+    hash: -506228642
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1.3699813, y: 1, z: 1.3175596}
+  - bone: RightUpLegTwist
+    hash: -222930202
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1.3927789, y: 1, z: 1.225}
+  - bone: Spine1
+    hash: -1892025778
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1.0004436, y: 1.0004437, z: 1.0004438}
+  - bone: Spine2
+    hash: 372288500
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1.0004579, y: 1.0004579, z: 1.0004579}
+  - bone: CraniumBack
+    hash: -1875694748
+    position: {x: 0, y: -0.00003656745, z: -0.000035154575}
+    rotation: {x: 0, y: 0, z: 0, w: 0.99999994}
+    scale: {x: 1, y: 1, z: 1}
+  - bone: CraniumFront
+    hash: 207920978
+    position: {x: 0, y: -0.000047028065, z: 0.000019895728}
+    rotation: {x: 0, y: 0, z: 0, w: 0.99999994}
+    scale: {x: 1, y: 0.99973494, z: 0.99973494}
+  - bone: Forehead
+    hash: 1721849208
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0.99999994}
+    scale: {x: 0.9997303, y: 1, z: 0.9997303}
+  - bone: HeadAdjust
+    hash: -423229038
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1, y: 0.9995946, z: 0.9995946}
+  - bone: LeftCheekBone
+    hash: -536478659
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 0.99925107, y: 0.99925107, z: 0.99925107}
+  - bone: LeftEarPosition
+    hash: 1156507464
+    position: {x: 0, y: 0, z: -0.000026570633}
+    rotation: {x: 0.000000065034996, y: -0.000000015579419, z: -0.0005090497, w: 0.99999994}
+    scale: {x: 1, y: 1, z: 1}
+  - bone: LeftEarOut
+    hash: 994855401
+    position: {x: 0.000019582454, y: 0.000022126362, z: 0.00002237875}
+    rotation: {x: -0.00019202432, y: 0.00004873893, z: 0.00006668907, w: 0.99999994}
+    scale: {x: 1, y: 1, z: 1}
+  - bone: ChinAdjust
+    hash: -1728294455
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1, y: 1, z: 0.99960333}
+  - bone: UnderChin
+    hash: 1848579668
+    position: {x: -0.000018892944, y: 0, z: 0}
+    rotation: {x: 4.8636405e-19, y: -2.7435617e-14, z: 1.1032672e-13, w: 1.0000001}
+    scale: {x: 1, y: 1, z: 1}
+  - bone: RightCheekBone
+    hash: -390889161
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 0.99925107, y: 0.99925107, z: 0.99925107}
+  - bone: RightEarPosition
+    hash: -1867183371
+    position: {x: 0, y: 0, z: -0.000026570633}
+    rotation: {x: 0.000000065034996, y: 0.000000015579419, z: 0.0005090497, w: 0.99999994}
+    scale: {x: 1, y: 1, z: 1}
+  - bone: RightEarOut
+    hash: 26937014
+    position: {x: -0.000019581057, y: 0.000022126362, z: 0.000022375956}
+    rotation: {x: -0.00019202432, y: -0.00004873893, z: -0.00006668907, w: 0.99999994}
+    scale: {x: 1, y: 1, z: 1}
+  - bone: BellyAdjust
+    hash: 1810081474
+    position: {x: 0, y: 0, z: -0.00002811104}
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+    scale: {x: 1, y: 1, z: 1}
+  tweenPoses: []
+  tweenWeights: []

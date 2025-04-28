@@ -1,0 +1,4432 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c6edb17218abd469257d07a2bc5559, type: 3}
+  m_Name: o3nStunnerCommonDetailsDNAConverterController
+  m_EditorClassIdentifier: 
+  _dnaAsset: {fileID: 11400000, guid: 0234c3c1d0dad8042881a80600aa81c1, type: 2}
+  _plugins:
+  - {fileID: 114925027221876342}
+  _overallModifiers:
+    _adjustScale: 0
+    _adjustHeight: 1
+    _adjustRadius: 1
+    _adjustMass: 1
+    _updateBounds: 1
+    _tightenBounds: 1
+    _adjustBounds: 1
+    _scale: 1
+    _bone: Position
+    _scaleBoneHash: -1084586333
+    _headRatio: 7.5
+    _radiusAdjustY: 0.01
+    _radiusAdjust: {x: 0.23, y: 0}
+    _massAdjust: {x: 46, y: 26, z: 26}
+    _boundsAdjust: {x: 0, y: 0, z: 0}
+  _displayValue: 
+--- !u!114 &114925027221876342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4952de3305cd7194bb51aafa1b220607, type: 3}
+  m_Name: ColorDNAConverters
+  m_EditorClassIdentifier: 
+  masterWeight:
+    _masterWeightType: 0
+    _globalWeight: 1
+    _DNAForWeight:
+      _calcOption: 0
+      _dnaName: 
+      _dnaNameHash: 0
+      _evaluator:
+        _name: Raw
+        _graph:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0
+            outSlope: 1
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.5
+            value: 0.5
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 1
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      _multiplier: 1
+      _initialized: 1
+  _converterController: {fileID: 11400000}
+  _colorSets:
+  - mode: 0
+    targetName: colorDNA_fatUpper
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: weightUpper
+        _dnaNameHash: -521605851
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 0
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 3
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      G:
+        enable: 0
+        adjustmentType: 3
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      B:
+        enable: 0
+        adjustmentType: 3
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: 1
+  - mode: 0
+    targetName: colorDNA_fatLower
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: weightLower
+        _dnaNameHash: -2144515686
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 0
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: 0
+  - mode: 0
+    targetName: colorDNA_bellyBig
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: belly
+        _dnaNameHash: -2005660810
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      - _calcOption: 1
+        _dnaName: pregnant
+        _dnaNameHash: -11245468
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      - _calcOption: 1
+        _dnaName: weightUpper
+        _dnaNameHash: -521605851
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 0.6
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 0
+    targetName: colorDNA_breastSmall
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: breastSize
+        _dnaNameHash: -1437215794
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      - _calcOption: 1
+        _dnaName: ageBase
+        _dnaNameHash: -1253256781
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      - _calcOption: 1
+        _dnaName: weightUpper
+        _dnaNameHash: -521605851
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 0.5
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: 1
+  - mode: 0
+    targetName: colorDNA_thinUpper
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: weightUpper
+        _dnaNameHash: -521605851
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 0
+    targetName: colorDNA_thinLower
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: weightLower
+        _dnaNameHash: -2144515686
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.33333334
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 0
+    targetName: colorDNA_child
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: ageBase
+        _dnaNameHash: -1253256781
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 0
+    targetName: colorDNA_muscleTone
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: muscleTone
+        _dnaNameHash: 176181549
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_cheekPosDown
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: cheekPosition
+        _dnaNameHash: -2146412263
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_cheekSizeBig
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: cheekSize
+        _dnaNameHash: -1727332994
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_cheekSizeSmall
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: cheekSize
+        _dnaNameHash: -1727332994
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_chinPronouncedIn
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: chinPronounced
+        _dnaNameHash: 2080425167
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_chinPronouncedOut
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: chinPronounced
+        _dnaNameHash: 2080425167
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_chinSizeLarge
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: chinSize
+        _dnaNameHash: -61818555
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_chinSizeNarrow
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: chinSize
+        _dnaNameHash: -61818555
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_eyeDepthIn
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: eyeDepth
+        _dnaNameHash: 564182743
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_eyeDepthOut
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: eyeDepth
+        _dnaNameHash: 564182743
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_eyeSizeSmall
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: eyeSize
+        _dnaNameHash: 1336626240
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_eyeSizeBig
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: eyeSize
+        _dnaNameHash: 1336626240
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_foreheadPositionUp
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: foreheadPosition
+        _dnaNameHash: 1645211981
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_foreheadPositionDown
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: foreheadPosition
+        _dnaNameHash: 1645211981
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_foreheadSizeFwd
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: foreheadSize
+        _dnaNameHash: -1728938687
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_foreheadSizeBck
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: foreheadSize
+        _dnaNameHash: -1728938687
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_jawsPositionDown
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: jawsPosition
+        _dnaNameHash: 791229381
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_jawsPositionUp
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: jawsPosition
+        _dnaNameHash: 791229381
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_jawsSizeBig
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: jawsSize
+        _dnaNameHash: -684992667
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_jawsSizeSmall
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: jawsSize
+        _dnaNameHash: -684992667
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_lipsSizeSmall
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: lipsSize
+        _dnaNameHash: 1068408893
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_lipsSizeBig
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: lipsSize
+        _dnaNameHash: 1068408893
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_lowCheekSizeOut
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: lowCheek
+        _dnaNameHash: -460801948
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_lowCheekSizeIn
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: lowCheek
+        _dnaNameHash: -460801948
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_mandibleSizeIn
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: mandibleSize
+        _dnaNameHash: 420250386
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_mandibleSizeOut
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: mandibleSize
+        _dnaNameHash: 420250386
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_mouthPositionUp
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: mouthPosition
+        _dnaNameHash: 1366929150
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_mouthPositionDown
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: mouthPosition
+        _dnaNameHash: 1366929150
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_mouthPronouncedIn
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: mouthPronounced
+        _dnaNameHash: 1736767704
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_mouthPronouncedOut
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: mouthPronounced
+        _dnaNameHash: 1736767704
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_mouthSizeWide
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: mouthSize
+        _dnaNameHash: -1275520811
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_mouthSizeNarrow
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: mouthSize
+        _dnaNameHash: -1275520811
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_noseBridgeIn
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: noseBridge
+        _dnaNameHash: -1959179013
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_noseBridgeOut
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: noseBridge
+        _dnaNameHash: -1959179013
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_noseCurveOut
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: noseCurve
+        _dnaNameHash: -1365234306
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_noseCurveIn
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: noseCurve
+        _dnaNameHash: -1365234306
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_noseFlattenIn
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: noseFlatten
+        _dnaNameHash: -512297083
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_noseFlattenOut
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: noseFlatten
+        _dnaNameHash: -512297083
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_noseInclinationUp
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: noseInclination
+        _dnaNameHash: -164646798
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_noseInclinationDown
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: noseInclination
+        _dnaNameHash: -164646798
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_nosePositionDown
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: nosePosition
+        _dnaNameHash: -1469532099
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_nosePositionUp
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: nosePosition
+        _dnaNameHash: -1469532099
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_nosePronouncedOut
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: nosePronounced
+        _dnaNameHash: 1938239509
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_nosePronouncedIn
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: nosePronounced
+        _dnaNameHash: 1938239509
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_Age
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: ageBase
+        _dnaNameHash: -1253256781
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: SkinPale
+    textureChannel: 0
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: skinTone
+        _dnaNameHash: 116851117
+        _evaluator:
+          _name: OneZeroZero
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: -2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: -2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_breastBig
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: breastSize
+        _dnaNameHash: -1437215794
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
+  - mode: 1
+    targetName: colorDNA_cheekPosUp
+    textureChannel: 4
+    modifyingDNA:
+      _dnaEvaluators:
+      - _calcOption: 0
+        _dnaName: cheekPosition
+        _dnaNameHash: -2146412263
+        _evaluator:
+          _name: ZeroZeroOne
+          _graph:
+            serializedVersion: 2
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 0
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.5
+              value: 0
+              inSlope: 0
+              outSlope: 2
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 1
+              value: 1
+              inSlope: 2
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+        _multiplier: 1
+        _initialized: 1
+      _aggregationMethod: 1
+    colorModifier:
+      R:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      G:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      B:
+        enable: 0
+        adjustmentType: 0
+        useDNAValue: 0
+        value: 0
+        adjustValue: 0
+        multiplier: 0
+      A:
+        enable: 1
+        adjustmentType: 0
+        useDNAValue: 1
+        value: 0
+        adjustValue: 0
+        multiplier: 1
+      _testDNAVal: -0
