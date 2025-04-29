@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -63,8 +64,6 @@ public class GameManager : MonoBehaviour
     {
         playerSpeed = playerData.Speed;
         damagePercent = playerData.DamagePercent;
-
-        UIManager.instance.PlayerHpTextUpdate(playerData.HP);
     }
 
     public float PlayerStamina(bool isRun)
@@ -144,6 +143,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            SceneManager.LoadScene("HappyEndingScene");
             HappyEnding();
         }
     }
