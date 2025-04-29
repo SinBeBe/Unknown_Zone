@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    [Header("GameScene")]
     public PlayerData playerData;
 
     [SerializeField]
@@ -37,11 +39,19 @@ public class GameManager : MonoBehaviour
 
     private int candleIndexer = -1;
 
+    [Header("EndingScene")]
+    [Header("HappyEnding")]
+    [SerializeField]
+    private CinemachineVirtualCamera dollyCam;
+    [SerializeField]
+    private CinemachineVirtualCamera blendListCam;
+
     private void Awake()
     {
         if(instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
         else
         {
