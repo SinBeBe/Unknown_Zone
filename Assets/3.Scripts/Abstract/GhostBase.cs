@@ -43,6 +43,9 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, radius);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, nearRadius);
     }
 
     protected virtual void Update()

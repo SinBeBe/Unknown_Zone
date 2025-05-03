@@ -79,6 +79,10 @@ public class Ghost : GhostBase
             {
                 ai.PlayAudiocilp(audioSource, ai.ghostChaseClip, true);
             }
+            else
+            {
+                audioSource.Stop();
+            }
             transform.LookAt(player.transform);
             agent.SetDestination(player.transform.position);
         }
@@ -88,8 +92,8 @@ public class Ghost : GhostBase
     {
         base.Init();
         radius = 80f;
-        nearRadius = 150f;
-        findRadius = 100f;
+        nearRadius = 200f;
+        findRadius = 80f;
         agent.speed = 10f;
     }
 
