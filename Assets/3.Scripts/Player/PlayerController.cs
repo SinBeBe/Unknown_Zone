@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -63,8 +64,8 @@ public class PlayerController : ManagerBase, IMoveObject
             }
             else
             {
-                rb.velocity = Vector3.zero;
                 moveAudio.Stop();
+                rb.velocity = Vector3.zero;
             }
         }
         else
@@ -163,6 +164,9 @@ public class PlayerController : ManagerBase, IMoveObject
             }
             else if (hitObjLayer == hideObj && !gi.isPlayerHide)
             {
+                moveAudio.clip = null;
+                moveAudio.Stop();
+
                 col.enabled = false;
                 isMove = false;
                 gi.isPlayerLimit = true;
