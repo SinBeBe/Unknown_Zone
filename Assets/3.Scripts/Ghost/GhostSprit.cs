@@ -15,7 +15,7 @@ public class GhostSprit : SoulBase
 
         if(colliders.Length > 0 && gi.isFindKnife)
         {
-            //ai.PlayAudiocilp(); ±Í½Å Á×´Â ¼Ò¸®
+            ai.PlayAudiocilp(ai.SFX, ai.ghostDeathClip, false);
             Destroy(this.gameObject);
             gi.isKilledGhost = true;
         }
