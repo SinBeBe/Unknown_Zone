@@ -67,6 +67,10 @@ public class PlayerController : ManagerBase, IMoveObject
                 moveAudio.Stop();
             }
         }
+        else
+        {
+            rb.velocity = Vector3.zero;
+        }
     }
 
     public void Move(float speed, int index)
