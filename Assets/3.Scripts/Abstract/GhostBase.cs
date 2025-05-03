@@ -27,6 +27,7 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
     protected float currentTime;
 
     protected float radius;
+    protected float nearRadius;
     protected float findRadius;
 
     protected float speed;
@@ -46,6 +47,18 @@ public abstract class GhostBase : ManagerBase, IFindTerrain
 
     protected virtual void Update()
     {
+        if(IsCheckPlayer(nearRadius))
+        {
+            if (!ai.ghostSFX.isPlaying)
+            {
+                ai.PlayAudiocilp(ai.ghostSFX, ai.ghostNearClip, true);
+            }
+        }
+        else
+        {
+            ai.ghostSFX.clip = null;
+        }
+
         if (!gi.isEnemyLimit)
         {
             switch (currentState)

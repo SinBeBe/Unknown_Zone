@@ -9,7 +9,6 @@ public class Ghost : GhostBase
 
     public override void Idle()
     {
-        ai.PlayAudiocilp(audioSource, ai.ghostNearClip, true);
         if (IsCheckPlayer(findRadius))
         {
             agent.ResetPath();
@@ -76,7 +75,10 @@ public class Ghost : GhostBase
         }
         else
         {
-            ai.PlayAudiocilp(audioSource, ai.ghostChaseClip, true);
+            if (!audioSource.isPlaying)
+            {
+                ai.PlayAudiocilp(audioSource, ai.ghostChaseClip, true);
+            }
             transform.LookAt(player.transform);
             agent.SetDestination(player.transform.position);
         }
@@ -86,6 +88,7 @@ public class Ghost : GhostBase
     {
         base.Init();
         radius = 80f;
+        nearRadius = 150f;
         findRadius = 100f;
         agent.speed = 10f;
     }

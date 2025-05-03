@@ -7,8 +7,12 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance = null;
 
-    [SerializeField] private AudioSource BGM;
+    [Header("AudioSource")]
+    public AudioSource BGM;
     public AudioSource SFX;
+    public AudioSource ghostSFX;
+    [SerializeField] private AudioSource ghostBGM;
+    [SerializeField] private AudioSource playerAudio;
 
     public AudioClip[] BGMclip;
 
