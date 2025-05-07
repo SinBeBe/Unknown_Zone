@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1706.6667
     height: 1024
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 50
+  controlID: 139
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -810,9 +810,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 945.649, y: 1137.4397, z: -782.19556}
+    m_Target: {x: -2.7552552, y: 1.1423559, z: -67.24125}
     speed: 2
-    m_Value: {x: 945.649, y: 1137.4397, z: -782.19556}
+    m_Value: {x: -2.7552552, y: 1.1423559, z: -67.24125}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -858,13 +858,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.26787162, y: -0.008320949, z: -0.00065822725, w: 0.96442544}
+    m_Target: {x: -0.016188469, y: 0.94968754, z: -0.31342238, w: -0.03931939}
     speed: 2
-    m_Value: {x: 0.26761198, y: -0.008312884, z: -0.00065758923, w: 0.9634906}
+    m_Value: {x: -0.01648587, y: 0.9487241, z: -0.3131012, w: -0.040230002}
   m_Size:
-    m_Target: 119.26861
+    m_Target: 12.124355
     speed: 2
-    m_Value: 119.26861
+    m_Value: 12.124355
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1030,9 +1030,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 729effff629affff8898ffff
-      m_LastClickedID: -24974
-      m_ExpandedIDs: 10eeffff0cfbffff7c6300007665000032660000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 0ab8ffff0cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1101,7 +1101,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/3.Scripts/Player
+    - Assets/1.Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1109,16 +1109,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 56
   m_LastFolders:
-  - Assets/3.Scripts/Player
+  - Assets/1.Scenes
   m_LastFoldersGridSize: 56
   m_LastProjectPath: C:\Users\User\Desktop\Unknown_Zone
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 44}
-    m_SelectedIDs: a8780000
-    m_LastClickedID: 30888
-    m_ExpandedIDs: 00000000fa760000fc760000fe76000000770000027700000477000006770000087700000a7700000c7700000e77000010770000127700001477000016770000187700001a7700001c7700003878000000ca9a3bffffff7f
+    m_SelectedIDs: 5c780000
+    m_LastClickedID: 30812
+    m_ExpandedIDs: 000000001a7700001c7700001e77000020770000227700002477000026770000287700002a7700002c7700002e77000030770000327700003477000036770000387700003a7700003c7700006078000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1146,7 +1146,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fa760000fc760000fe76000000770000027700000477000006770000087700000a7700000c7700000e77000010770000127700001477000016770000187700001a7700001c770000
+    m_ExpandedIDs: 000000001a7700001c7700001e77000020770000227700002477000026770000287700002a7700002c7700002e77000030770000327700003477000036770000387700003a7700003c770000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
