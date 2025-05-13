@@ -1,4 +1,5 @@
 using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -43,9 +44,9 @@ public class GameManager : MonoBehaviour
     [Header("EndingScene")]
     [Header("HappyEnding")]
     [SerializeField]
-    private CinemachineVirtualCamera dollyCam;
+    private CinemachineVirtualCamera[] virtualCameras;
     [SerializeField]
-    private CinemachineVirtualCamera blendListCam;
+    private CinemachineDollyCart dollyCart;
 
     private void Awake()
     {
@@ -64,6 +65,8 @@ public class GameManager : MonoBehaviour
     {
         playerSpeed = playerData.Speed;
         damagePercent = playerData.DamagePercent;
+
+        HappyEnding();
     }
 
     public float PlayerStamina(bool isRun)
@@ -160,6 +163,19 @@ public class GameManager : MonoBehaviour
 
     private void HappyEnding()
     {
-        Debug.Log("Happy");
+        StartCoroutine(EndingSequence(virtualCameras, dollyCart));
     }
+
+    private IEnumerator EndingSequence(CinemachineVirtualCamera[] cameras, CinemachineDollyCart cart)
+    {
+        cameras[0].Priority = 5;
+
+        while (cart.m_Path.PathLength - cart.m_Position > 0.01f)
+        {
+            yield return null;
+        }
+
+        cameras[1].Priority = 4;
+    }
+
 }
