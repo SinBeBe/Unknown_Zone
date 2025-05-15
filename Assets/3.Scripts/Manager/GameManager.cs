@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         playerSpeed = playerData.Speed;
         damagePercent = playerData.DamagePercent;
 
-        HappyEnding();
+        //HappyEnding();
     }
 
     public float PlayerStamina(bool isRun)

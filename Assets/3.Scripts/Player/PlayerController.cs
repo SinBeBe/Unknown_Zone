@@ -209,6 +209,7 @@ public class PlayerController : ManagerBase, IMoveObject
         if (context.performed)
         {
             gameEscPanel.SetActive(!gameEscPanel.activeSelf);
+            Time.timeScale = gameEscPanel.activeSelf ? 0f : 1f;
         }
     }
 
