@@ -2,8 +2,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class ButtonManager : ManagerBase
 {
+    [SerializeField]
+    private GameObject optionPanel;
+
     private void Start()
     {
         FindManager();
@@ -20,9 +24,17 @@ public class ButtonManager : ManagerBase
         {
             
         }
-        else if (name == "Exit")
+        else if (name == "Quit")
         {
             Application.Quit();
+        }
+        else if (name == "Continue")
+        {
+            Time.timeScale = 1f;
+        }
+        else if(name == "Exit")
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }
