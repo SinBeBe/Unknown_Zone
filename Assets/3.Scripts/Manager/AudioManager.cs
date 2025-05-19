@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource ghostBGM;
     [SerializeField] private AudioSource playerAudio;
 
-    public AudioClip[] BGMclip;
+    public AudioClip BGMclip;
 
     public AudioClip[] playerMoveClip;
     public AudioClip[] playerHideClip;
@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        PlayBGM(BGMclip[SceneManager.sceneCount]);
+        PlayBGM(BGMclip);
     }
 
     public void PlayAudiocilp(AudioSource source, AudioClip clip, bool isLoop)
