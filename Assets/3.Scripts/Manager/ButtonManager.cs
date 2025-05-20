@@ -22,7 +22,7 @@ public class ButtonManager : ManagerBase
         }
         else if (name == "Option")
         {
-            
+            optionPanel.SetActive(true);
         }
         else if (name == "Quit")
         {
