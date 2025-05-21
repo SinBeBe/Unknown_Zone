@@ -16,6 +16,7 @@ public class Ghost : GhostBase
         }
         else
         {
+            audioSource.Stop();
             currentTime -= Time.deltaTime;
 
             if (currentTime < 0 && !agent.hasPath)
@@ -89,7 +90,7 @@ public class Ghost : GhostBase
         base.Init();
         radius = 80f;
         nearRadius = 200f;
-        findRadius = 80f;
+        findRadius = 120f;
         agent.speed = 10f;
     }
 

@@ -93,7 +93,6 @@ public class UIManager : MonoBehaviour
             }
             else
             {
-                GameManager.instance.CursorModeChange(CursorLockMode.Locked, false);
                 currentImage.gameObject.SetActive(false);
                 currentImage = null;
             }
