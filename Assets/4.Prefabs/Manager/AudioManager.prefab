@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &762976786580430304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3118414471000532930}
+  - component: {fileID: 5287021678603768610}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3118414471000532930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762976786580430304}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.678589, y: -40.398636, z: -33.70575}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5287021678603768610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762976786580430304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc2452a0a3a72c46bb464fc617c359c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGM: {fileID: 0}
+  SFX: {fileID: 0}
+  ghostSFX: {fileID: 0}
+  ghostBGM: {fileID: 0}
+  playerAudio: {fileID: 0}
+  BGM_Mixer: {fileID: 24100000, guid: 7227c406370391846a23b61b3befe361, type: 2}
+  SFX_Mixer: {fileID: 24100000, guid: 0645871917462bc479a7594da4063370, type: 2}
+  BGMSlider: {fileID: 0}
+  SFXSlider: {fileID: 0}
+  BGMclip: {fileID: 8300000, guid: c8523bcc7f9716f418822aa9d35a882f, type: 3}
+  playerMoveClip:
+  - {fileID: 8300000, guid: bded410048d8cbc4e913f26566e73a5a, type: 3}
+  - {fileID: 8300000, guid: f7c3e57a9e6d4c542a4c94155cee056c, type: 3}
+  playerHideClip:
+  - {fileID: 8300000, guid: 7492f21ce6a2be54eb15e0a1c5ba7afc, type: 3}
+  - {fileID: 8300000, guid: 8e1fc0fe474792b40879409a01a43b36, type: 3}
+  ghostNearClip: {fileID: 8300000, guid: 3d882a510c2311b4fbfe008d366624d2, type: 3}
+  ghostChaseClip: {fileID: 8300000, guid: b6983aefbbd885e488b8c4eb775de73a, type: 3}
+  ghostSkillClip: {fileID: 8300000, guid: aae28eda2b1ba6e45ad34161ca2786d9, type: 3}
+  ghostDeathClip: {fileID: 8300000, guid: 6f33cb2c3d751ce4ca76948280ba9050, type: 3}
+  clips:
+  - {fileID: 8300000, guid: 22e4643a1589e9f47b9178f933634a62, type: 3}
+  soulClip: {fileID: 8300000, guid: 61c41b34e89e21a4ab3df2b48ff278a7, type: 3}
+  clipsIndex: 0
