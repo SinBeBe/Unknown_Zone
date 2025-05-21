@@ -79,10 +79,6 @@ public class Ghost : GhostBase
             {
                 ai.PlayAudiocilp(audioSource, ai.ghostChaseClip, true);
             }
-            else
-            {
-                audioSource.Stop();
-            }
             transform.LookAt(player.transform);
             agent.SetDestination(player.transform.position);
         }
