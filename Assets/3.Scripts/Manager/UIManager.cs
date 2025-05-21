@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -21,10 +22,13 @@ public class UIManager : MonoBehaviour
     public Text gameOverText;
 
     [Header("Image")]
+    public Image gameEscPanel;
     public Image playerStamina;
     public Image interactImage;
     public Image hideImage;
     public Image gameOverImage;
+
+    public Image currentImage {  get; set; }
 
     private string[] gameOverTextList = { 
         "Dead.",
@@ -74,6 +78,25 @@ public class UIManager : MonoBehaviour
         if (soulCount == 5)
         {
             GameManager.instance.isFindSoul = true;
+        }
+    }
+
+    public void OnESCInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if(currentImage == null)
+            {
+                ImageOnOff(gameEscPanel, !gameEscPanel.gameObject.activeSelf);
+                GameManager.instance.CursorModeChange(CursorLockMode.None, true);
+                Time.timeScale = gameEscPanel.gameObject.activeSelf ? 0f : 1f;
+            }
+            else
+            {
+                GameManager.instance.CursorModeChange(CursorLockMode.Locked, false);
+                currentImage.gameObject.SetActive(false);
+                currentImage = null;
+            }
         }
     }
 

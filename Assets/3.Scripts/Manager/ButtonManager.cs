@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ButtonManager : ManagerBase
 {
     [SerializeField]
-    private GameObject optionPanel;
+    private Image optionPanel;
 
     private void Start()
     {
@@ -22,7 +22,8 @@ public class ButtonManager : ManagerBase
         }
         else if (name == "Option")
         {
-            optionPanel.SetActive(true);
+            UIManager.instance.ImageOnOff(optionPanel, true);
+            UIManager.instance.currentImage = optionPanel;
         }
         else if (name == "Quit")
         {
@@ -30,6 +31,8 @@ public class ButtonManager : ManagerBase
         }
         else if (name == "Continue")
         {
+            UIManager.instance.gameEscPanel.gameObject.SetActive(false);
+            GameManager.instance.CursorModeChange(CursorLockMode.Locked, false);
             Time.timeScale = 1f;
         }
         else if(name == "Exit")

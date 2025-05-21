@@ -121,12 +121,17 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void CursorModeChange(CursorLockMode mode, bool state)
+    {
+        Cursor.lockState = mode;
+        Cursor.visible = state;
+    }
     
     public void GameOver()
     {
         StartCoroutine(UIManager.instance.GameOver());
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        CursorModeChange(CursorLockMode.None, true);
         Time.timeScale = 1f;
     }
 

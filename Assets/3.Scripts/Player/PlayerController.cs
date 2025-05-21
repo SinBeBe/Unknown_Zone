@@ -9,8 +9,6 @@ public class PlayerController : ManagerBase, IMoveObject
     [SerializeField]
     private GameObject flashLight;
     [SerializeField]
-    private GameObject gameEscPanel;
-    [SerializeField]
     private Transform rayPos;
 
     private Rigidbody rb;
@@ -201,15 +199,6 @@ public class PlayerController : ManagerBase, IMoveObject
                 gi.isPlayerHide = false;
                 ui.ImageOnOff(ui.hideImage, false);
             }
-        }
-    }
-
-    public void OnESCInput(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            gameEscPanel.SetActive(!gameEscPanel.activeSelf);
-            Time.timeScale = gameEscPanel.activeSelf ? 0f : 1f;
         }
     }
 
