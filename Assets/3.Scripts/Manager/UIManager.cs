@@ -112,4 +112,11 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(5f);
         SceneManager.LoadScene("MainScene");
     }
+
+    public IEnumerator GameEnd(string text)
+    {
+        gameOverText.text = text;
+        ImageOnOff(gameOverImage, true);
+        yield return new WaitForSeconds(5f);
+    }
 }

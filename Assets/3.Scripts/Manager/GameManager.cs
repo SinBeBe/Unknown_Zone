@@ -64,8 +64,6 @@ public class GameManager : MonoBehaviour
     {
         playerSpeed = playerData.Speed;
         damagePercent = playerData.DamagePercent;
-
-        //HappyEnding();
     }
 
     public float PlayerStamina(bool isRun)
@@ -138,18 +136,22 @@ public class GameManager : MonoBehaviour
     {
         if(!isKilledGhost && !isFindSoul)
         {
+            StartCoroutine(UIManager.instance.GameEnd("BadEnding"));
             BadEnding();
         }
         else if(isKilledGhost && !isFindSoul)
         {
+            StartCoroutine(UIManager.instance.GameEnd("NormalEnding1"));
             NormalEnding(1);
         }
         else if(!isKilledGhost && isFindSoul)
         {
+            StartCoroutine(UIManager.instance.GameEnd("NormalEnding2"));
             NormalEnding(2);
         }
         else
         {
+            StartCoroutine(UIManager.instance.GameEnd("HappyEnding"));
             SceneManager.LoadScene("HappyEndingScene");
             HappyEnding();
         }
