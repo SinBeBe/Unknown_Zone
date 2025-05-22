@@ -159,12 +159,12 @@ public class GameManager : MonoBehaviour
 
     private void BadEnding()
     {
-        Debug.Log("Bad");
+        SceneManager.LoadScene("MainScene");
     }
 
     private void NormalEnding(int num)
     {
-        Debug.Log("Normal" + num);
+        SceneManager.LoadScene("MainScene");
     }
 
     private void HappyEnding()

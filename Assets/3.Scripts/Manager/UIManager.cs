@@ -117,6 +117,6 @@ public class UIManager : MonoBehaviour
     {
         gameOverText.text = text;
         ImageOnOff(gameOverImage, true);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSecondsRealtime(5f);
     }
 }
