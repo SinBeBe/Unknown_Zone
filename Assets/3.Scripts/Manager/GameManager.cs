@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject ghostSprit;
 
+    private delegate void EndingHandler();
+    EndingHandler endingHandler;
+
     private float maxStamina = 100f;
     private float stamina = 100f;
     private float regenRate = 5f;
@@ -50,7 +53,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -68,11 +71,11 @@ public class GameManager : MonoBehaviour
 
     public float PlayerStamina(bool isRun)
     {
-        if(isRun && stamina > 0 && !isExhausted)
+        if (isRun && stamina > 0 && !isExhausted)
         {
             stamina -= decreaseRate * Time.deltaTime;
 
-            if(stamina <= 0)
+            if (stamina <= 0)
             {
                 stamina = 0;
                 isExhausted = true;
@@ -80,11 +83,11 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if(stamina < maxStamina)
+            if (stamina < maxStamina)
             {
                 stamina += regenRate * Time.deltaTime;
 
-                if(stamina >= 30)
+                if (stamina >= 30)
                 {
                     isExhausted = false;
                 }
@@ -109,10 +112,10 @@ public class GameManager : MonoBehaviour
     public void SwitchGameObject<T>(string tag, bool isStop) where T : Component
     {
         GameObject[] gameObject = GameObject.FindGameObjectsWithTag(tag);
-        foreach(GameObject obj in gameObject)
+        foreach (GameObject obj in gameObject)
         {
             T component = obj.GetComponent<T>();
-            if(component is MonoBehaviour mono)
+            if (component is MonoBehaviour mono)
             {
                 mono.enabled = isStop;
             }
@@ -124,7 +127,7 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = mode;
         Cursor.visible = state;
     }
-    
+
     public void GameOver()
     {
         StartCoroutine(UIManager.instance.GameOver());
@@ -134,27 +137,15 @@ public class GameManager : MonoBehaviour
 
     public void GameClear()
     {
-        if(!isKilledGhost && !isFindSoul)
-        {
-            StartCoroutine(UIManager.instance.GameEnd("BadEnding"));
-            BadEnding();
-        }
-        else if(isKilledGhost && !isFindSoul)
-        {
-            StartCoroutine(UIManager.instance.GameEnd("NormalEnding1"));
-            NormalEnding(1);
-        }
-        else if(!isKilledGhost && isFindSoul)
-        {
-            StartCoroutine(UIManager.instance.GameEnd("NormalEnding2"));
-            NormalEnding(2);
-        }
+        if (!isKilledGhost && !isFindSoul)
+            endingHandler = BadEnding;
+        else if ((!isKilledGhost && isFindSoul) || (isKilledGhost && !isFindSoul))
+            endingHandler = NormalEnding;
         else
-        {
-            StartCoroutine(UIManager.instance.GameEnd("HappyEnding"));
-            SceneManager.LoadScene("HappyEndingScene");
-            HappyEnding();
-        }
+            endingHandler = HappyEnding;
+
+        StartCoroutine(UIManager.instance.GameEnd(endingHandler.Target.ToString()));
+        endingHandler.Invoke();
     }
 
     private void BadEnding()
@@ -162,13 +153,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
-    private void NormalEnding(int num)
+    private void NormalEnding()
     {
         SceneManager.LoadScene("MainScene");
     }
 
     private void HappyEnding()
     {
+        SceneManager.LoadScene("HappyEndingScene");
         StartCoroutine(EndingSequence(virtualCameras, dollyCart));
     }
 
@@ -183,5 +175,4 @@ public class GameManager : MonoBehaviour
 
         cameras[1].Priority = 4;
     }
-
 }
