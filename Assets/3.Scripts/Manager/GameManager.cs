@@ -1,197 +1,178 @@
 using Cinemachine;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public sealed class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    // 싱글톤
-    private static GameManager _instance;
-    public static GameManager Instance
-    {
-        get
-        {
-            if (_instance == null)
-                Debug.LogError("[GameManager] Instance가 존재하지 않습니다.");
-            return _instance;
-        }
-    }
+    public static GameManager instance = null;
 
-    [Header("Game Data")]
-    [SerializeField] private PlayerData playerData;
+    [Header("GameScene")]
+    public PlayerData playerData;
 
-    [Header("Candles & Ghost")]
-    [SerializeField] private List<GameObject> candleLights = new List<GameObject>();
-    [SerializeField] private GameObject ghostSpirit;
+    [SerializeField]
+    private List<GameObject> candleLight = new List<GameObject>();
 
-    [Header("Items")]
     public List<GameObject> items = new List<GameObject>();
 
-    [Header("Ending Scene")]
-    [SerializeField] private CinemachineVirtualCamera[] virtualCameras;
-    [SerializeField] private CinemachineDollyCart dollyCart;
+    public GameObject ghostSprit;
 
-    // --- Player 상태 ---
-    private const float MaxStamina = 100f;
-    private float stamina = MaxStamina;
-    private const float RegenRate = 5f;
-    private const float DecreaseRate = 7f;
+    private delegate void EndingHandler();
+    EndingHandler endingHandler;
 
-    public float PlayerSpeed { get; private set; }
-    public float DamagePercent { get; private set; }
+    private float maxStamina = 100f;
+    private float stamina = 100f;
+    private float regenRate = 5f;
+    private float decreaseRate = 7f;
 
-    public bool IsUsedItem { get; set; }
-    public bool IsEnemyLimit { get; set; }
-    public bool IsPlayerLimit { get; set; }
-    public bool IsKilledGhost { get; set; }
-    public bool IsFindKnife { get; set; }
-    public bool IsFindSoul { get; set; }
-    public bool IsPlayerHide { get; set; }
-    public bool IsExhausted { get; private set; }
+    public float playerSpeed;
+    public float damagePercent;
 
-    private int candleIndex = -1;
+    public bool isUsedItem = false;
 
-    // --- 이벤트 ---
-    public event Action OnGameOverEvent;
-    public event Action<string> OnGameEndEvent;
+    public bool isEnemyLimit = false;
+    public bool isPlayerLimit = false;
+
+    public bool isKilledGhost;
+    public bool isFindKnife;
+    public bool isFindSoul;
+
+    public bool isPlayerHide;
+    public bool isExhausted = false;
+
+    private int candleIndexer = -1;
+
+    [Header("EndingScene")]
+    [Header("HappyEnding")]
+    [SerializeField]
+    private CinemachineVirtualCamera[] virtualCameras;
+    [SerializeField]
+    private CinemachineDollyCart dollyCart;
 
     private void Awake()
     {
-        if (_instance != null && _instance != this)
+        if (instance == null)
         {
-            Destroy(gameObject);
-            return;
+            instance = this;
         }
-        _instance = this;
-        DontDestroyOnLoad(gameObject); // 필요 시 유지
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void Start()
     {
-        if (playerData != null)
-        {
-            PlayerSpeed = playerData.Speed;
-            DamagePercent = playerData.DamagePercent;
-        }
+        playerSpeed = playerData.Speed;
+        damagePercent = playerData.DamagePercent;
     }
 
-    #region Player Stamina
-    public float GetPlayerStamina(bool isRunning)
+    public float PlayerStamina(bool isRun)
     {
-        if (isRunning && stamina > 0 && !IsExhausted)
+        if (isRun && stamina > 0 && !isExhausted)
         {
-            stamina -= DecreaseRate * Time.deltaTime;
+            stamina -= decreaseRate * Time.deltaTime;
 
             if (stamina <= 0)
             {
                 stamina = 0;
-                IsExhausted = true;
+                isExhausted = true;
             }
         }
         else
         {
-            if (stamina < MaxStamina)
+            if (stamina < maxStamina)
             {
-                stamina += RegenRate * Time.deltaTime;
-                if (stamina >= 30f) IsExhausted = false;
+                stamina += regenRate * Time.deltaTime;
+
+                if (stamina >= 30)
+                {
+                    isExhausted = false;
+                }
             }
         }
 
-        stamina = Mathf.Clamp(stamina, 0f, MaxStamina);
-        return stamina / MaxStamina;
+        stamina = Mathf.Clamp(stamina, 0f, maxStamina);
+
+        return stamina / maxStamina;
     }
-    #endregion
 
-    #region Candle & Ghost
-    public void ActivateNextCandle()
+    public void OnCandle()
     {
-        candleIndex++;
-        if (candleIndex >= 0 && candleIndex < candleLights.Count)
+        candleIndexer += 1;
+        candleLight[candleIndexer].SetActive(true);
+        if (candleIndexer == 4)
         {
-            candleLights[candleIndex].SetActive(true);
-        }
-
-        if (candleIndex == 4 && ghostSpirit != null)
-        {
-            ghostSpirit.SetActive(true);
+            ghostSprit.SetActive(true);
         }
     }
-    #endregion
 
-    #region Utility
-    public void ToggleComponents<T>(string tag, bool isEnabled) where T : MonoBehaviour
+    public void SwitchGameObject<T>(string tag, bool isStop) where T : Component
     {
-        var objects = GameObject.FindGameObjectsWithTag(tag);
-        foreach (var obj in objects)
+        GameObject[] gameObject = GameObject.FindGameObjectsWithTag(tag);
+        foreach (GameObject obj in gameObject)
         {
-            if (obj.TryGetComponent<T>(out var component))
+            T component = obj.GetComponent<T>();
+            if (component is MonoBehaviour mono)
             {
-                component.enabled = isEnabled;
+                mono.enabled = isStop;
             }
         }
     }
 
-    public void SetCursorState(CursorLockMode mode, bool isVisible)
+    public void CursorModeChange(CursorLockMode mode, bool state)
     {
         Cursor.lockState = mode;
-        Cursor.visible = isVisible;
+        Cursor.visible = state;
     }
-    #endregion
 
-    #region Game Flow
     public void GameOver()
     {
-        OnGameOverEvent?.Invoke();
         StartCoroutine(UIManager.instance.GameOver());
-        SetCursorState(CursorLockMode.None, true);
+        CursorModeChange(CursorLockMode.None, true);
         Time.timeScale = 1f;
     }
 
     public void GameClear()
     {
-        string endingType;
-
-        if (!IsKilledGhost && !IsFindSoul)
-        {
-            endingType = "BadEnding";
-            BadEnding();
-        }
-        else if ((!IsKilledGhost && IsFindSoul) || (IsKilledGhost && !IsFindSoul))
-        {
-            endingType = "NormalEnding";
-            NormalEnding();
-        }
+        if (!isKilledGhost && !isFindSoul)
+            endingHandler = BadEnding;
+        else if ((!isKilledGhost && isFindSoul) || (isKilledGhost && !isFindSoul))
+            endingHandler = NormalEnding;
         else
-        {
-            endingType = "HappyEnding";
-            HappyEnding();
-        }
+            endingHandler = HappyEnding;
 
-        OnGameEndEvent?.Invoke(endingType);
-        StartCoroutine(UIManager.instance.GameEnd(endingType));
+        StartCoroutine(UIManager.instance.GameEnd(endingHandler.Target.ToString()));
+        endingHandler.Invoke();
     }
 
-    private void BadEnding() => SceneManager.LoadScene("MainScene");
-    private void NormalEnding() => SceneManager.LoadScene("MainScene");
+    private void BadEnding()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
+    private void NormalEnding()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
 
     private void HappyEnding()
     {
         SceneManager.LoadScene("HappyEndingScene");
-        StartCoroutine(EndingSequence());
+        StartCoroutine(EndingSequence(virtualCameras, dollyCart));
     }
 
-    private IEnumerator EndingSequence()
+    private IEnumerator EndingSequence(CinemachineVirtualCamera[] cameras, CinemachineDollyCart cart)
     {
-        if (virtualCameras.Length < 2 || dollyCart == null) yield break;
+        cameras[0].Priority = 5;
 
-        virtualCameras[0].Priority = 5;
-
-        while (dollyCart.m_Path.PathLength - dollyCart.m_Position > 0.01f)
+        while (cart.m_Path.PathLength - cart.m_Position > 0.01f)
+        {
             yield return null;
+        }
 
-        virtualCameras[1].Priority = 4;
+        cameras[1].Priority = 4;
     }
-    #endregion
 }
